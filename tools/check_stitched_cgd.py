@@ -1,4 +1,4 @@
-"""Audit a TopoStich CGD against its receipt using Systre's own parser.
+"""Audit a TopoTrace CGD against its receipt using Systre's own parser.
 
     python tools/check_stitched_cgd.py graph.cgd graph.json --systre Systre-19.6.0.jar
 
@@ -13,7 +13,7 @@ edges with the receipt (schema 1 or 2):
 * periodic dimensions of Systre's connected components are reported.
 
 Needs a JDK (javac/java) and a separately obtained Systre jar; neither is a
-TopoStich runtime dependency. Exit status 0 = pass, 1 = mismatch, 2 = usage.
+TopoTrace runtime dependency. Exit status 0 = pass, 1 = mismatch, 2 = usage.
 """
 from __future__ import annotations
 

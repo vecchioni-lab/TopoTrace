@@ -14,8 +14,8 @@ import xml.etree.ElementTree as ET
 import gemmi
 
 from test_converter import crystal
-from topostich.cgd import export_cgd
-from topostich.converter import ConversionError
+from topotrace.cgd import export_cgd
+from topotrace.converter import ConversionError
 
 SCHEMAS = Path(__file__).resolve().parents[1] / 'schemas'
 
@@ -237,7 +237,7 @@ class StitchingTests(unittest.TestCase):
     def test_cli_and_receipt_schema_2(self):
         self.source.write_text(self.translation_chain())
         receipt = self.root/'receipt.json'
-        p = subprocess.run([sys.executable, '-m', 'topostich.cgd', str(self.source), '--out', str(self.out),
+        p = subprocess.run([sys.executable, '-m', 'topotrace.cgd', str(self.source), '--out', str(self.out),
                             '--stitch-nicks', '--join-cutoff', '3.5', '--receipt', str(receipt)],
                            text=True, capture_output=True)
         self.assertEqual(p.returncode, 0, p.stderr)

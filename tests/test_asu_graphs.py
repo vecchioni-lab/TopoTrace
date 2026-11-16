@@ -14,9 +14,9 @@ import gemmi
 from test_converter import crystal
 from test_stitching import SCHEMAS, nucleotide
 from test_terminal_stacks import strand
-from topostich import asu_graphs as q
-from topostich.cgd import export_cgd
-from topostich.converter import ConversionError
+from topotrace import asu_graphs as q
+from topotrace.cgd import export_cgd
+from topotrace.converter import ConversionError
 
 I = ((1, 0, 0), (0, 1, 0), (0, 0, 1))
 
@@ -189,14 +189,14 @@ class ExportTests(unittest.TestCase):
         self.assertIn('1_(-1,0,0)', (out/'residue.html').read_text())
 
     def test_html_arrowheads_use_the_shared_size(self):
-        from topostich.asu_view import ARROW_SIZE
+        from topotrace.asu_view import ARROW_SIZE
         _, _, out = self.export(self.nick_chain(), stitch_nicks=True)
         self.assertEqual(ARROW_SIZE, {'chain': 16, 'residue': 11})
         self.assertIn('class="arrow"', (out/'chain.html').read_text())
         self.assertIn('d="M16,0 ', (out/'chain.html').read_text())
         self.assertIn('d="M11,0 ', (out/'residue.html').read_text())
 
-    @unittest.skipUnless(importlib.util.find_spec('matplotlib'), 'matplotlib (topostich[png]) not installed')
+    @unittest.skipUnless(importlib.util.find_spec('matplotlib'), 'matplotlib (topotrace[png]) not installed')
     def test_png_images(self):
         self.source.write_text(self.nick_chain())
         r = export_cgd(self.source, self.root/'g.cgd', stitch_nicks=True,
@@ -216,7 +216,7 @@ class ExportTests(unittest.TestCase):
         self.source.write_text(self.nick_chain())
         builtins.__import__ = blocked
         try:
-            with self.assertRaisesRegex(ConversionError, r'topostich\[png\]'):
+            with self.assertRaisesRegex(ConversionError, r'topotrace\[png\]'):
                 export_cgd(self.source, self.root/'g.cgd', asu_chain_png=self.root/'chain.png')
         finally:
             builtins.__import__ = real

@@ -2,8 +2,25 @@
 
 ## [Unreleased]
 
+- Integrate collaborator PR #1 as TopoTrace 0.4.0, preserving canonical
+  `topotrace` commands and `topostich` compatibility aliases for all new modules.
+  Keep the terminal-stack algorithm identifier stable; the ASU schema accepts
+  both historical TopoStich and current TopoTrace format labels. Existing 8D93
+  examples remain unchanged. Verify source tests and a clean relocated install.
+
+- Version 0.3.1: rename the project, distribution, canonical Python package and
+  commands to TopoTrace / topotrace / topotrace-cgd. Keep topostich commands and
+  public module imports as compatibility aliases. Update GitHub links, build
+  tooling, component map and user/machine-readable intent. Remove an installed
+  TopoStich distribution before installing TopoTrace to avoid shared-file ownership.
+- Conversion/CGD/catalog schemas and scientific behavior are unchanged. New
+  output branding and version change output bytes/hashes, not coordinates or links.
+- Verify both names and packaged catalog, then build/install from a relocated
+  source distribution and exercise both old/new installed entry points.
+
+
 - Version 0.4.0: opt-in backbone nick and chain-end stack stitching for
-  `topostich-cgd`, plus ASU quotient graphs. Nicks
+  `topotrace-cgd`, plus ASU quotient graphs. Nicks
   (`--stitch-nicks`, `--join-cutoff`, `--o5-cutoff`, `--include-o5-fallback`;
   API `export_cgd(stitch_nicks=True, ...)`). New `stitching.py` ports NAtopo's
   loose P…O3′ backbone-join rule (3.5 Å, different chain copy, O5′ fallback
@@ -36,7 +53,7 @@
   interpenetrating copies). `asu_view.py` writes self-contained SVG/HTML views
   with NAtopo's layouts. The receipt gains an optional `asu_graphs` summary.
 - PNG images of the ASU graphs (`--asu-chain-png`, `--asu-residue-png`;
-  new `asu_png.py`). They need the optional extra `topostich[png]`
+  new `asu_png.py`). They need the optional extra `topotrace[png]`
   (matplotlib). Larger arrowheads in the HTML and PNG views (chain 16,
   residue 11); NAtopo's Bokeh views were enlarged to match (16 and 14).
 - mmCIF `_struct_conn.conn_type_id` is now kept (`Pdb.conect_types`); only
@@ -61,7 +78,7 @@
   Distinguish implemented behavior from proposed image/identity interfaces;
   document required graph-schema, viewer and validator work. Documentation only.
 
-- Version 0.3.0: add a separate installable `topostich-cgd` command for the
+- Version 0.3.0: add a separate installable `topotrace-cgd` command for the
   exact CRYSTAL named-source/neighbor-image dialect. Represent each nucleotide
   by its observed O3′ and preserve chains/TER segments, model selection,
   missing-atom bridging, crystal cell and symmetry setting. No stitching yet.
@@ -99,7 +116,7 @@
 
 ## [0.1.0] - 2026-11-08
 
-- Initial installable `topostich` command; PDB input and core CIF (default),
+- Initial installable `topotrace` command; PDB input and core CIF (default),
   PDBx/mmCIF or PDB output, with no runtime dependencies.
 - Optional repeated atom selections follow conventional backbone order and
   bridge missing selections within a chain/TER segment. No stitching is inferred.

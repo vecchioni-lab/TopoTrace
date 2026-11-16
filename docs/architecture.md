@@ -1,6 +1,6 @@
 # Architecture
 
-`cgd.py` provides the separate `topostich-cgd` CLI and `export_cgd` API. It reuses
+`cgd.py` provides the separate `topotrace-cgd` CLI and `export_cgd` API. It reuses
 the established readers, O3′ selection and fractional transform without altering
 the original converter. Gemmi validates the named space-group setting and cell;
 a conservative symmetry-position guard rejects ambiguous overlaps and special
@@ -65,9 +65,9 @@ pan/zoom; it uses no external resources. `asu_png.py` reuses those layouts and
 edge geometry to draw PNG images with matplotlib (optional `png` extra, imported
 only when a PNG is requested; `ARROW_SIZE` is shared by both renderers).
 
-`src/topostich/converter.py` owns fixed-column PDB parsing, input dispatch, atom selection,
+`src/topotrace/converter.py` owns fixed-column PDB parsing, input dispatch, atom selection,
 coordinate transforms, graph construction and the three output writers.
-`src/topostich/cli.py` maps CLI arguments to `convert_file` and serializes the
+`src/topotrace/cli.py` maps CLI arguments to `convert_file` and serializes the
 schema-1 receipt. `mmcif_input.py` uses Gemmi for CIF syntax and normalizes native
 mmCIF into the shared atom/model container without a PDB intermediate. Conversion
 does not invoke external scientific programs or the network.

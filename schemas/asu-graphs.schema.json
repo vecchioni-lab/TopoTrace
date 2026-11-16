@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "TopoStich ASU quotient graphs",
+  "title": "TopoTrace ASU quotient graphs",
   "description": "Asymmetric-unit quotient graphs of covalent bonds and stitched joins at chain and residue resolution, ported from NAtopo's asu_quotient/residue_quotient. One edge per symmetry orbit, labelled with the partner copy's symmetry code; periodicity from the cycles' generated translations. Source name and hash are provenance, not operational paths.",
   "type": "object",
   "additionalProperties": false,
@@ -25,7 +25,10 @@
       "const": 1
     },
     "format": {
-      "const": "TopoStich ASU quotient graphs"
+      "enum": [
+        "TopoTrace ASU quotient graphs",
+        "TopoStich ASU quotient graphs"
+      ]
     },
     "tool_version": {
       "type": "string"

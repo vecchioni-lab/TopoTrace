@@ -1,6 +1,6 @@
-# TopoStich contributor contract
+# TopoTrace contributor contract
 
-Simon requested on 2026-11-08: **TopoStich must remain installable after every
+Simon requested on 2026-11-08: **TopoTrace must remain installable after every
 substantial patch.** This is a continuing requirement, not a release-only task.
 
 Before edits, inspect `git status --short`, `README.md`, `docs/intent.json`,
@@ -10,7 +10,7 @@ dirty files and all original scientific inputs.
 
 Read `docs/agent-handoff.json` for the component map and next task. The
 collaborator's connection logic lives in the NAtopo project. 0.4.0 ports its
-P…O3′ backbone-join rule into `stitching.py` (opt-in `topostich-cgd
+P…O3′ backbone-join rule into `stitching.py` (opt-in `topotrace-cgd
 --stitch-nicks`, requested 2026-11-11) and its folded-ASU chain/residue views
 into `asu_graphs.py`/`asu_view.py` (covalent bonds and stitching only,
 requested 2026-11-13). NAtopo's junction rule was removed on 2026-11-13 in
@@ -25,7 +25,7 @@ stitched output with `tools/check_stitched_cgd.py`.
   DNA/RNA backbone trace. PDB and PDBx/mmCIF are alternative coordinate outputs.
 - Respect chain, TER and model boundaries. The coordinate converter and the
   default CGD export never stitch. The only authorized stitching is opt-in in
-  `topostich-cgd`: NAtopo-rule backbone nick joins (`--stitch-nicks`) and
+  `topotrace-cgd`: NAtopo-rule backbone nick joins (`--stitch-nicks`) and
   pi stacks between chain ends (`--stitch-terminal-stacks`; NAtopo stack
   geometry, any end polarity, same-polarity flagged). Both report unstitched
   candidates with a status instead of choosing silently. No

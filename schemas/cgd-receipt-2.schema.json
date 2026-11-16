@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "TopoStich CGD graph receipt with stitching",
+  "title": "TopoTrace CGD graph receipt with stitching",
   "description": "Schema 2 is written only when nick and/or chain-end stack stitching is requested; unstitched exports keep schema 1. Adds periodic joins with relative symmetry images, every nick and chain-end stack candidate with its status, and the rule parameters. Source name and hash are provenance, not operational paths.",
   "type": "object",
   "additionalProperties": false,

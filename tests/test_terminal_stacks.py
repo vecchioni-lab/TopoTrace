@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 
 from test_converter import crystal
 from test_stitching import assert_reciprocal, nucleotide
-from topostich.cgd import export_cgd
+from topotrace.cgd import export_cgd
 
 TOOLS = Path(__file__).resolve().parents[1] / 'tools'
 

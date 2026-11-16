@@ -1,5 +1,49 @@
 # Development handoff
 
+## TopoTrace PR #1 integration — 2026-11-16
+
+Reconciles collaborator head `d946792a4a82692c630eb20dafb2b0e2d6312430`
+with the rename on main `a9facd96e331e27959549751a151fca447ddecd3`.
+Before: main had TopoTrace 0.3.1, while the 0.4.0 PR still implemented TopoStich.
+After: one canonical `topotrace` implementation supplies the collaborator's
+opt-in nick/terminal-stack stitching, ASU graphs and optional PNG rendering;
+legacy `topostich` commands and public imports delegate to it. Defaults remain
+unstitched. This integration does not change the collaborator's geometry rules.
+
+Files: canonical source modules and legacy wrappers, packaging/install checker,
+rename regression tests and active imports, human/machine docs and schema titles.
+Stitched CGD uses the collaborator's schema 2; ASU schema 1 accepts both historical
+and renamed format labels. `topostich_terminal_pi_stack_v1` remains the same
+algorithm identifier. Existing 8D93 examples and their hashes are unchanged and
+excluded from distributions. No new scientific inputs, generated runs or local
+workspace files are added. Old TopoStich installations still need uninstalling
+before installing TopoTrace; existing TopoTrace users can upgrade normally.
+
+Validation: Python 3.12.14, Gemmi 0.7.5, macOS arm64, temporary environment
+`/private/tmp/topotrace-rename-env`. Commands from the isolated integration tree:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -p test_rename.py -v
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src MPLBACKEND=Agg python -m unittest discover -s tests -v
+PYTHONDONTWRITEBYTECODE=1 python tools/check_install.py
+git diff --check
+```
+
+Two added regression methods fail against 0.3.1 (missing feature modules/options)
+and pass after integration. Focused: **4 passed**. Full source: **89 passed**, with
+matplotlib 3.11.2 and jsonschema 4.26.0 installed. Matplotlib emitted host-cache
+permission warnings, fell back to temporary storage, and the PNG test passed.
+Clean sdist → removed staging → relocated wheel → fresh install: **PASS**;
+installed suite ran **89 tests: 87 passed, 2 skipped** for optional PNG/jsonschema
+dependencies absent from the minimal installation. Both installed legacy aliases
+and new feature smoke tests pass. All four existing 8D93 JSON examples validate
+against maintained schemas; all repository JSON parses and whitespace checks pass.
+
+Collaborator NAtopo/Systre comparisons below remain prior evidence; they were not
+rerun for this naming integration. Live ToposPro and new CMM visual checks remain
+unvalidated. Stack links are graph connections, not a claim of chemical repair.
+
+
 ## 0.4.0 nick and chain-end stack stitching, ASU graphs — 2026-11-13
 
 Branch `codex/rowan-nick-stitching` (PR #1). The user asked for backbone nick
@@ -12,7 +56,7 @@ chain and residue resolution** (code from `main_NAtopo.ipynb`) for covalent
 bonds and stitching only.
 
 **Before/after.** 0.3.0 wrote unstitched strands only. 0.4.0 adds opt-in
-`topostich-cgd --stitch-nicks`, `--stitch-terminal-stacks`, and
+`topotrace-cgd --stitch-nicks`, `--stitch-terminal-stacks`, and
 `--asu-graphs/--asu-chain-html/--asu-residue-html`. The junction rule and its
 flags (`--stitch-junctions`, `--junction-scope`) were drafted earlier on this
 branch and removed before release. `stitching.py` ports NAtopo's backbone-join
@@ -48,8 +92,8 @@ schema 1 (optional `asu_graphs` summary only), version files and docs.
   - **Nicks:** identical candidate orbits, relative images and distances
     (≤10⁻⁴ Å) to `find_backbone_join_candidates`.
   - **ASU graphs:** identical covalent orbits, backbone-join orbits (against
-    every TopoStich join candidate), symmetry codes and operator numbering to
-    NAtopo's `G_residue_quotient`; NAtopo's `periodicity()` on TopoStich's
+    every TopoTrace join candidate), symmetry codes and operator numbering to
+    NAtopo's `G_residue_quotient`; NAtopo's `periodicity()` on TopoTrace's
     edges gives the same parts, ranks, bases and interpenetration counts at
     chain and residue resolution. This found the `hydrog` bug below.
 - Native Systre 19.6.0 (jar SHA-256
@@ -66,7 +110,7 @@ schema 1 (optional `asu_graphs` summary only), version files and docs.
   as intended; their scripts pass `node --check`.
 
 **Found by the checks.** (1) A base stacked on its own 2-fold mate (9Y3B,
-6YL5, 6YLB) produced identical forward and reciprocal rows; TopoStich declared
+6YL5, 6YLB) produced identical forward and reciprocal rows; TopoTrace declared
 degree 3 where Systre saw 2. Rows are now de-duplicated per node. (2) mmCIF
 `hydrog` `_struct_conn` records at 2.26–2.27 Å (5KEK A8–D11, 9ZXK D8–E26)
 were read as covalent links because the reader dropped `conn_type_id`. It is
@@ -74,7 +118,7 @@ now kept; only covalent types count.
 
 **PNG images and arrowheads (2026-11-13, later request).** `--asu-chain-png`
 and `--asu-residue-png` (`asu_png.py`, optional `png` extra with matplotlib)
-draw the ASU graphs as PNG images. Arrowheads are larger in TopoStich
+draw the ASU graphs as PNG images. Arrowheads are larger in TopoTrace
 (`asu_view.ARROW_SIZE`: chain 16, residue 11) and in NAtopo's
 `asu_quotient.py`/`residue_quotient.py` (Bokeh size 16 and 14; that NAtopo
 change is not committed). The 8D93 examples were regenerated with PNGs; their
@@ -85,7 +129,7 @@ the missing-matplotlib test runs). PNG rendering was checked visually for
 
 **Signed symmetry-code labels (2026-11-13, later request).** Edge labels in
 both repos are now `op_(k,l,m)` with signed cell shifts (`7_(-1,-1,0)`,
-`1_(0,0,0)`) instead of PDB `op_klm` (`7_445`, `1_555`). TopoStich keeps the
+`1_(0,0,0)`) instead of PDB `op_klm` (`7_445`, `1_555`). TopoTrace keeps the
 PDB form in the ASU JSON as `pdb_symmetry_code`; NAtopo's `symmetry_code()`,
 view hints, notebook text and `tests/test_asu_quotient.py` were updated (not
 committed there; its 4 quotient tests pass). For 7SE0 and 8D93 both repos
@@ -100,11 +144,55 @@ decision log could feed this); special positions; live ToposPro; scientific
 review of whether every chain-end stack should be stitched (stacks are not
 exclusive, so an end may stack on two others).
 
+## TopoTrace rename — 2026-11-13
+
+TopoStich 0.3.0 is renamed to **TopoTrace 0.3.1**. Canonical package/commands are
+`topotrace` and `topotrace-cgd`; old `topostich` commands, executable modules and
+public imports remain aliases of the same implementation. Scientific behavior,
+CLI options and conversion/CGD/catalog schema 1 remain unchanged. Branding and
+version strings in newly written outputs change their bytes/hashes.
+
+Changed files: package moved to `src/topotrace`, compatibility wrappers retained
+in `src/topostich`; pyproject/MANIFEST, install checker, tests, README, AGENTS,
+architecture/CGD/recognition docs, JSON intent/component map, schema titles and
+changelog updated. Agent handoff document is version 2 because product-specific
+responsibility keys changed. The atom catalog bytes are unchanged.
+
+Migration: uninstall the old TopoStich distribution before installing TopoTrace
+so two distributions do not own the same compatibility command/module files.
+Existing structures and receipts need no migration. GitHub target:
+https://github.com/vecchioni-lab/TopoTrace. PyPI publication is not claimed.
+
+Validation: Python 3.12.14, Gemmi 0.7.5, setuptools 84.2.1, wheel 0.48.0,
+macOS arm64. `PYTHON` below was the temporary isolated interpreter and
+`WHEELHOUSE` the temporary downloaded dependency directory (not project inputs).
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src "$PYTHON" -m unittest discover -s tests -p test_rename.py -v
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src "$PYTHON" -m unittest discover -s tests -v
+"$PYTHON" tools/check_install.py --wheelhouse "$WHEELHOUSE"
+git diff --check
+```
+
+- The new two-test rename regression failed before implementation: topotrace
+  was absent and legacy commands still reported TopoStich 0.3.0.
+- Focused: **2 passed**; complete source suite: **50 passed**.
+- Install: sdist built, original staging removed, wheel built from relocated
+  extracted source and installed in a fresh environment offline. Both old/new
+  command names, module aliases, public API identity, packaged catalog and
+  format/CGD/CMM smoke checks passed; **50 installed tests passed**.
+- JSON parses, component paths and whitespace validated. No live ToposPro,
+  Systre or ChimeraX run was needed or claimed for this naming-only patch.
+
+Scientific inputs, previous generated outputs, environments and local bundles
+are excluded from the commit. Symmetry stitching remains the collaborator-engine
+integration task; the rename adds no connectivity or scientific inference.
+
 ## Agent onboarding and next task — 2026-11-11
 
 `docs/agent-handoff.json` maps the components and defines the next integration:
 the collaborator already owns the logic engine that finds symmetry-related
-backbone connections. TopoStich will map those decisions to node/image identities
+backbone connections. TopoTrace will map those decisions to node/image identities
 and serialize the exact CGD dialect, with matching viewing and provenance.
 The engine interface remains to be agreed; the suggested contract is explicitly
 a proposal. It flags current edge-schema, viewer and baseline-audit limitations.
@@ -116,7 +204,7 @@ results below are previous implementation results rather than newly rerun tests.
 ## Behavior before and after
 
 0.2.1 had coordinate conversion, all-atom mode and optional backbone traces.
-0.3.0 adds a separate `topostich-cgd` command and module. It writes one observed
+0.3.0 adds a separate `topotrace-cgd` command and module. It writes one observed
 O3′ node per nucleotide in the exact CRYSTAL named-source/neighbor-image grammar.
 Consecutive retained nodes connect only inside the original segment. Missing
 O3′ atoms are skipped/bridged as before; chain, TER, model and mmCIF label-asym
@@ -131,9 +219,9 @@ See `cgd.md` for CLI usage, exact dialect, interpretation and viewing commands.
 
 ## Changed files and schemas
 
-- New `src/topostich/cgd.py`: API/CLI, symmetry/position checks, graph receipt,
+- New `src/topotrace/cgd.py`: API/CLI, symmetry/position checks, graph receipt,
   exact CGD writer and exclusive multi-output writes.
-- New `src/topostich/graph_viewer.py`: native ChimeraX marker/link XML writer.
+- New `src/topotrace/graph_viewer.py`: native ChimeraX marker/link XML writer.
 - New `tests/test_cgd.py`: eight regressions covering boundaries, missing nodes,
   original coordinates, mmCIF precision, alternate/model selection, symmetry,
   CMM links/identities, no-overwrite behavior, CLI and receipt output.
@@ -141,7 +229,7 @@ See `cgd.md` for CLI usage, exact dialect, interpretation and viewing commands.
   node/edge graph, original identities, cell, operations and artifact hashes.
 - New `tools/CheckCgd.java`: optional native Systre parser/degree/adjacency audit.
 - `tools/check_install.py`: installed CGD command, receipt and CMM smoke checks.
-- `pyproject.toml`, `src/topostich/__init__.py`: 0.3.0 and new entry point.
+- `pyproject.toml`, `src/topotrace/__init__.py`: 0.3.0 and new entry point.
 - `MANIFEST.in`: include the optional Java audit source in the sdist.
 - README, changelog, architecture, intent, `cgd.md`, and this handoff: updated.
 

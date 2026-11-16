@@ -1,18 +1,18 @@
 # Chain-aware O3′ graphs for Systre and ToposPro
 
-TopoStich 0.3.0 adds a separate `topostich-cgd` command. Each observed O3′
+TopoTrace 0.3.0 adds a separate `topotrace-cgd` command. Each observed O3′
 becomes one nucleotide node; consecutive retained nodes link within their
 original chain/TER segment. This is a topological trace, not a chemical model.
-Existing `topostich` conversions remain unchanged.
+Existing `topotrace` conversions remain unchanged.
 
 ```sh
-topostich-cgd 8D93.pdb --out 8D93_O3.cgd \
+topotrace-cgd 8D93.pdb --out 8D93_O3.cgd \
   --cmm 8D93_chains.cmm --crystal-cmm 8D93_symmetry.cmm \
   --receipt 8D93_graph.json
 ```
 
 Native PDBx/mmCIF input works through the same command. `--model`, `--altloc`,
-and `--input-format` retain the converter's meanings. `python -m topostich.cgd`
+and `--input-format` retain the converter's meanings. `python -m topotrace.cgd`
 is equivalent to the installed command. All output paths must be new and have
 existing parents. The command does not overwrite inputs or earlier outputs.
 
@@ -71,7 +71,7 @@ ported without NAtopo, NetworkX or SciPy dependencies:
 Images are searched exactly: every conventional space-group operation
 (including centering) and every lattice translation that can bring the
 endpoints within the cutoff. NAtopo's finite cell window is not needed. On 17
-nucleic-acid crystals in the NAtopo workspace, TopoStich found exactly the same
+nucleic-acid crystals in the NAtopo workspace, TopoTrace found exactly the same
 candidate orbits, relative images and distances (to 10⁻⁴ Å) as NAtopo's own
 `find_backbone_join_candidates` with its radius-2 window.
 
@@ -116,7 +116,7 @@ and records it:
 |---|---|
 | Chain ends | The first (5′) and last (3′) backbone-bearing residue of each chain/TER segment with at least two such residues. Internal residues are never candidates. Single-residue segments (free nucleotides, nucleoside ligands) are counted in `single_residue_segments`, not stitched |
 | Base plane | SVD plane of the complete ring heavy atoms: 9 for purines, 6 for pyrimidines; centroid = ring-atom mean (NAtopo `fit_base_planes`) |
-| Ring atom names | TopoStich's NARestraints-derived residue catalog maps canonical ring positions to actual names, including modified residues; unmapped/ambiguous residues are reported in `plane_diagnostics` |
+| Ring atom names | TopoTrace's NARestraints-derived residue catalog maps canonical ring positions to actual names, including modified residues; unmapped/ambiguous residues are reported in `plane_diagnostics` |
 | Pi stack | NAtopo `find_pi_interactions` geometry: centroids **< 5.5 Å**, normals within **30°**, both normal separations **2.0–4.5 Å**, both lateral shifts **≤ 3.0 Å** |
 | Already backbone joined | The two ends share a verified O3′–P link in the same image (deposited or consecutive), or a nick join stitched in this run joins them in the same image: status `backbone_joined`, not stitched |
 | Polarity | `5'-3'`, `5'-5'` or `3'-3'`; `same_polarity` is true for the last two |
@@ -212,16 +212,16 @@ stacks. The CGD itself is unchanged by these options.
 `asu_chain_png=`, `asu_residue_png=`) draw the same layouts, colors and
 arrowheads as static PNG images (200 dpi, white background, with the title,
 periodicity lines and a legend). They need matplotlib, installed with the
-optional extra `pip install "topostich[png]"`; without it the export stops
+optional extra `pip install "topotrace[png]"`; without it the export stops
 with that instruction before writing any file. Gemmi remains the only
 required dependency.
 
 On all 17 crystals, with nicks, O5′ fallback and chain-end stacks enabled, the
 residue graph's covalent orbits and its backbone-join orbits (against every
-TopoStich join candidate) are identical to the `covalent`, `backbone_join`
+TopoTrace join candidate) are identical to the `covalent`, `backbone_join`
 and `backbone_join_o5` edges of NAtopo's own `G_residue_quotient`, built with
 the notebook's pipeline. The symmetry codes and operator numbering agree. NAtopo's
-`periodicity()`, applied to TopoStich's edges, gives the same parts,
+`periodicity()`, applied to TopoTrace's edges, gives the same parts,
 dimensions, bases and interpenetration counts at both resolutions. In all
 85 audited exports, the chain graph's dimensions match Systre's components
 (for example 5KEK with nicks and stacks: one 3-periodic part with 2
