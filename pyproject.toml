@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TopoTrace"
-version = "0.3.1"
+version = "0.4.0"
 description = "Convert PDB/mmCIF coordinates to core CIF with nucleotide atom recognition"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,6 +13,7 @@ dependencies = ["gemmi>=0.7.5,<0.8"]
 
 [project.optional-dependencies]
 catalog = ["openpyxl>=3.1,<4"]
+png = ["matplotlib>=3.5"]
 
 [project.scripts]
 topotrace = "topotrace.cli:main"

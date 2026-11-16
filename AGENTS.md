@@ -8,20 +8,29 @@ Before edits, inspect `git status --short`, `README.md`, `docs/intent.json`,
 The active user request takes precedence over old handoffs. Preserve unrelated
 dirty files and all original scientific inputs.
 
-Read `docs/agent-handoff.json` for the component map and next task. Simon clarified
-on 2026-11-11 that the collaborator already has the connection-finding logic
-engine. The next integration should consume its symmetry-aware backbone links
-and write them in the existing CGD dialect; do not invent a replacement engine.
-Current 0.3.1 behavior remains unstitched until that integration is implemented.
+Read `docs/agent-handoff.json` for the component map and next task. The
+collaborator's connection logic lives in the NAtopo project. 0.4.0 ports its
+P…O3′ backbone-join rule into `stitching.py` (opt-in `topotrace-cgd
+--stitch-nicks`, requested 2026-11-11) and its folded-ASU chain/residue views
+into `asu_graphs.py`/`asu_view.py` (covalent bonds and stitching only,
+requested 2026-11-13). NAtopo's junction rule was removed on 2026-11-13 in
+favour of chain-end stacking (`--stitch-terminal-stacks`): every pi stack
+between two chain ends, any polarity, unless already backbone joined. Keep the
+ported rules aligned with NAtopo rather than inventing replacements. Audit
+stitched output with `tools/check_stitched_cgd.py`.
 
 ## Scope and scientific behavior
 
 - The product converts PDB/PDBx-mmCIF to core CIF, optionally selecting a linear
   DNA/RNA backbone trace. PDB and PDBx/mmCIF are alternative coordinate outputs.
-- Respect chain, TER and model boundaries. No stitching, symmetry seam joining,
-  sticky-end inference, distance-based bond guessing, or chemical repairs are
-  authorized by the initial scope. Missing selected atoms are bridged within
-  their existing chain/TER segment.
+- Respect chain, TER and model boundaries. The coordinate converter and the
+  default CGD export never stitch. The only authorized stitching is opt-in in
+  `topotrace-cgd`: NAtopo-rule backbone nick joins (`--stitch-nicks`) and
+  pi stacks between chain ends (`--stitch-terminal-stacks`; NAtopo stack
+  geometry, any end polarity, same-polarity flagged). Both report unstitched
+  candidates with a status instead of choosing silently. No
+  hydrogen-bond stitching, general bond guessing, or chemical repairs. Missing
+  selected atoms are bridged within their chain/TER segment.
 - Keep crystal coordinates, symmetry and graph connectivity distinct. Do not
   label a format check as a live ToposPro compatibility test.
 - Keep the package independent of NASolve/Phenix/Coot. Do not add a dependency
@@ -32,6 +41,8 @@ Current 0.3.1 behavior remains unstitched until that integration is implemented.
   outside the current trace scope even though extra sugar atoms are recognized.
 - Never overwrite inputs or prior outputs. Do not commit scientific coordinates,
   reflections, generated runs, secrets, or machine-local environment state.
+  Exception requested 2026-11-13: the 8D93 reference outputs in
+  `examples/8D93/` (generated files only, no input structure; not packaged).
 - Preserve explicit CLI paths and valid shell quoting for atom-name primes.
 
 ## Required checks after each substantial patch

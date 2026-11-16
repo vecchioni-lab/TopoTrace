@@ -5,13 +5,17 @@ Optionally select backbone atoms and connect them in strand order. Python
 3.10+; Gemmi is installed automatically. Phenix, Coot, Excel and NASolve are
 not required.
 
-This first release performs conversion and within-strand tracing. It does not
-stitch chains, close loops, infer sticky ends or add symmetry-related links.
+Conversion and within-strand tracing never stitch chains. The separate
+`topotrace-cgd` graph exporter can optionally stitch **backbone nicks**
+(`--stitch-nicks`, NAtopo's P…O3′ join rule) and **chain ends whose bases
+pi-stack** (`--stitch-terminal-stacks`, any polarity: 5′-3′, 5′-5′ or 3′-3′)
+across chains and symmetry images. It can also write NAtopo's **ASU quotient
+graphs** at chain and residue resolution for the covalent bonds and stitched
+joins (`--asu-graphs`, `--asu-chain-html`, `--asu-residue-html`). Hydrogen
+bonds and other contacts are not stitched.
 
 For agents and incoming collaborators, start with [the component map and next
-symmetry-connection task](docs/agent-handoff.json). The collaborator supplies
-the connection-finding logic; TopoTrace will integrate and export its image-aware
-links. That integration is planned, not yet implemented.
+symmetry-connection task](docs/agent-handoff.json).
 
 ## Install
 
@@ -25,7 +29,7 @@ topotrace --version
 Install the current version from GitHub:
 
 ```sh
-python3 -m pip install --upgrade git+https://github.com/vecchioni-lab/TopoTrace.git
+python3 -m pip install git+https://github.com/vecchioni-lab/TopoTrace.git
 ```
 
 For development use `python3 -m pip install -e .`. Prefer a virtual environment.
@@ -35,11 +39,12 @@ from PyPI is not promised.
 
 ## Renamed from TopoStich
 
-TopoTrace 0.3.1 is the same converter under its new name. Use `topotrace`,
+The 0.3.1 release renamed TopoStich to TopoTrace; 0.4.0 retains that migration. Use `topotrace`,
 `topotrace-cgd`, and `import topotrace` for new work. The old `topostich` and
 `topostich-cgd` commands, `python -m topostich[.cgd]`, and public Python module
-imports remain compatibility aliases. Conversion flags, coordinates, graph rules
-and receipt schemas are unchanged. Branding comments/data-block names and the
+imports remain compatibility aliases. The rename itself preserved conversion flags,
+coordinates and graph rules; 0.4.0 adds opt-in stitching and schema-2 receipts.
+Branding comments/data-block names and the
 reported software version change, so new output file hashes may differ.
 
 If you installed the old **TopoStich** distribution, remove it **before**
@@ -63,8 +68,30 @@ topotrace-cgd 8D93.pdb --out 8D93_O3.cgd --cmm 8D93_chains.cmm \
   --crystal-cmm 8D93_symmetry.cmm --receipt 8D93_graph.json
 ```
 
-This keeps chain/TER segments separate; nick and junction stitching is pending.
-The following existing conversion commands continue to work unchanged.
+This keeps chain/TER segments separate. Add `--stitch-nicks` to join
+unambiguous backbone nicks and `--stitch-terminal-stacks` to join chain ends
+whose bases stack (unless those ends are already backbone joined; 5′-5′ and
+3′-3′ stacks are flagged). Joins to symmetry-related or translated copies
+become explicit periodic CGD edges (see [nick](docs/cgd.md#backbone-nick-stitching)
+and [chain-end stack](docs/cgd.md#chain-end-stack-stitching) stitching). The
+[ASU graphs](docs/cgd.md#asu-quotient-graphs) fold every covalent bond and
+stitched join back onto one asymmetric unit, labelled with symmetry codes
+such as `7_(-1,-1,0)` (operation 7, then −1 cell along a and b), and report
+each part's periodicity:
+
+```sh
+topotrace-cgd 7SE0.cif --stitch-nicks --stitch-terminal-stacks --out 7SE0_stitched.cgd \
+  --cmm 7SE0_stitched.cmm --receipt 7SE0_stitched.json \
+  --asu-graphs 7SE0_asu.json --asu-chain-html 7SE0_chains.html --asu-residue-html 7SE0_residues.html
+```
+
+`--asu-chain-png` and `--asu-residue-png` save the same two graphs as PNG
+images. They need matplotlib, an optional extra:
+`python3 -m pip install ".[png]"`.
+
+`tools/check_stitched_cgd.py` audits a stitched file against its receipt with
+Systre's own parser ([native audit](docs/cgd.md#native-systre-audit)). The
+following existing conversion commands continue to work unchanged.
 
 Keep every atom in the first model, with its original position:
 
