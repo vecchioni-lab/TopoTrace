@@ -81,6 +81,13 @@ NAtopo's two layouts as inline SVG with a small script for filters, details and
 pan/zoom; it uses no external resources. `asu_png.py` reuses those layouts and
 edge geometry to draw PNG images with matplotlib (optional `png` extra, imported
 only when a PNG is requested; `ARROW_SIZE` is shared by both renderers).
+`build_atom_graph` folds the finished CGD receipt itself (O3′ and C1′ nodes,
+trace edges, `base_links`, stitched edges with their image operations) into a
+third, atom-resolution quotient with the same orientation, symmetry codes and
+periodicity. `_atom_layout` reuses the residue layout for O3′ nodes and puts
+each C1′ node at 0.84 of its O3′ radius. Edge geometry draws O3′–C1′ links as
+straight spokes and C1′–C1′ chords like rim-to-rim chords; for residue graphs
+the geometry is unchanged.
 
 `src/topotrace/converter.py` owns fixed-column PDB parsing, input dispatch, atom selection,
 coordinate transforms, graph construction and the three output writers.

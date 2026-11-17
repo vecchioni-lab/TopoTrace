@@ -30,6 +30,12 @@ Edge types:
 
 Nodes are the nucleotide residues (those with backbone atoms) plus any
 non-water residue joined to the graph by a deposited covalent link.
+
+``build_atom_graph`` adds a third, view-oriented resolution: the CGD's own
+nodes (O3' backbone nodes and, with base pairs, C1' base nodes) with every CGD
+edge folded the same way. Edge types there are ``trace`` (consecutive O3' nodes
+of one segment), ``base_link`` (a nucleotide's O3'-C1' link) and the stitched
+joins and base pairs on the nodes they actually join.
 """
 from __future__ import annotations
 
@@ -43,7 +49,8 @@ from .converter import covalent_connections, normalized_name
 
 GRID = 24  # Space-group translations lie on the 1/24 fractional grid.
 EDGE_TYPES = ('covalent', 'backbone_join', 'backbone_join_o5', 'terminal_stack', 'base_pair')
-EDGE_LABELS = {'covalent': 'Covalent bond', 'backbone_join': "Stitched backbone join (P...O3')",
+EDGE_LABELS = {'covalent': 'Covalent bond', 'trace': "Backbone trace (consecutive O3' nodes)",
+               'base_link': "O3'-C1' link (same nucleotide)", 'backbone_join': "Stitched backbone join (P...O3')",
                'backbone_join_o5': "Stitched O5'...O3' join (phosphate missing)",
                'terminal_stack': 'Stitched chain-end pi stack',
                'base_pair': "Base pair (significant hydrogen pair, C1'-C1')"}
@@ -249,14 +256,15 @@ def describe_periodicity(graph, *, resolution):
             names = ', '.join(labels[n]['label'] for n in part['nodes'])
         else:
             counts = Counter(labels[n]['chain_label'] for n in part['nodes'])
-            names = ', '.join(f'{c} ({k})' for c, k in counts.items()) + ' residues'
+            names = ', '.join(f'{c} ({k})' for c, k in counts.items()) + \
+                (' nodes' if resolution == 'atom' else ' residues')
         extra = f" along {' & '.join(part['translation_basis'])}" if part['translation_basis'] else ''
         copies = part['interpenetrating_copies']
         nets = f'; {copies} interpenetrating copies of this net' if copies and copies > 1 else ''
         lines.append(f"{names}: {DIMENSION_WORDS[part['dimension']]}{extra}{nets}")
     if isolated:
         shown = ', '.join(isolated[:6]) + (f' ... (+{len(isolated) - 6})' if len(isolated) > 6 else '')
-        noun = 'node(s)' if resolution == 'chain' else 'residue(s)'
+        noun = 'residue(s)' if resolution == 'residue' else 'node(s)'
         lines.append(f'{len(isolated)} single {noun} with no join, finite: {shown}')
     return lines
 
@@ -434,7 +442,7 @@ def _finish(nodes, edges, operations, name, space_group, resolution):
         if e['type'] == 'terminal_stack':
             e['polarities'] = sorted({c['polarity'] for c in contacts})
             e['same_polarity'] = any(c['same_polarity'] for c in contacts)
-        if resolution == 'residue':
+        if resolution != 'chain':
             e['contacts'] = [c['text'] for c in contacts]
     order = {n['id']: i for i, n in enumerate(nodes)}
     edges.sort(key=lambda e: (order[e['source']], order[e['target']], not e['intra_asu'], e['symmetry_code'], e['type']))
@@ -448,3 +456,57 @@ def _finish(nodes, edges, operations, name, space_group, resolution):
                  symmetry_edges=sum(not e['intra_asu'] for e in edges), periodicity=parts)
     graph['summary'] = describe_periodicity(graph, resolution=resolution)
     return graph
+
+
+def build_atom_graph(cgd, residue_graph, operations, *, name, space_group):
+    """Atom-resolution quotient of a CGD receipt: its O3' and C1' nodes and every edge.
+
+    cgd is the export_cgd receipt; residue_graph supplies chain labels and
+    residue identities. Nodes keep the CGD labels as ids. Each trace edge,
+    O3'-C1' link, stitched join and base pair is one edge, labelled with the
+    symmetry code of the partner's image as in the residue graph.
+    """
+    residues = {(n['segment'], n['seq'], n['insertion']): n for n in residue_graph['nodes']}
+    nodes = []
+    for node in cgd['nodes']:
+        res = residues.get((node['segment'], node['seq'], node['insertion']))
+        base = node.get('node_type') == 'base'
+        chain_label = res['chain_label'] if res else (node['chain'] or f"S{node['segment']}")
+        residue_label = res['label'] if res else f"{chain_label}:{node['residue']}{node['seq']}{node['insertion']}"
+        atom = "C1'" if base else "O3'"
+        record = dict(id=node['label'], label=f'{residue_label} {atom}', atom=atom,
+                      node_type='base' if base else 'backbone', residue_id=res['id'] if res else None,
+                      residue=node['residue'], seq=node['seq'], insertion=node['insertion'],
+                      chain_label=chain_label, chain_node=f"S{node['segment']}", segment=node['segment'],
+                      kind='polymer', position_in_chain=int(node['label'].split('_')[1][1:]))
+        if base:
+            record['base_paired'] = node['base_paired']
+        nodes.append(record)
+    label = {n['id']: n['label'] for n in nodes}
+    cartesian = {n['label']: n['cartesian'] for n in cgd['nodes']}
+    raw = []
+    for kind, pairs in (('trace', cgd['edges']), ('base_link', cgd.get('base_links', []))):
+        for a, b in pairs:
+            d = math.dist(cartesian[a], cartesian[b])
+            raw.append((a, b, IDENTITY, kind, dict(text=f'{label[a]} - {label[b]} {d:.2f} A', distance_A=d)))
+    for e in cgd.get('stitched_edges', []):
+        kind = 'covalent' if e['kind'] == 'deposited_link' else e['kind']
+        contact = dict(text=f"{label[e['source']]} - {label[e['target']]} {e['image_operation']} "
+                            f"{e['distance_A']:.2f} A ({kind})", distance_A=e['distance_A'])
+        if kind == 'terminal_stack':
+            contact.update(polarity=e['evidence']['polarity'], same_polarity=e['evidence']['same_polarity'])
+        elif kind == 'base_pair':
+            ev = e['evidence']
+            contact['text'] += (f"; {ev['atom_pairs']} hydrogen atom pairs ({' '.join(ev['atoms_1'])} / "
+                                f"{' '.join(ev['atoms_2'])}), {ev['origin']}")
+        raw.append((e['source'], e['target'], from_gemmi(gemmi.Op(e['image_operation'])), kind, contact))
+    order = {n['id']: i for i, n in enumerate(nodes)}
+    merged = {}
+    for a, b, g, kind, contact in raw:
+        s, t, g2 = _orient(order, a, b, g)
+        token = (s, t, key(g2), kind)
+        if token not in merged:
+            merged[token] = dict(_edge_record(s, t, g2, kind, operations), _g=g2, contacts=[])
+        if contact['text'] not in [c['text'] for c in merged[token]['contacts']]:
+            merged[token]['contacts'].append(contact)
+    return _finish(nodes, list(merged.values()), operations, name, space_group, 'atom')

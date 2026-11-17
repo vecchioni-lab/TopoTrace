@@ -59,7 +59,8 @@ topotrace-cgd 8d93.cif --base-pairs --stitch-nicks --stitch-terminal-stacks --na
   --cmm 8d93_stitched_hbond.cmm --crystal-cmm 8d93_stitched_hbond_symmetry.cmm \
   --asu-graphs 8d93_stitched_hbond_asu.json \
   --asu-chain-html 8d93_stitched_hbond_chains.html --asu-residue-html 8d93_stitched_hbond_residues.html \
-  --asu-chain-png 8d93_stitched_hbond_chains.png --asu-residue-png 8d93_stitched_hbond_residues.png
+  --asu-chain-png 8d93_stitched_hbond_chains.png --asu-residue-png 8d93_stitched_hbond_residues.png \
+  --asu-atom-html 8d93_stitched_hbond_atoms.html --asu-atom-png 8d93_stitched_hbond_atoms.png
 ```
 
 **84 nodes and 105 edges.** Every nucleotide has both an O3′ node
@@ -89,3 +90,11 @@ equal to the receipt. Without the base pairs, `8D93_stiched` above has only
 1-periodic rods and a finite ring. Teal edges in the views and images are base
 pairs. In the CMM files, C1′ nodes are the small markers inside each strand's
 model, and the base pairs have their own **base pairs** model.
+
+`8d93_stitched_hbond_atoms.png` and `.html` show the same graph at **atom
+resolution**: every CGD node and every edge. O3′ nodes sit on the outer ring,
+labelled with their residue. Each C1′ node is an open circle just inside its
+O3′ node, joined by a grey O3′–C1′ spoke. Base pairs are teal chords between C1′
+nodes; backbone arcs, nick joins and stacks stay on the O3′ nodes. An
+unpaired C1′ node would have a red outline. The `_residues` views are
+unchanged.

@@ -1273,6 +1273,40 @@
               }
             }
           }
+        },
+        "atom": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "nodes",
+            "edges",
+            "edge_type_counts",
+            "periodicity"
+          ],
+          "properties": {
+            "nodes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "edges": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "edge_type_counts": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "periodicity": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Present only when an atom-resolution view (--asu-atom-html/--asu-atom-png) was requested: O3' and C1' nodes of the CGD"
         }
       }
     }

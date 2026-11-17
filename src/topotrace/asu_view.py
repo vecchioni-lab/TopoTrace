@@ -3,7 +3,9 @@
 Layouts follow NAtopo's Bokeh views: ``asu_quotient.quotient_view`` (chains on
 a circle, ligands outside) and ``residue_quotient.residue_quotient_view``
 (residues around a circle by chain and sequence; rim arcs join sequence
-neighbours, chords join everything else). Arrows point from the original ASU
+neighbours, chords join everything else). The atom-resolution view uses the
+residue layout for the O3' nodes and puts each C1' base node just inside its
+O3' node, joined by a short spoke; base pairs are chords between C1' nodes. Arrows point from the original ASU
 node to the copy named by the symmetry code; ASU-internal edges are unlabelled.
 """
 from __future__ import annotations
@@ -16,8 +18,12 @@ import math
 from .asu_graphs import EDGE_LABELS
 
 EDGE_COLORS = {'covalent': 'var(--covalent)', 'backbone_join': '#FF7A00', 'backbone_join_o5': '#FFB000',
-               'terminal_stack': '#BD45E8', 'base_pair': '#17A589'}
-ARROW_SIZE = {'chain': 16, 'residue': 11}  # arrowhead length in view units (HTML) or points (PNG)
+               'terminal_stack': '#BD45E8', 'base_pair': '#17A589', 'trace': 'var(--covalent)',
+               'base_link': '#8395A7'}
+ARROW_SIZE = {'chain': 16, 'residue': 11, 'atom': 11}  # arrowhead length in view units (HTML) or points (PNG)
+INNER = 0.84  # radius of the C1' ring relative to the O3' ring (atom view)
+UNPAIRED = '#D62728'  # outline of unpaired C1' base nodes
+TITLES = {'chain': 'chain', 'residue': 'residue', 'atom': "atom resolution (O3' and C1' nodes)"}
 PALETTE = ('#2E86C1', '#E67E22', '#27AE60', '#8E44AD', '#C0392B', '#16A085', '#D4AC0D', '#7F8C8D',
            '#1F618D', '#AF601A')
 
@@ -128,12 +134,35 @@ def _residue_layout(graph):
     return pos, chains, angle_of
 
 
+def _atom_layout(graph):
+    """O3' nodes as in the residue layout; each C1' node just inside its O3' node."""
+    backbone = [n for n in graph['nodes'] if n.get('node_type') != 'base']
+    ids = {n['id'] for n in backbone}
+    sub = dict(graph, nodes=backbone,
+               edges=[e for e in graph['edges'] if e['source'] in ids and e['target'] in ids])
+    pos, chains, angle_of = _residue_layout(sub)
+    for n in graph['nodes']:
+        if n.get('node_type') == 'base':
+            pos[n['id']] = _scale(pos.get(n['id'].replace('_B', '_N', 1), (0., 0.)), INNER)
+    return pos, chains, angle_of
+
+
+def _layout(graph):
+    """(pos, chains, angle_of, center) for any resolution."""
+    if graph['resolution'] == 'chain':
+        pos, center = _chain_layout(graph)
+        return pos, [], None, center
+    pos, chains, angle_of = (_atom_layout if graph['resolution'] == 'atom' else _residue_layout)(graph)
+    return pos, chains, angle_of, (0., 0.)
+
+
 def _edge_geometry(graph, pos, resolution, angle_of=None, center=(0., 0.)):
     groups = defaultdict(list)
     for e in graph['edges']:
         groups[frozenset((e['source'], e['target']))].append(e)
     position = {n['id']: n.get('position_in_chain') for n in graph['nodes']}
     chain = {n['id']: n.get('chain_node', n['id']) for n in graph['nodes']}
+    ring = set(angle_of or ()) | {n['id'] for n in graph['nodes'] if n.get('node_type') == 'base'}
     out = []
     for members in groups.values():
         members.sort(key=lambda e: (not e['intra_asu'], e['symmetry_code'], e['type']))
@@ -150,15 +179,23 @@ def _edge_geometry(graph, pos, resolution, angle_of=None, center=(0., 0.)):
                     shape = _loop(p0, .07*(1 + .35*i), base)
             elif resolution == 'chain':
                 shape = _bend(p0, p1, .18*spread)
+            elif e['type'] == 'base_link':
+                shape = _bend(p0, p1, 0.)  # short radial spoke O3' -> C1'
             elif chain[a] == chain[b] and a in angle_of and b in angle_of \
                     and abs(position[a] - position[b]) == 1:
                 shape = _bend(p0, p1, .22*spread)  # sequence neighbours: rim arcs
             else:
                 middle = _scale(_add(p0, p1), .5)
-                pull = .55 if (a in angle_of and b in angle_of) else .85
+                pull = .55 if (a in ring and b in ring) else .85
                 shape = _quad(p0, _scale(middle, pull + .18*spread), p1)
             out.append((e, shape))
     return out
+
+
+def _title(graph):
+    what = TITLES[graph['resolution']]
+    what = what if graph['resolution'] == 'atom' else f'{what} resolution'
+    return f"{graph['name']}: one ASU at {what} ({graph['space_group']})"
 
 
 def _svg_point(p, s):
@@ -196,13 +233,8 @@ def render_html(graph, *, title=None):
     labels = {n['id']: n['label'] for n in nodes}
     chain_ids = list(dict.fromkeys(n.get('chain_node', n['id']) for n in nodes))
     color = {c: PALETTE[i % len(PALETTE)] for i, c in enumerate(chain_ids)}
-    angle_of, chains, center = None, [], (0., 0.)
-    if resolution == 'chain':
-        pos, center = _chain_layout(graph)
-        scale = 260.
-    else:
-        pos, chains, angle_of = _residue_layout(graph)
-        scale = 360.
+    pos, chains, angle_of, center = _layout(graph)
+    scale = 260. if resolution == 'chain' else 360.
     shapes = _edge_geometry(graph, pos, resolution, angle_of, center)
     loops = defaultdict(int)
     partners = defaultdict(set)
@@ -250,12 +282,24 @@ def render_html(graph, *, title=None):
             label_svg.append(f'<text class="nodelabel" x="{p[0]*scale:.2f}" y="{-p[1]*scale:.2f}">'
                              f'{html.escape(n["label"])}</text>')
     else:
-        r = max(2.5, min(6.5, 260/max(len(nodes), 1)))
+        r = max(2.5, min(6.5, 260/max(len(nodes) if resolution == 'residue' else len(angle_of), 1)))
         for n in nodes:
             p = pos[n['id']]
             xs.append(p[0]); ys.append(p[1])
-            info = [f"Residue {n['label']}", f"Chain {n['chain_label']} (segment {n['segment']})",
-                    f"Distinct partner residues: {len(partners[n['id']])}",
+            if n.get('node_type') == 'base':
+                paired = n['base_paired']
+                info = [f"C1' base node {n['id']}: {n['label']}", f"Chain {n['chain_label']} (segment {n['segment']})",
+                        'Base paired' if paired else 'Unpaired base (flagged base_paired=false)',
+                        f"Distinct partner nodes: {len(partners[n['id']])}",
+                        f"Self-loops (joins with own copies): {loops[n['id']]}"]
+                stroke = color[n['chain_node']] if paired else UNPAIRED
+                node_svg.append(f'<circle class="node base" cx="{p[0]*scale:.2f}" cy="{-p[1]*scale:.2f}" '
+                                f'r="{r*(.7 if paired else .95):.2f}" fill="var(--bg)" '
+                                f'style="stroke:{stroke};stroke-width:1.6" data-info="{_info(info)}"/>')
+                continue
+            what = f"O3' node {n['id']}: {n['label']}" if resolution == 'atom' else f"Residue {n['label']}"
+            info = [what, f"Chain {n['chain_label']} (segment {n['segment']})",
+                    f"Distinct partner {'nodes' if resolution == 'atom' else 'residues'}: {len(partners[n['id']])}",
                     f"Self-loops (joins with own copies): {loops[n['id']]}"]
             on_rim = n['id'] in angle_of
             node_svg.append(f'<circle class="node" cx="{p[0]*scale:.2f}" cy="{-p[1]*scale:.2f}" '
@@ -285,9 +329,10 @@ def render_html(graph, *, title=None):
                       f'<span class="swatch" style="background:{EDGE_COLORS[k]}"></span>{html.escape(EDGE_LABELS[k])}'
                       f' ({graph["edge_type_counts"][k]})</label>' for k in kinds)
     if title is None:
-        what = 'chain' if resolution == 'chain' else 'residue'
-        title = f"{graph['name']}: one ASU at {what} resolution ({graph['space_group']})"
-    unit = 'chains/TER segments' if resolution == 'chain' else 'residues'
+        title = _title(graph)
+    unit = {'chain': 'chains/TER segments', 'residue': 'residues',
+            'atom': "O3&prime; backbone nodes (outer ring, labelled with their residue) and C1&prime; base nodes "
+                    "(open circles on the inner ring, red outline = unpaired), as in the CGD"}[resolution]
     summary = ''.join(f'<li>{html.escape(line)}</li>' for line in graph['summary']) or '<li>No nodes.</li>'
     data = json.dumps(dict(view=view))
     return f'''<!doctype html>

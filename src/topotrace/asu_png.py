@@ -11,11 +11,11 @@ import io
 import math
 
 from .asu_graphs import EDGE_LABELS
-from .asu_view import (ARROW_SIZE, EDGE_COLORS, PALETTE, _add, _chain_layout, _edge_geometry, _norm,
-                       _residue_layout, _scale)
+from .asu_view import (ARROW_SIZE, EDGE_COLORS, PALETTE, UNPAIRED, _add, _edge_geometry, _layout, _norm,
+                       _scale, _title)
 from .converter import ConversionError
 
-COLORS = dict(EDGE_COLORS, covalent='#555555')
+COLORS = dict(EDGE_COLORS, covalent='#555555', trace='#555555')
 
 
 def _pyplot():
@@ -38,11 +38,7 @@ def render_png(graph, *, title=None, dpi=200):
     nodes = graph['nodes']
     chain_ids = list(dict.fromkeys(n.get('chain_node', n['id']) for n in nodes))
     color = {c: PALETTE[i % len(PALETTE)] for i, c in enumerate(chain_ids)}
-    angle_of, chains, center = None, [], (0., 0.)
-    if resolution == 'chain':
-        pos, center = _chain_layout(graph)
-    else:
-        pos, chains, angle_of = _residue_layout(graph)
+    pos, chains, angle_of, center = _layout(graph)
     shapes = _edge_geometry(graph, pos, resolution, angle_of, center)
     summary = graph['summary'] or ['No nodes.']
     fig = plt.figure(figsize=(11, 11 + 0.22*len(summary)), dpi=dpi, facecolor='white')
@@ -78,11 +74,18 @@ def render_png(graph, *, title=None, dpi=200):
             ax.text(*p, n['label'], ha='center', va='center', color='white', fontsize=11 if big else 7,
                     fontweight='bold', zorder=5)
     else:
-        size = max(10., min(60., 2600/max(len(nodes), 1)))
-        label_font = max(4., min(7., 600/max(len(nodes), 1)))
+        count = len(nodes) if resolution == 'residue' else len(angle_of)
+        size = max(10., min(60., 2600/max(count, 1)))
+        label_font = max(4., min(7., 600/max(count, 1)))
         for n in nodes:
             p = pos[n['id']]
             xs.append(p[0]); ys.append(p[1])
+            if n.get('node_type') == 'base':
+                paired = n['base_paired']
+                ax.scatter(*p, s=size*(.55 if paired else .9), color='white',
+                           edgecolors=color[n['chain_node']] if paired else UNPAIRED,
+                           linewidths=1.1 if paired else 1.6, zorder=3)
+                continue
             on_rim = n['id'] in angle_of
             ax.scatter(*p, s=size if on_rim else size*1.5, color=color[n['chain_node']], edgecolors='#25313b',
                        linewidths=.5, zorder=3)
@@ -109,11 +112,19 @@ def render_png(graph, *, title=None, dpi=200):
     if any(e.get('same_polarity') for e in graph['edges']):
         handles.append(Line2D([], [], color=COLORS['terminal_stack'], linewidth=width, linestyle=(0, (5, 3)),
                               label="Same-polarity (5'-5' or 3'-3') chain-end stack"))
+    if resolution == 'atom':
+        handles.append(Line2D([], [], linestyle='none', marker='o', markersize=7, markerfacecolor='#9aa5ae',
+                              markeredgecolor='#25313b', label="O3' backbone node (outer ring)"))
+        if any(n.get('node_type') == 'base' for n in nodes):
+            handles.append(Line2D([], [], linestyle='none', marker='o', markersize=6, markerfacecolor='white',
+                                  markeredgecolor='#5b6670', label="C1' base node (inner ring)"))
+        if any(n.get('node_type') == 'base' and not n['base_paired'] for n in nodes):
+            handles.append(Line2D([], [], linestyle='none', marker='o', markersize=7, markerfacecolor='white',
+                                  markeredgecolor=UNPAIRED, markeredgewidth=1.6, label="Unpaired C1' base node"))
     if handles:
         ax.legend(handles=handles, loc='lower left', fontsize=8, frameon=False)
     if title is None:
-        what = 'chain' if resolution == 'chain' else 'residue'
-        title = f"{graph['name']}: one ASU at {what} resolution ({graph['space_group']})"
+        title = _title(graph)
     fig.text(0.03, 1 - 0.25/fig.get_figheight(), title, fontsize=14, fontweight='bold', va='top')
     fig.text(0.03, 1 - 0.6/fig.get_figheight(),
              'Periodicity: ' + '\n'.join(summary) + '\nArrows point to the copy named by the symmetry code '

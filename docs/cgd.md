@@ -284,6 +284,21 @@ edge types, show only symmetry joins, hide labels, hover or tap for details,
 drag to pan and scroll to zoom. Dashed purple edges are 5′-5′ or 3′-3′
 stacks. The CGD itself is unchanged by these options.
 
+`--asu-atom-html FILE.html` and `--asu-atom-png FILE.png` (API: `asu_atom_html=`,
+`asu_atom_png=`) add a third view at **atom resolution**. Its nodes are the
+CGD's own nodes: O3′ on the outer ring in the residue layout, and with
+`--base-pairs` each C1′ on an inner ring beside its O3′. Its edges are every
+CGD edge, folded per symmetry orbit with the same `op_(k,l,m)` codes:
+
+- `trace`: consecutive O3′ nodes of one segment, drawn as rim arcs;
+- `base_link`: a nucleotide's O3′–C1′ link, drawn as a short grey spoke;
+- nick joins and chain-end stacks, on their O3′ nodes;
+- `base_pair`: teal chords between C1′ nodes.
+
+Unpaired C1′ nodes have a red outline. The periodicity is computed on this
+node graph, and the receipt's `asu_graphs.atom` gives its summary. The ASU
+JSON and the chain and residue views are unchanged.
+
 `--asu-chain-png FILE.png` and `--asu-residue-png FILE.png` (API:
 `asu_chain_png=`, `asu_residue_png=`) draw the same layouts, colors and
 arrowheads as static PNG images (200 dpi, white background, with the title,

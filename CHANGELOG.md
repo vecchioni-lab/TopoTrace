@@ -19,6 +19,12 @@
   teal base-pairs model, and `tools/check_stitched_cgd.py` counts O3′–C1′ links.
   Legacy alias `topostich.base_pairs`. Output without `--base-pairs` is
   unchanged except for the version string.
+- Atom-resolution ASU view (`--asu-atom-html`, `--asu-atom-png`; API
+  `asu_atom_html=`, `asu_atom_png=`; `asu_graphs.build_atom_graph`). It draws
+  O3′ and C1′ nodes with every trace edge, O3′–C1′ link, stitched join and base
+  pair, using the residue layout for O3′ and an inner ring for C1′. The receipt
+  schemas accept an optional `asu_graphs.atom` summary. The chain and residue
+  views are byte-identical. The 8D93 example adds `8d93_stitched_hbond_atoms.*`.
 - Validation: all 164 NAtopo `base_pairs.csv` rows (6 crystals) match in
   residues, atom pairs, atoms per base and symmetry code. 42 exports (21
   crystals, base pairs alone and with nicks and stacks) pass the native Systre

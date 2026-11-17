@@ -70,11 +70,11 @@
     },
     {
       "path": "src/topotrace/asu_graphs.py",
-      "purpose": "Port of NAtopo asu_quotient/residue_quotient for covalent bonds and stitched joins: exact integer symmetry algebra, op_klm codes, orbit folding at chain and residue resolution, voltage-graph periodicity and interpenetration."
+      "purpose": "Port of NAtopo asu_quotient/residue_quotient for covalent bonds and stitched joins: exact integer symmetry algebra, op_klm codes, orbit folding at chain and residue resolution, voltage-graph periodicity and interpenetration. build_atom_graph: atom-resolution quotient of the CGD receipt (O3' and C1' nodes, trace/base_link/stitched/base_pair edges)."
     },
     {
       "path": "src/topotrace/asu_view.py",
-      "purpose": "Self-contained SVG/HTML views of the two ASU quotient graphs with NAtopo's layouts, type filters, details and pan/zoom."
+      "purpose": "Self-contained SVG/HTML views of the two ASU quotient graphs with NAtopo's layouts, type filters, details and pan/zoom. Atom view: O3' outer ring, C1' inner ring with spokes, base pairs as chords."
     },
     {
       "path": "src/topotrace/asu_png.py",
@@ -361,7 +361,7 @@
     "date": "2026-11-17",
     "version": "0.5.0",
     "branch": "codex/alder-c1-base-pairs",
-    "summary": "Opt-in --base-pairs two-node model: C1' base nodes linked to O3' nodes and C1'-C1' base pairs from NAtopo's residue representation; unpaired bases kept and flagged; chain-end stacks remain on O3'.",
+    "summary": "Opt-in --base-pairs two-node model: C1' base nodes linked to O3' nodes and C1'-C1' base pairs from NAtopo's residue representation; unpaired bases kept and flagged; chain-end stacks remain on O3'. Adds an atom-resolution ASU view (--asu-atom-html/--asu-atom-png) showing O3' and C1' nodes and every link.",
     "validation": "See docs/development-handoff.md (2026-11-17 section)."
   }
 }

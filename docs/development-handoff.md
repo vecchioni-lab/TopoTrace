@@ -64,6 +64,17 @@ git diff --check
   stitched. The receipt/ASU JSON differ only in the version string, the
   omitted PNG artifact hashes and the prior TopoStich→TopoTrace format label.
 
+Follow-up (same day): **atom-resolution ASU view** (`--asu-atom-html`,
+`--asu-atom-png`, `asu_graphs.build_atom_graph`). Before: the folded views
+had only chain and residue nodes. After: a third view shows the CGD's O3′ and
+C1′ nodes and every edge. The `_residues` views are kept and byte-identical.
+The receipt schemas 1–3 accept an optional `asu_graphs.atom` summary. Five
+new regressions plus updated arrow-size and exporter-signature assertions
+failed first (7 failures/errors) and then passed. Full suite: **108
+passed**. The regenerated 8D93 set is byte-identical except the receipt
+(new `asu_graphs.atom` summary and two artifact hashes) and adds
+`8d93_stitched_hbond_atoms.html`/`.png`. The PNG was inspected visually.
+
 Not run: live ToposPro import, and a ChimeraX visual check of the new
 base-node CMM (the XML structure is unit-tested). The 8D93 examples were not
 regenerated. Limits: geometric screen only, with no donor/acceptor or

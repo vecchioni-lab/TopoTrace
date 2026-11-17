@@ -41,5 +41,6 @@ class StitchingRenameTests(unittest.TestCase):
                 module = importlib.import_module(package + '.cgd')
                 parameters = inspect.signature(module.export_cgd).parameters
                 for name in ('stitch_nicks', 'stitch_terminal_stacks', 'asu_graphs',
-                             'asu_chain_png', 'asu_residue_png', 'base_pairs'):
+                             'asu_chain_png', 'asu_residue_png', 'base_pairs',
+                             'asu_atom_png', 'asu_atom_html'):
                     self.assertIn(name, parameters)

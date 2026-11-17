@@ -11,7 +11,8 @@
     "CGD export keeps chains separate by default; opt-in --stitch-nicks (NAtopo rule) and --stitch-terminal-stacks add joins and report every unstitched candidate.",
     "Publish as an independent vecchioni-lab Git repository named TopoTrace.",
     "2026-11-13: junction stitching removed completely. Stitch every pi stack between chain ends (any polarity 5'-3', 5'-5', 3'-3'; same-polarity noted) unless already backbone joined. Generate the ASU graphs of main_NAtopo.ipynb at chain and residue resolution, for covalent bonds and stitching only.",
-    "2026-11-17: increase the graph complexity to two node types. Keep the O3' backbone representation and its nick/stack stitching; add the C1' carbon as a base node linked to its own O3' node, and map base-base hydrogen interactions to C1'-C1' links taken from NAtopo's residue representation. Opt-in flag --base-pairs. Keep unpaired base nodes and flag them. Chain-end stacks stay on O3' nodes for now; record that choice."
+    "2026-11-17: increase the graph complexity to two node types. Keep the O3' backbone representation and its nick/stack stitching; add the C1' carbon as a base node linked to its own O3' node, and map base-base hydrogen interactions to C1'-C1' links taken from NAtopo's residue representation. Opt-in flag --base-pairs. Keep unpaired base nodes and flag them. Chain-end stacks stay on O3' nodes for now; record that choice.",
+    "2026-11-17: keep the residue-resolution graphs and add a graph view where both O3' and C1' nodes and their connections are visible, with a PNG."
   ],
   "runtime": {
     "python": ">=3.10",
@@ -273,7 +274,9 @@
         "--asu-chain-html FILE.html",
         "--asu-residue-html FILE.html",
         "--asu-chain-png FILE.png",
-        "--asu-residue-png FILE.png"
+        "--asu-residue-png FILE.png",
+        "--asu-atom-html FILE.html",
+        "--asu-atom-png FILE.png"
       ],
       "schema": "schemas/asu-graphs.schema.json",
       "rule_source": "NAtopo asu_quotient.py + residue_quotient.py (main_NAtopo.ipynb folded ASU views)",
@@ -287,7 +290,8 @@
       "edges": "one per symmetry orbit and type, labelled with the partner copy's PDB op_klm code; operator numbers from the input file",
       "periodicity": "voltage-graph cycle translations: rank, Hermite basis, interpenetrating copies",
       "natopo_cross_validation": "identical covalent/backbone-join orbits, symmetry codes and periodicity (NAtopo's own periodicity()) on 17 local crystals (2026-11-13)",
-      "png": "optional extra topotrace[png] (matplotlib); export fails before writing if it is missing"
+      "png": "optional extra topotrace[png] (matplotlib); export fails before writing if it is missing",
+      "atom_view": "2026-11-17: atom-resolution view of the CGD's own O3' and C1' nodes and all their edges (trace, base_link, stitched joins, base_pair); O3' outer ring in the residue layout, C1' inner ring; periodicity summary in receipt asu_graphs.atom; ASU JSON unchanged"
     },
     "native_audit": "tools/check_stitched_cgd.py (+ tools/CheckCgd.java --stitched); CheckCgd default mode is the unstitched baseline",
     "base_atom": "C1' (opt-in --base-pairs)",

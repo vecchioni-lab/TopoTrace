@@ -7261,6 +7261,20 @@
       "periodicity": [
         "A, B, C, D: 3-periodic framework along [1/3, 2/3, 2/3] & [0, 1, 0] & [0, 0, 1]"
       ]
+    },
+    "atom": {
+      "nodes": 84,
+      "edges": 105,
+      "edge_type_counts": {
+        "backbone_join": 2,
+        "base_link": 42,
+        "base_pair": 21,
+        "terminal_stack": 2,
+        "trace": 38
+      },
+      "periodicity": [
+        "A (24), B (14), C (28), D (18) nodes: 3-periodic framework along [1/3, 2/3, 2/3] & [0, 1, 0] & [0, 0, 1]"
+      ]
     }
   },
   "artifacts": [
@@ -7287,6 +7301,14 @@
     {
       "name": "8d93_stitched_hbond_residues.png",
       "sha256": "049b8056902836ae23db108b24fa07008646e8125cd3d0e8a9d644e7f63364da"
+    },
+    {
+      "name": "8d93_stitched_hbond_atoms.html",
+      "sha256": "db3741f8eedf4d62042bdbf5f2d6dda83ca851c493548d3094d082a7bab389f8"
+    },
+    {
+      "name": "8d93_stitched_hbond_atoms.png",
+      "sha256": "ba26b9e4bdeb2211cae2a4ef9fccb36cb5f02701ff9775f8471d0b99a985806d"
     },
     {
       "name": "8d93_stitched_hbond.cmm",

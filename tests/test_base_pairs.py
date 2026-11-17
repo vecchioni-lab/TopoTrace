@@ -273,5 +273,61 @@ class BasePairTests(unittest.TestCase):
         self.assertEqual(full[frozenset(('S1_N1', 'S1_B1'))], 1)
 
 
+class AtomGraphTests(unittest.TestCase):
+    """Atom-resolution ASU view: O3' and C1' nodes and every link between them."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.source = self.root / 'input.pdb'
+        self.source.write_text(duplex())
+
+    def test_atom_graph_has_both_node_types_and_links(self):
+        from topotrace.asu_graphs import build_atom_graph
+        asu = self.root / 'asu.json'
+        r = export_cgd(self.source, self.root / 'g.cgd', base_pairs=True, asu_graphs=asu)
+        doc = json.loads(asu.read_text())
+        from topotrace.asu_graphs import from_gemmi
+        import gemmi
+        ops = [(o['id'], from_gemmi(gemmi.Op(o['operation']))) for o in doc['symmetry_operations']]
+        atom = build_atom_graph(r, doc['residue_graph'], ops, name=r['name'], space_group=r['space_group'])
+        self.assertEqual(atom['resolution'], 'atom')
+        self.assertEqual([n['id'] for n in atom['nodes']], [n['label'] for n in r['nodes']])
+        self.assertEqual([n['node_type'] for n in atom['nodes']], ['backbone']*4 + ['base']*4)
+        self.assertEqual(atom['nodes'][4]['label'], "A:DC1 C1'")
+        self.assertEqual(atom['edge_type_counts'], {'base_link': 4, 'base_pair': 2, 'trace': 2})
+        self.assertEqual(atom['summary'], ['A (4), B (4) nodes: finite (0-periodic)'])
+
+    def test_atom_views_are_written(self):
+        html_path = self.root / 'atoms.html'
+        r = export_cgd(self.source, self.root / 'g.cgd', base_pairs=True, asu_atom_html=html_path)
+        page = html_path.read_text()
+        self.assertIn('class="node base"', page)
+        self.assertIn('O3&#x27;-C1&#x27; link', page)
+        self.assertIn('atom resolution', page)
+        self.assertNotIn('<script src', page)
+        self.assertIn('atoms.html', [a['name'] for a in r['artifacts']])
+
+    def test_atom_view_without_base_pairs_shows_o3_nodes_only(self):
+        html_path = self.root / 'atoms.html'
+        export_cgd(self.source, self.root / 'g.cgd', asu_atom_html=html_path)
+        page = html_path.read_text()
+        self.assertNotIn('class="node base"', page)
+        self.assertIn('data-type="trace"', page)
+
+    @unittest.skipUnless(importlib.util.find_spec('matplotlib'), 'matplotlib (topotrace[png]) not installed')
+    def test_atom_png(self):
+        png = self.root / 'atoms.png'
+        export_cgd(self.source, self.root / 'g.cgd', base_pairs=True, asu_atom_png=png)
+        self.assertEqual(png.read_bytes()[:8], b'\x89PNG\r\n\x1a\n')
+
+    def test_cli_atom_options(self):
+        run = subprocess.run([sys.executable, '-m', 'topotrace.cgd', str(self.source), '--out', str(self.root/'g.cgd'),
+                              '--base-pairs', '--asu-atom-html', str(self.root/'a.html')], text=True, capture_output=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertIn('ASU atom graph: 8 nodes', run.stdout)
+
+
 if __name__ == '__main__':
     unittest.main()

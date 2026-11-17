@@ -191,7 +191,7 @@ class ExportTests(unittest.TestCase):
     def test_html_arrowheads_use_the_shared_size(self):
         from topotrace.asu_view import ARROW_SIZE
         _, _, out = self.export(self.nick_chain(), stitch_nicks=True)
-        self.assertEqual(ARROW_SIZE, {'chain': 16, 'residue': 11})
+        self.assertEqual(ARROW_SIZE, {'chain': 16, 'residue': 11, 'atom': 11})
         self.assertIn('class="arrow"', (out/'chain.html').read_text())
         self.assertIn('d="M16,0 ', (out/'chain.html').read_text())
         self.assertIn('d="M11,0 ', (out/'residue.html').read_text())

@@ -139,12 +139,15 @@ def main():
         pair_input.write_text("CRYST1   40.000   40.000   40.000  90.00  90.00  90.00 P 1           1\n"
                               + ''.join(pair_lines) + "END\n")
         run([cgd_command, pair_input, '--out', work/'pair.cgd', '--base-pairs', '--receipt', work/'pair.json',
-             '--cmm', work/'pair.cmm', '--asu-graphs', work/'pair_asu.json'], work, env)
+             '--cmm', work/'pair.cmm', '--asu-graphs', work/'pair_asu.json',
+             '--asu-atom-html', work/'pair_atoms.html'], work, env)
         run([python, '-c', "import json; r=json.load(open('pair.json')); "
              "assert r['schema_version']==3 and r['base_node_count']==2 and r['base_links']==[['S1_N1','S1_B1'],['S2_N1','S2_B1']], r; "
              "assert r['stitched_edge_counts']=={'base_pair': 1}, r['stitched_edge_counts']; "
              "a=json.load(open('pair_asu.json')); assert a['residue_graph']['edge_type_counts']=={'base_pair': 1}; "
-             "assert 'atom S1_B1 2 ' in open('pair.cgd').read()"], work, env)
+             "assert 'atom S1_B1 2 ' in open('pair.cgd').read(); "
+             "assert r['asu_graphs']['atom']['edge_type_counts']=={'base_link': 2, 'base_pair': 1}, r['asu_graphs']; "
+             "assert 'class=\"node base\"' in open('pair_atoms.html').read()"], work, env)
         run([python, '-c', "from topotrace.nucleotides import classify_atom; assert classify_atom('DZ', 'C1').role == 'base'"], work, env)
         run([python, "-m", "unittest", "discover", "-s", extracted / "tests", "-v"], work, env)
         print("PASS: sdist, relocated wheel build, clean install, installed CLI and complete installed suite")
