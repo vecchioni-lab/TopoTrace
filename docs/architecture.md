@@ -45,6 +45,23 @@ viewer draws nick joins and chain-end stacks in separate models with explicit
 endpoint markers. `tools/CheckCgd.java --stitched` plus
 `tools/check_stitched_cgd.py` compare Systre's parsed adjacency with the receipt.
 
+`base_pairs.py` adds the opt-in two-node model (`export_cgd(base_pairs=True)`).
+After nicks and stacks, `export_cgd` appends one C1′ node per O3′ node whose
+residue has C1′ (`S<segment>_B<k>`) to the same `StitchContext`, whose
+`node_of` keeps mapping residues to their O3′ nodes, and occupies each
+O3′–C1′ link. Base planes reuse `stitching.base_planes`. Contact atoms are the
+NAtopo `bases.xlsx` lists, mapped to actual names through the residue catalog.
+A centroid screen (cutoff plus both contact-atom reaches) bounds every
+symmetry operation and lattice translation exactly. Atom contacts (< 4.0 Å,
+contact vector within 30° of both planes, different chain copy, not
+covalently linked) plus deposited same-image `hydrog` links are de-duplicated
+as atom-pair orbits, then grouped per residue-pair orbit
+`min((a, b, g), (b, a, g⁻¹))`. NAtopo's significance test (≥ 2 distinct atoms
+per base, with the two-fold self-pair rule) decides which orbits become
+C1′–C1′ edges through `StitchContext.add_edge`. These reach the ASU graphs as
+`base_pair` stitched links and the CMM views as their own model. Base-node
+receipts use schema 3; `tools/check_stitched_cgd.py` counts `base_links`.
+
 `asu_graphs.py` ports NAtopo's `asu_quotient.py` and `residue_quotient.py`
 without NetworkX/NumPy. Operations are exact integer pairs `(R, t·24)`. Raw
 residue joins are the segment-internal O3′–P polymer links, deposited covalent

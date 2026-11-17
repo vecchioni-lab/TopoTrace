@@ -11,8 +11,11 @@ Conversion and within-strand tracing never stitch chains. The separate
 pi-stack** (`--stitch-terminal-stacks`, any polarity: 5′-3′, 5′-5′ or 3′-3′)
 across chains and symmetry images. It can also write NAtopo's **ASU quotient
 graphs** at chain and residue resolution for the covalent bonds and stitched
-joins (`--asu-graphs`, `--asu-chain-html`, `--asu-residue-html`). Hydrogen
-bonds and other contacts are not stitched.
+joins (`--asu-graphs`, `--asu-chain-html`, `--asu-residue-html`). With
+`--base-pairs` each nucleotide also gets a **C1′ base node** linked to its O3′
+node, and NAtopo's significant hydrogen pairs become **C1′–C1′ base-pair
+links** in any symmetry image. Hydrogen bonds are used only for these
+base-pair links, never to join backbones.
 
 For agents and incoming collaborators, start with [the component map and next
 symmetry-connection task](docs/agent-handoff.json).
@@ -84,6 +87,12 @@ topotrace-cgd 7SE0.cif --stitch-nicks --stitch-terminal-stacks --out 7SE0_stitch
   --cmm 7SE0_stitched.cmm --receipt 7SE0_stitched.json \
   --asu-graphs 7SE0_asu.json --asu-chain-html 7SE0_chains.html --asu-residue-html 7SE0_residues.html
 ```
+
+Add `--base-pairs` for the two-node model: each nucleotide's C1′ atom becomes a
+base node joined to its O3′ node, and base pairs (≥ 2 hydrogen-contact atoms on
+each base, NAtopo's rule) join C1′ nodes across chains and symmetry images.
+Unpaired bases keep a degree-1 C1′ node and are flagged; chain-end stacks stay
+on O3′ nodes. See [C1′ base nodes and base pairs](docs/cgd.md#c1-base-nodes-and-base-pairs).
 
 `--asu-chain-png` and `--asu-residue-png` save the same two graphs as PNG
 images. They need matplotlib, an optional extra:

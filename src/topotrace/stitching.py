@@ -189,7 +189,11 @@ class StitchContext:
     def __init__(self, pdb, *, altloc, node_atoms, node_labels, transform, operations, trace_pairs):
         self.pdb, self.frame, self.operations, self.altloc = pdb, _Frame(transform), operations, altloc
         self.node_atoms, self.node_labels = node_atoms, node_labels
-        self.node_of = {atom.residue_key: i for i, atom in enumerate(node_atoms)}
+        # Residue -> its O3' node. O3' nodes come first; later C1' base nodes of
+        # the same residue (base_pairs.py) keep their own index map.
+        self.node_of = {}
+        for i, atom in enumerate(node_atoms):
+            self.node_of.setdefault(atom.residue_key, i)
         self._read_residues(altloc)
         self._read_links()
         # Existing neighbors per node as (neighbor index, rounded image coordinates).

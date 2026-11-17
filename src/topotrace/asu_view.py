@@ -16,7 +16,7 @@ import math
 from .asu_graphs import EDGE_LABELS
 
 EDGE_COLORS = {'covalent': 'var(--covalent)', 'backbone_join': '#FF7A00', 'backbone_join_o5': '#FFB000',
-               'terminal_stack': '#BD45E8'}
+               'terminal_stack': '#BD45E8', 'base_pair': '#17A589'}
 ARROW_SIZE = {'chain': 16, 'residue': 11}  # arrowhead length in view units (HTML) or points (PNG)
 PALETTE = ('#2E86C1', '#E67E22', '#27AE60', '#8E44AD', '#C0392B', '#16A085', '#D4AC0D', '#7F8C8D',
            '#1F618D', '#AF601A')

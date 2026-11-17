@@ -2,6 +2,28 @@
 
 ## [Unreleased]
 
+- Version 0.5.0: opt-in two-node model for `topotrace-cgd --base-pairs` (API
+  `export_cgd(base_pairs=True)`, requested 2026-11-17). Each nucleotide with an
+  O3′ node gains a C1′ base node (`S<segment>_B<k>`) linked to it. New
+  `base_pairs.py` ports NAtopo's residue-representation base pairs: hydrogen
+  contacts from the `bases.xlsx` atom lists (< 4.0 Å `--hbond-cutoff`, within 30°
+  of both base planes `--hbond-plane-angle`, different chain copies) plus
+  deposited mmCIF `hydrog` links, grouped per residue-pair symmetry orbit and
+  kept when each base contributes ≥ 2 distinct atoms (`--min-pair-atoms`).
+  Each such pair becomes a C1′–C1′ edge in its symmetry image. Weak contacts
+  and pairs without nodes are reported with a status.
+- Unpaired bases keep a degree-1 C1′ node, flagged `base_paired: false`, listed
+  and drawn larger in CMM. Chain-end stacks stay on O3′ nodes (recorded choice).
+  New receipt schema 3 (`schemas/cgd-receipt-3.schema.json`); the ASU schema
+  accepts `base_pair` edges and `stitching.base_pairs`. The CMM views add a
+  teal base-pairs model, and `tools/check_stitched_cgd.py` counts O3′–C1′ links.
+  Legacy alias `topostich.base_pairs`. Output without `--base-pairs` is
+  unchanged except for the version string.
+- Validation: all 164 NAtopo `base_pairs.csv` rows (6 crystals) match in
+  residues, atom pairs, atoms per base and symmetry code. 42 exports (21
+  crystals, base pairs alone and with nicks and stacks) pass the native Systre
+  19.6.0 audit.
+
 - Integrate collaborator PR #1 as TopoTrace 0.4.0, preserving canonical
   `topotrace` commands and `topostich` compatibility aliases for all new modules.
   Keep the terminal-stack algorithm identifier stable; the ASU schema accepts

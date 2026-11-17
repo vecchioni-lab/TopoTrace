@@ -7,6 +7,7 @@ All generated artifacts and environments are temporary.
 
 from pathlib import Path
 import argparse
+import math
 import os
 import shutil
 import subprocess
@@ -72,7 +73,7 @@ def main():
             executable = bindir / (alias + '.exe' if os.name == 'nt' else alias)
             result = subprocess.run([str(executable), '--version'], cwd=work, env=env,
                                     text=True, capture_output=True, check=True)
-            if result.stdout.strip() != 'TopoTrace 0.4.0':
+            if result.stdout.strip() != 'TopoTrace 0.5.0':
                 raise RuntimeError('Legacy command does not resolve to TopoTrace')
         smoke_input = work / "smoke.pdb"
         smoke_input.write_text(
@@ -121,6 +122,29 @@ def main():
              "assert [(e['type'], e['symmetry_code']) for e in c['edges']]==[('backbone_join', '1_(-1,0,0)')], c['edges']; "
              "assert c['periodicity'][0]['dimension']==1 and r['asu_graphs']['chain']['periodicity']==c['summary']; "
              "assert '<svg' in open('chain.html').read() and '<svg' in open('residue.html').read()"], work, env)
+        # Base pairs: two cytosines in one plane, N3 facing N3 (2.9 A); each gains a C1' node.
+        pair_lines, serial = [], 0
+        for chain, cx, facing in (('A', 10., 1), ('B', 15.68, -1)):
+            def at(angle, radius):
+                a = math.radians(angle)
+                return (cx + facing*radius*math.cos(a), 10. + radius*math.sin(a), 10.)
+            atoms = {n: at(60*k - 120, 1.39) for k, n in enumerate(('N1', 'C2', 'N3', 'C4', 'C5', 'C6'))}
+            atoms.update(O2=at(-60, 2.62), N4=at(60, 2.62))
+            atoms["C1'"] = at(-120, 2.86)
+            atoms.update({n: (cx - facing*4., 7., z) for n, z in (("O5'", 9.8), ("C5'", 10.4), ("C3'", 10.2), ("O3'", 10.8))})
+            for name, (x, y, z) in atoms.items():
+                serial += 1
+                pair_lines.append(f"ATOM  {serial:5d} {name:>4}  DC {chain}   1    {x:8.3f}{y:8.3f}{z:8.3f}  1.00 20.00           {name[0]}\n")
+        pair_input = work / 'pair.pdb'
+        pair_input.write_text("CRYST1   40.000   40.000   40.000  90.00  90.00  90.00 P 1           1\n"
+                              + ''.join(pair_lines) + "END\n")
+        run([cgd_command, pair_input, '--out', work/'pair.cgd', '--base-pairs', '--receipt', work/'pair.json',
+             '--cmm', work/'pair.cmm', '--asu-graphs', work/'pair_asu.json'], work, env)
+        run([python, '-c', "import json; r=json.load(open('pair.json')); "
+             "assert r['schema_version']==3 and r['base_node_count']==2 and r['base_links']==[['S1_N1','S1_B1'],['S2_N1','S2_B1']], r; "
+             "assert r['stitched_edge_counts']=={'base_pair': 1}, r['stitched_edge_counts']; "
+             "a=json.load(open('pair_asu.json')); assert a['residue_graph']['edge_type_counts']=={'base_pair': 1}; "
+             "assert 'atom S1_B1 2 ' in open('pair.cgd').read()"], work, env)
         run([python, '-c', "from topotrace.nucleotides import classify_atom; assert classify_atom('DZ', 'C1').role == 'base'"], work, env)
         run([python, "-m", "unittest", "discover", "-s", extracted / "tests", "-v"], work, env)
         print("PASS: sdist, relocated wheel build, clean install, installed CLI and complete installed suite")

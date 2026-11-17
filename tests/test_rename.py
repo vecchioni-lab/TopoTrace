@@ -13,7 +13,7 @@ class RenameTests(unittest.TestCase):
                 result = subprocess.run([sys.executable, '-m', module, '--version'],
                                         text=True, capture_output=True)
                 self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertEqual(result.stdout.strip(), 'TopoTrace 0.4.0')
+                self.assertEqual(result.stdout.strip(), 'TopoTrace 0.5.0')
 
     def test_public_api_identity_and_packaged_catalog(self):
         for name, symbol in (('converter', 'convert_file'), ('converter', 'ConversionError'),
@@ -29,7 +29,7 @@ class RenameTests(unittest.TestCase):
 
 class StitchingRenameTests(unittest.TestCase):
     def test_new_features_share_canonical_and_legacy_modules(self):
-        for name, symbol in (('stitching', 'find_backbone_joins'), ('asu_graphs', 'build_asu_graphs'), ('asu_view', 'render_html'), ('asu_png', 'render_png')):
+        for name, symbol in (('stitching', 'find_backbone_joins'), ('base_pairs', 'find_base_pairs'), ('asu_graphs', 'build_asu_graphs'), ('asu_view', 'render_html'), ('asu_png', 'render_png')):
             with self.subTest(module=name):
                 canonical = importlib.import_module('topotrace.' + name)
                 legacy = importlib.import_module('topostich.' + name)
@@ -41,5 +41,5 @@ class StitchingRenameTests(unittest.TestCase):
                 module = importlib.import_module(package + '.cgd')
                 parameters = inspect.signature(module.export_cgd).parameters
                 for name in ('stitch_nicks', 'stitch_terminal_stacks', 'asu_graphs',
-                             'asu_chain_png', 'asu_residue_png'):
+                             'asu_chain_png', 'asu_residue_png', 'base_pairs'):
                     self.assertIn(name, parameters)

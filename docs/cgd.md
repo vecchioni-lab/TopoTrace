@@ -166,6 +166,81 @@ graph only; they are not a scientific verdict on each crystal's connectivity.
 O5′ fallback joins change several of these (an end pair joined by an O5′
 fallback is no longer stacked).
 
+## C1′ base nodes and base pairs
+
+`--base-pairs` (API: `export_cgd(..., base_pairs=True)`) turns the graph into a
+two-node model. Every nucleotide that has an O3′ node also gets a **C1′ node**
+standing for its base, and the two are linked. **Base pairs** then join C1′
+nodes, in whatever symmetry image the partner lies. The rule is NAtopo's residue
+representation, ported without NetworkX, NumPy, SciPy or openpyxl:
+
+| Step | Rule (NAtopo source) |
+|---|---|
+| C1′ node | Observed C1′ of a residue with an O3′ node; label `S<segment>_B<k>` beside `S<segment>_N<k>`, joined by one O3′–C1′ link. Residues without C1′ get no base node (`residues_without_base_node`) |
+| Contact atoms | `bases.xlsx` Atom ID lists (Donor/Acceptor ignored): A N1 N3 N6 N7; G N1 N2 N3 O6 N7; C O2 N3 N4; T/U O2 N3 O4. Modified residues map through TopoTrace's NARestraints catalog; other base analogs are reported |
+| Hydrogen contact | Contact atoms on **different chain copies** (another segment, or any other symmetry/lattice image) **< 4.0 Å** (`--hbond-cutoff`), contact vector within **30°** of both base planes (`--hbond-plane-angle`), not covalently linked (`find_hydrogen_bond_candidates` with the active `nucleotide_interactions.json`) |
+| Deposited links | mmCIF `_struct_conn` `hydrog` links between two base-bearing residues count too, without distance or angle limits (`crystal_interactions`); symmetry-image annotations are not read |
+| Significant pair | Contacts grouped per residue-pair symmetry orbit; **≥ 2 distinct atoms on each base** (`--min-pair-atoms`; `structural_features.FeatureGraph`). A residue paired with its own two-fold copy counts each stored x…y′ also as y…x′ |
+
+Each significant pair becomes a `base_pair` edge from the first residue's C1′
+(stored position) to the partner's C1′ in image `g`, written with the same
+neighbor-image rows and inverse-affine reciprocals as stitched joins. Every
+orbit is listed in `base_pair_candidates` with its atom pairs, distances,
+plane angles and origin (`inferred`, `file` or `both`), and one status:
+`stitched`, `weak_contact` (fewer atoms than required), `no_graph_node` or
+`duplicate_edge`. Triplets and other multiple partners are all linked and
+counted in `multiple_partner_residues`.
+
+Unpaired bases keep their C1′ node, normally with degree 1, and are flagged:
+`base_paired: false` on the node, `unpaired_base_nodes` in
+`stitch_parameters.base_pairs`, a warning, and a larger marker in the CMM
+views. Systre accepts these degree-1 nodes.
+
+`--base-pairs` combines with `--stitch-nicks` and `--stitch-terminal-stacks`.
+**Chain-end stacks stay on O3′ nodes** for now: the stack rule and its
+candidate list are unchanged. This is a recorded choice that may be revisited
+now that base nodes exist. The receipt becomes schema 3
+(`schemas/cgd-receipt-3.schema.json`): nodes gain `node_type` (`backbone` or
+`base`) and `base_paired`, and the receipt gains `base_atom`, `base_links`,
+`base_pair_candidates` and `stitch_parameters.base_pairs`. The CMM views draw
+C1′ nodes in their segment's model with thin O3′–C1′ links and the base pairs
+in a separate teal **base pairs** model. The ASU graphs gain `base_pair` edges.
+The graph name gains `_C1`, for example `8D93_O3_C1_base_paired`. Without
+`--base-pairs`, output is unchanged apart from the version string.
+
+```sh
+topotrace-cgd 8D93.cif --base-pairs --stitch-nicks --stitch-terminal-stacks \
+  --out 8D93_O3_C1.cgd --receipt 8D93_O3_C1.json --cmm 8D93_O3_C1.cmm \
+  --asu-residue-html 8D93_residues.html
+```
+
+**Validation against NAtopo.** NAtopo's `outputs/<id>/base_pairs.csv` (its
+significant hydrogen pairs) exists for 6 of the 21 crystals in the NAtopo
+workspace. On those 6 (1KF1, 1BNA, 7SE0, 8D93, 9Y3B, 82B-CG refinement), all
+**164** listed pairs match TopoTrace's `base_pair` orbits, with no extra
+pairs in either set. They match in residues, atom-pair count, the atoms on
+each base and the oriented symmetry code `op_(k,l,m)`.
+
+**Native Systre audit.** All 42 exports pass `tools/check_stitched_cgd.py`
+with Systre 19.6.0, and Systre's edge counts equal the receipts. The exports
+are the 21 crystals, each with base pairs alone and with base pairs, nicks and
+stacks. Selected components with base pairs alone (per primitive cell):
+
+| Structure | Base pairs | Unpaired C1′ | Systre components, base pairs only |
+|---|---|---|---|
+| 1BNA | 14 | 0 | 2 × 1-periodic |
+| 5KEK / 5KEO | 21 | 0 | 6 × 1-periodic |
+| 7SE0 | 18 | 6 | 3 × 1-periodic |
+| 8D93 | 21 | 0 | 1 × 3-periodic |
+| 8A refinement | 39 | 2 | 1 × 3-periodic |
+| 9Y3B | 63 | 0 | 4 × 1-periodic |
+| 6YL5 / 6YLB | 87 | 54 | 30 finite |
+
+These counts describe the graph, not a scientific verdict on each crystal.
+Limits: contacts are geometric screens. No donor/acceptor chemistry or
+D–H···A angle is tested, as in NAtopo, and the links are topological, not
+chemical bonds.
+
 ## ASU quotient graphs
 
 `--asu-graphs FILE.json`, `--asu-chain-html FILE.html` and
@@ -180,7 +255,8 @@ and stitching. The code is a port of NAtopo's `asu_quotient.py` and
   ASU. Residue resolution: one node per residue. Nucleotide residues (those
   with backbone atoms) are always included; another non-water residue is
   included when a deposited covalent link joins it.
-- **Edges.** One per symmetry orbit and type: `covalent` (consecutive O3′–P
+- **Edges.** One per symmetry orbit and type (plus `base_pair` with
+  `--base-pairs`; see above): `covalent` (consecutive O3′–P
   links at 0.8–2.2 Å and deposited covalent links at 0.8–2.3 Å: covalent
   `_struct_conn.conn_type_id` or untyped PDB CONECT, never metal, hydrogen or
   water endpoints), `backbone_join`, `backbone_join_o5` and `terminal_stack`

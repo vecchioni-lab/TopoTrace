@@ -19,6 +19,23 @@ between two chain ends, any polarity, unless already backbone joined. Keep the
 ported rules aligned with NAtopo rather than inventing replacements. Audit
 stitched output with `tools/check_stitched_cgd.py`.
 
+**Two-node model (requested 2026-11-17, 0.5.0).** The graph is growing from one
+node per nucleotide to two. The O3′ node still carries the backbone and the
+nick/chain-end-stack stitching. With opt-in `topotrace-cgd --base-pairs`
+(`base_pairs.py`), each nucleotide that has an O3′ node also gets a C1′ node
+standing for its base, linked to its own O3′ node. Base–base hydrogen
+interactions become C1′–C1′ links, in any symmetry image, taken from NAtopo's
+residue representation: hydrogen contacts as in
+`nucleotide_interactions.find_hydrogen_bond_candidates` (bases.xlsx contact
+atoms, < 4.0 Å, within 30° of both base planes, different chain copies, plus
+deposited `hydrog` links), grouped per residue-pair orbit and kept when
+significant as in `structural_features.FeatureGraph` (≥ 2 distinct atoms on each
+base). Unpaired bases keep their degree-1 C1′ node and are flagged
+(`base_paired: false`), not dropped. Chain-end stacks deliberately stay on O3′
+nodes for now (a recorded choice, open for revision once base nodes are in use).
+Receipts with base nodes use schema 3 (`schemas/cgd-receipt-3.schema.json`);
+output without `--base-pairs` is unchanged apart from the version string.
+
 ## Scope and scientific behavior
 
 - The product converts PDB/PDBx-mmCIF to core CIF, optionally selecting a linear
@@ -27,10 +44,12 @@ stitched output with `tools/check_stitched_cgd.py`.
   default CGD export never stitch. The only authorized stitching is opt-in in
   `topotrace-cgd`: NAtopo-rule backbone nick joins (`--stitch-nicks`) and
   pi stacks between chain ends (`--stitch-terminal-stacks`; NAtopo stack
-  geometry, any end polarity, same-polarity flagged). Both report unstitched
-  candidates with a status instead of choosing silently. No
-  hydrogen-bond stitching, general bond guessing, or chemical repairs. Missing
-  selected atoms are bridged within their chain/TER segment.
+  geometry, any end polarity, same-polarity flagged), and C1′–C1′ base-pair
+  links between NAtopo significant hydrogen pairs (`--base-pairs`). All three
+  report unstitched candidates with a status instead of choosing silently.
+  Hydrogen contacts are used only to form these base-pair links, never to join
+  backbones. No general bond guessing or chemical repairs. Missing selected
+  atoms are bridged within their chain/TER segment.
 - Keep crystal coordinates, symmetry and graph connectivity distinct. Do not
   label a format check as a live ToposPro compatibility test.
 - Keep the package independent of NASolve/Phenix/Coot. Do not add a dependency

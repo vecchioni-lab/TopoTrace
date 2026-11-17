@@ -4,7 +4,7 @@
 
 Compiles tools/CheckCgd.java into a temporary directory, runs it in --stitched
 mode (Systre parse + declared degrees), then compares Systre's primitive-cell
-edges with the receipt (schema 1 or 2):
+edges with the receipt (schema 1, 2 or 3; schema 3 adds O3'-C1' base links):
 
 * every Systre edge joins a node pair listed in the receipt, and vice versa;
 * for each node pair, Systre's edge count equals the expected orbit count:
@@ -45,7 +45,7 @@ def expected_pairs(receipt):
     identity = gemmi.Op('x,y,z').triplet()
     pairs = Counter()
     half = Counter()
-    for left, right in receipt['edges']:
+    for left, right in receipt['edges'] + receipt.get('base_links', []):
         pairs[frozenset((left, right))] += 1
     for edge in receipt.get('stitched_edges', ()):
         key = frozenset((edge['source'], edge['target']))
@@ -79,7 +79,8 @@ def compare(records, receipt):
     components = Counter((int(r[1]), int(r[2])) for r in records if r[0] == 'COMPONENT')
     summary = dict(systre_nodes=nodes, primitive_copies=copies,
                    systre_edges=sum(observed.values()), expected_edges=sum(expected.values()),
-                   trace_edges=len(receipt['edges']), stitched_edges=len(receipt.get('stitched_edges', ())),
+                   trace_edges=len(receipt['edges']), base_links=len(receipt.get('base_links', ())),
+                   stitched_edges=len(receipt.get('stitched_edges', ())),
                    components={f'dimension {d}, {n} nodes': c for (d, n), c in sorted(components.items())},
                    warnings=[r[1] for r in records if r[0] == 'WARNING'])
     return problems, summary

@@ -97,6 +97,10 @@
         },
         "terminal_stacks": {
           "type": "boolean"
+        },
+        "base_pairs": {
+          "type": "boolean",
+          "description": "present (true) only when C1' base nodes and base pairs were requested"
         }
       }
     },
@@ -207,7 +211,8 @@
                   "covalent",
                   "backbone_join",
                   "backbone_join_o5",
-                  "terminal_stack"
+                  "terminal_stack",
+                  "base_pair"
                 ]
               },
               "symmetry_code": {
@@ -277,7 +282,8 @@
               "covalent",
               "backbone_join",
               "backbone_join_o5",
-              "terminal_stack"
+              "terminal_stack",
+              "base_pair"
             ]
           },
           "additionalProperties": {
@@ -480,7 +486,8 @@
                   "covalent",
                   "backbone_join",
                   "backbone_join_o5",
-                  "terminal_stack"
+                  "terminal_stack",
+                  "base_pair"
                 ]
               },
               "symmetry_code": {
@@ -549,7 +556,8 @@
               "covalent",
               "backbone_join",
               "backbone_join_o5",
-              "terminal_stack"
+              "terminal_stack",
+              "base_pair"
             ]
           },
           "additionalProperties": {

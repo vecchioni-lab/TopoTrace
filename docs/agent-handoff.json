@@ -1,9 +1,9 @@
 {
   "document_type": "TopoTrace agent and collaborator handoff",
   "document_version": 2,
-  "updated": "2026-11-16",
-  "implementation_version": "0.4.0",
-  "status": "NICK_AND_CHAIN_END_STACK_STITCHING_AND_ASU_GRAPHS_IMPLEMENTED_OPT_IN; SYSTRE_STITCHED_AUDIT_AVAILABLE",
+  "updated": "2026-11-17",
+  "implementation_version": "0.5.0",
+  "status": "NICK_AND_CHAIN_END_STACK_STITCHING_ASU_GRAPHS_AND_C1_BASE_PAIRS_IMPLEMENTED_OPT_IN; SYSTRE_STITCHED_AUDIT_AVAILABLE",
   "authority": "Current user instructions govern scope. This file distinguishes implemented behavior from proposed integration details; it does not claim that an external interface has been agreed or implemented.",
   "read_first": [
     "AGENTS.md",
@@ -16,9 +16,9 @@
   ],
   "mission": {
     "product": "An independently installable toolkit for converting nucleic-acid coordinates into explicit topological graphs and files that collaborators can inspect and analyze.",
-    "current_model": "Represent each nucleotide by one node at its observed O3-prime atom and retain ordered backbone connectivity within each original strand segment.",
+    "current_model": "Represent each nucleotide by a node at its observed O3-prime atom with ordered backbone connectivity within each original strand segment. With --base-pairs, add a second node at its observed C1-prime atom (the base), linked to its O3-prime node, and join C1-prime nodes of NAtopo significant hydrogen pairs.",
     "next_problem": "Find the symmetry-related backbone connections across nicks and chain-end stacks, then encode those connections with the correct images in the existing Systre CGD dialect.",
-    "scientific_owner": "The lab's NAtopo project holds the connection logic. Its backbone-join rule, its pi-stack geometry and its folded ASU quotient graphs are ported into src/topotrace/stitching.py and src/topotrace/asu_graphs.py.",
+    "scientific_owner": "The lab's NAtopo project holds the connection logic. Its backbone-join rule, its pi-stack geometry and its folded ASU quotient graphs are ported into src/topotrace/stitching.py and src/topotrace/asu_graphs.py. Its residue-representation base pairs (find_hydrogen_bond_candidates + structural_features significant pairs) are ported into src/topotrace/base_pairs.py.",
     "topotrace_responsibility": "Map engine results onto explicit nucleotide/node identities, validate image references, preserve graph connectivity and provenance, and write auditable Systre and viewing artifacts.",
     "downstream": "ToposPro/Systre topological analysis; ChimeraX for graph inspection. Links represent the chosen topological model and do not assert chemical bonds or ideal bond lengths.",
     "longer_term": "Sugar recognition supports possible future ribbons; ribbon construction is not part of the next symmetry-link integration."
@@ -34,7 +34,7 @@
     },
     {
       "path": "src/topotrace/__init__.py",
-      "purpose": "Package version, currently 0.3.0."
+      "purpose": "Package version, currently 0.5.0."
     },
     {
       "path": "src/topotrace/converter.py",
@@ -54,7 +54,7 @@
     },
     {
       "path": "src/topotrace/cgd.py",
-      "purpose": "Separate topotrace-cgd command and export_cgd API. Selects observed O3-prime nodes, validates cell/group and positional ambiguity, builds strand edges, optional --stitch-nicks periodic joins via stitching.py, serializes exact CGD dialect, CMM views and schema-1/schema-2 receipts."
+      "purpose": "Separate topotrace-cgd command and export_cgd API. Selects observed O3-prime nodes, validates cell/group and positional ambiguity, builds strand edges, optional --stitch-nicks periodic joins via stitching.py, serializes exact CGD dialect, CMM views and schema-1/schema-2 receipts. Optional --base-pairs appends C1' base nodes (S<segment>_B<k>), O3'-C1' base links and C1'-C1' base-pair edges via base_pairs.py; schema-3 receipts."
     },
     {
       "path": "src/topotrace/graph_viewer.py",
@@ -63,6 +63,10 @@
     {
       "path": "src/topotrace/stitching.py",
       "purpose": "Nick rule (NAtopo) and chain-end stack rule: shared StitchContext (residues, verified O3'-P links, existing edges, stitched residue links), exact symmetry/lattice image search, nick one-to-one acceptance, base-plane pi-stack screen between chain ends with polarity, candidate statuses, inverse-affine reciprocal images."
+    },
+    {
+      "path": "src/topotrace/base_pairs.py",
+      "purpose": "Two-node model: C1' base nodes per O3' node, NAtopo hydrogen contacts (bases.xlsx atoms, < 4.0 A, 30 deg plane test, interchain; deposited hydrog links) grouped per residue-pair symmetry orbit, significant (>= 2 atoms per base) pairs as C1'-C1' edges; weak/no-node candidates and unpaired bases reported."
     },
     {
       "path": "src/topotrace/asu_graphs.py",
@@ -83,6 +87,10 @@
     {
       "path": "schemas/cgd-receipt-2.schema.json",
       "purpose": "Stitched graph receipt schema 2: stitched_edges with operation, lattice translation, forward/reverse images, endpoint identities and evidence; join_candidates and terminal_stack_candidates with status; stitch_parameters; optional asu_graphs summary."
+    },
+    {
+      "path": "schemas/cgd-receipt-3.schema.json",
+      "purpose": "Receipt with C1' base nodes (node_type, base_paired), base_links, base_pair_candidates and stitch_parameters.base_pairs; generated from schema 2."
     },
     {
       "path": "tests/test_stitching.py",
@@ -183,6 +191,10 @@
     {
       "path": "CHANGELOG.md",
       "purpose": "User-visible change history and Unreleased notes."
+    },
+    {
+      "path": "tests/test_base_pairs.py",
+      "purpose": "Regressions for C1' nodes, base-pair significance, plane-angle filter, interchain rule, two-fold self pairs, deposited hydrog links, views, ASU graphs, schema 3 and the Systre audit counter."
     }
   ],
   "implemented_data_flow": [
@@ -210,7 +222,7 @@
     "format_distinction": "CGD is a graph format, not core CIF or PDBx/mmCIF. Preserve the separate existing coordinate-conversion commands."
   },
   "next_integration": {
-    "status": "Nick and chain-end stack stitching and ASU graphs implemented (0.4.0, opt-in). Reviewed decisions pending.",
+    "status": "Nick and chain-end stack stitching, ASU graphs (0.4.0) and C1' base nodes with base pairs (0.5.0) implemented, all opt-in. Open: collaborator review of base-pair links; whether chain-end stacks move to C1' nodes (they stay on O3' by recorded choice); reviewed decisions for ambiguous nicks.",
     "ownership": {
       "connection_decisions": "Collaborator existing logic engine",
       "identity_image_validation_and_export": "TopoTrace integration",
@@ -346,9 +358,10 @@
     "PR #1 integration and publication authorized 2026-11-16; retain existing collaborator reference outputs, without adding local scientific data."
   ],
   "this_update": {
-    "behavior_before_after": "TopoTrace 0.3.1 gains the collaborator 0.4.0 opt-in nick/terminal-stack stitching and ASU graphs; canonical topotrace commands and legacy topostich aliases share one implementation. Default graphs stay unstitched.",
-    "schema_impact": "New cgd-receipt-2 schema for stitched exports; new asu-graphs schema; schema 1 gains only an optional asu_graphs summary.",
-    "validation": "2026-11-16 integration: two fail-before regression methods; 4 focused and 89 full source tests pass; clean relocated wheel/install passes (87 tests passed, 2 optional-dependency skips). Four unchanged 8D93 JSON examples validate. Prior native Systre/NAtopo evidence not rerun; see development-handoff.md.",
-    "generated_artifacts": "Existing collaborator examples/8D93 reference artifacts retained unchanged and excluded from distributions; no new scientific payload added during integration."
+    "date": "2026-11-17",
+    "version": "0.5.0",
+    "branch": "codex/alder-c1-base-pairs",
+    "summary": "Opt-in --base-pairs two-node model: C1' base nodes linked to O3' nodes and C1'-C1' base pairs from NAtopo's residue representation; unpaired bases kept and flagged; chain-end stacks remain on O3'.",
+    "validation": "See docs/development-handoff.md (2026-11-17 section)."
   }
 }

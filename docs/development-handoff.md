@@ -1,5 +1,75 @@
 # Development handoff
 
+## 0.5.0 C1′ base nodes and base pairs — 2026-11-17
+
+Branch `codex/alder-c1-base-pairs` from main `ae1be3a` (main fast-forwarded to
+`origin/main`, which already contained `codex/rowan-nick-stitching`).
+
+**Before:** one O3′ node per nucleotide. Hydrogen contacts were never used.
+**After:** opt-in `topotrace-cgd --base-pairs` (`export_cgd(base_pairs=True)`).
+Each nucleotide with an O3′ node also gets a C1′ base node `S<seg>_B<k>`,
+linked to `S<seg>_N<k>`. NAtopo's residue-representation base pairs become
+C1′–C1′ edges in their symmetry image. The hydrogen screen is
+`find_hydrogen_bond_candidates` with the active JSON: bases.xlsx contact atoms,
+< 4.0 Å, 30° plane test and interchain only, plus deposited same-image
+`hydrog` links. A pair is significant as in `structural_features.FeatureGraph`:
+≥ 2 distinct atoms per base, with the two-fold self-pair rule.
+Unpaired bases keep a flagged degree-1 C1′ node. Chain-end stacks stay on O3′
+nodes by recorded choice. Defaults, nick and stack rules are unchanged; output
+without `--base-pairs` differs only in the version string.
+
+Files: new `src/topotrace/base_pairs.py`, `src/topostich/base_pairs.py`
+(alias), `schemas/cgd-receipt-3.schema.json`, `tests/test_base_pairs.py`.
+Changed: `cgd.py` (nodes, flags, schema 3, CLI summary), `stitching.py`
+(`node_of` keeps O3′ nodes when C1′ nodes share the context), `asu_graphs.py`,
+`asu_view.py`, `graph_viewer.py`, `schemas/asu-graphs.schema.json` (`base_pair`,
+`stitching.base_pairs`), `tools/check_stitched_cgd.py` (counts `base_links`),
+`tools/check_install.py` (installed `--base-pairs` smoke check), version
+0.5.0, AGENTS.md, README, architecture, cgd.md, intent/handoff JSON and the
+changelog. Migration: schema-3 readers must accept `S<seg>_B<k>` labels and
+`base_pair` edges; schema 1/2 consumers are unaffected.
+
+Validation: Python 3.11.2, Gemmi 0.7.5, jsonschema 4.26.0, matplotlib 3.11.2,
+macOS, scratch virtual environment outside the repository.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -p test_base_pairs.py -v
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src MPLBACKEND=Agg python -m unittest discover -s tests -v
+PYTHONDONTWRITEBYTECODE=1 python3 tools/check_install.py
+python tools/check_stitched_cgd.py graph.cgd graph.json --systre Systre-19.6.0.jar   # per export
+git diff --check
+```
+
+- Fail-before: all 14 new regressions failed on the unmodified tree (13 ×
+  `TypeError: unexpected keyword argument 'base_pairs'`, 1 failed CLI), and
+  they pass after the change. Full source suite: **103 passed** in about 2 s.
+- Clean sdist → removed staging → relocated wheel → fresh install: **PASS**
+  in about 6 s. The installed suite ran 103 tests: 99 passed and 4 skipped
+  (jsonschema/matplotlib absent from the minimal install).
+- NAtopo cross-check (read-only inputs and outputs from the local NAtopo
+  workspace; nothing copied into the repository): 6 crystals have NAtopo
+  `base_pairs.csv`. All **164** rows match TopoTrace exactly, with 0 extra and
+  0 missing, in residue labels, `atom_pairs`, `atoms_1`/`atoms_2` and the
+  oriented `op_(k,l,m)` code. The remaining 15 crystals have no NAtopo
+  `base_pairs.csv` and were not cross-checked.
+- Native Systre 19.6.0 (jar downloaded from the official gavrog GitHub
+  release into a scratch directory; not a dependency): **42/42 PASS**. That is
+  21 crystals × (`--base-pairs`) and (`--base-pairs --stitch-nicks
+  --stitch-terminal-stacks`). Systre edge counts equal the receipts, and
+  degree-1 unpaired C1′ nodes parse.
+- Runtime: 0.0–0.7 s per crystal for base pairs (9Y3B, 252 nodes: 0.7 s).
+- Default/stitched compatibility: regenerating the committed 8D93 examples
+  (without PNGs) from the same `8d93.cif` (SHA-256 `9f67eb6a…`) gives
+  byte-identical CGD, both CMM views and both HTML pages, unstitched and
+  stitched. The receipt/ASU JSON differ only in the version string, the
+  omitted PNG artifact hashes and the prior TopoStich→TopoTrace format label.
+
+Not run: live ToposPro import, and a ChimeraX visual check of the new
+base-node CMM (the XML structure is unit-tested). The 8D93 examples were not
+regenerated. Limits: geometric screen only, with no donor/acceptor or
+D–H···A test (as in NAtopo). Symmetry-image deposited `hydrog` records are
+not read. Residues without C1′ get no base node.
+
 ## TopoTrace PR #1 integration — 2026-11-16
 
 Reconciles collaborator head `d946792a4a82692c630eb20dafb2b0e2d6312430`

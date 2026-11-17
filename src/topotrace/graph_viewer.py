@@ -2,7 +2,9 @@
 
 No distance-based bonding is performed. Every chain/TER segment and symmetry
 copy is a separate model so ChimeraX's Models panel can toggle it independently.
-Stitched nick joins and chain-end stacks cross segments and images, so each
+C1' base nodes (base_pairs) sit in their segment's model with thinner O3'-C1'
+links; unpaired ones are drawn larger. Stitched nick joins, chain-end stacks
+and base pairs cross segments and images, so each
 family gets its own model with explicit endpoint markers; every stitched edge
 is drawn in each view.
 """
@@ -14,7 +16,8 @@ import gemmi
 
 PALETTE = ((.16,.65,.85),(.95,.55,.18),(.50,.78,.35),(.72,.46,.85),(.93,.35,.45),(.28,.77,.70))
 JOIN_FAMILIES = (('nick joins', ('backbone_join', 'backbone_join_o5', 'deposited_link'), dict(r='1', g='0.84', b='0')),
-                 ('terminal stacks', ('terminal_stack',), dict(r='0.9', g='0.2', b='0.75')))
+                 ('terminal stacks', ('terminal_stack',), dict(r='0.9', g='0.2', b='0.75')),
+                 ('base pairs', ('base_pair',), dict(r='0.09', g='0.65', b='0.54')))
 
 
 def _xyz(values):
@@ -61,6 +64,11 @@ def marker_xml(graph, *, crystal=False):
         segments[node['segment']].append(node)
     ops = graph['symmetry_operations'] if crystal else ['x,y,z']
     cell = gemmi.UnitCell(*graph['cell'])
+    base_links = graph.get('base_links', [])
+    stems = defaultdict(int)  # O3'-C1' links per node; the rest is backbone degree
+    for left, right in base_links:
+        stems[left] += 1
+        stems[right] += 1
     for op_index, triplet in enumerate(ops,1):
         op = gemmi.Op(triplet)
         for color_index,(segment,nodes) in enumerate(segments.items()):
@@ -77,11 +85,18 @@ def marker_xml(graph, *, crystal=False):
                     frac = op.apply_to_xyz(node['fractional'])
                     xyz = list(cell.orthogonalize(gemmi.Fractional(*frac)))
                 note = node['label']+' '+node['description']+f" degree={node['degree']}"
-                ET.SubElement(model,'marker',id=ids[node['label']],**_xyz(xyz),
-                              **rgb,radius='0.85' if node['degree']<=1 else '0.5',note=note)
+                if node.get('node_type') == 'base':
+                    note += " C1' base" + ('' if node['base_paired'] else ' unpaired')
+                    radius = '0.35' if node['base_paired'] else '0.7'
+                else:
+                    radius = '0.85' if node['degree'] - stems[node['label']] <= 1 else '0.5'
+                ET.SubElement(model,'marker',id=ids[node['label']],**_xyz(xyz),**rgb,radius=radius,note=note)
             for left,right in graph['edges']:
                 if left in ids and right in ids:
                     ET.SubElement(model,'link',id1=ids[left],id2=ids[right],**rgb,radius='0.22')
+            for left,right in base_links:
+                if left in ids and right in ids:
+                    ET.SubElement(model,'link',id1=ids[left],id2=ids[right],**rgb,radius='0.12')
     for family, kinds, rgb in JOIN_FAMILIES:
         _join_model(root, graph, ops, crystal, family, kinds, rgb)
     ET.indent(root)

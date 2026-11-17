@@ -1,16 +1,17 @@
 {
   "schema_version": 1,
   "project": "TopoTrace",
-  "updated": "2026-11-16",
-  "status": "0.4.0-integrated",
+  "updated": "2026-11-17",
+  "status": "0.5.0-base-pairs",
   "owner": "vecchioni-lab",
-  "purpose": "Convert DNA/RNA PDB or PDBx/mmCIF coordinates to core CIF with residue-aware nucleotide atom recognition and optional linear backbone traces. Export chain-aware O3-prime graphs as Systre CRYSTAL CGD and native ChimeraX marker/link views. Optionally stitch backbone nicks (NAtopo's P...O3' join rule) and chain ends whose bases pi-stack across chains and symmetry images, and write NAtopo's ASU quotient graphs at chain and residue resolution for covalent bonds and stitching.",
+  "purpose": "Convert DNA/RNA PDB or PDBx/mmCIF coordinates to core CIF with residue-aware nucleotide atom recognition and optional linear backbone traces. Export chain-aware O3-prime graphs as Systre CRYSTAL CGD and native ChimeraX marker/link views. Optionally stitch backbone nicks (NAtopo's P...O3' join rule) and chain ends whose bases pi-stack across chains and symmetry images, and write NAtopo's ASU quotient graphs at chain and residue resolution for covalent bonds and stitching. Optionally add a C1-prime base node per nucleotide, linked to its O3-prime node, and join base nodes of NAtopo significant hydrogen pairs (C1'-C1' base-pair links in any symmetry image).",
   "standing_user_requirements": [
     "Installable after every substantial patch, not only at formal releases.",
     "Maintain clear human-readable and machine-readable intent in the repository.",
     "CGD export keeps chains separate by default; opt-in --stitch-nicks (NAtopo rule) and --stitch-terminal-stacks add joins and report every unstitched candidate.",
     "Publish as an independent vecchioni-lab Git repository named TopoTrace.",
-    "2026-11-13: junction stitching removed completely. Stitch every pi stack between chain ends (any polarity 5'-3', 5'-5', 3'-3'; same-polarity noted) unless already backbone joined. Generate the ASU graphs of main_NAtopo.ipynb at chain and residue resolution, for covalent bonds and stitching only."
+    "2026-11-13: junction stitching removed completely. Stitch every pi stack between chain ends (any polarity 5'-3', 5'-5', 3'-3'; same-polarity noted) unless already backbone joined. Generate the ASU graphs of main_NAtopo.ipynb at chain and residue resolution, for covalent bonds and stitching only.",
+    "2026-11-17: increase the graph complexity to two node types. Keep the O3' backbone representation and its nick/stack stitching; add the C1' carbon as a base node linked to its own O3' node, and map base-base hydrogen interactions to C1'-C1' links taken from NAtopo's residue representation. Opt-in flag --base-pairs. Keep unpaired base nodes and flag them. Chain-end stacks stay on O3' nodes for now; record that choice."
   ],
   "runtime": {
     "python": ">=3.10",
@@ -50,7 +51,7 @@
     "receipt_schema": "schemas/conversion-receipt.schema.json",
     "reference_policy": "self-contained coordinates and edges; source SHA-256 and basename are provenance",
     "pdb_precision": "0.001 A coordinates; 0.01 occupancy/B. Refuse field overflow.",
-    "cgd_receipt_schema": "schemas/cgd-receipt.schema.json (unstitched, schema 1); schemas/cgd-receipt-2.schema.json (stitched, schema 2)"
+    "cgd_receipt_schema": "schemas/cgd-receipt.schema.json (unstitched, schema 1); schemas/cgd-receipt-2.schema.json (stitched, schema 2); schemas/cgd-receipt-3.schema.json (C1' base nodes and base pairs, schema 3)"
   },
   "selection": {
     "explicit_all_atoms": {
@@ -95,13 +96,14 @@
   },
   "non_goals": [
     "sticky-end inference",
-    "base-pair inference",
     "chemical restraint generation",
     "deposition validation",
     "NASolve pipeline modification",
     "sugar ring graph construction",
     "ribbon construction",
-    "automatic component-specific atom-map corrections"
+    "automatic component-specific atom-map corrections",
+    "hydrogen-bond backbone joins (hydrogen contacts only form opt-in C1'-C1' base-pair links)",
+    "donor/acceptor or D-H...A angle validation of base pairs"
   ],
   "quality_gates": [
     "fail-before regression",
@@ -117,13 +119,14 @@
     "explicit -atom -all installed CLI smoke test",
     "CGD regressions",
     "installed topotrace-cgd smoke check",
-    "stitching, chain-end stack and ASU-graph regressions; installed --stitch-nicks/--stitch-terminal-stacks/--asu-graphs smoke checks; NAtopo quotient cross-validation"
+    "stitching, chain-end stack and ASU-graph regressions; installed --stitch-nicks/--stitch-terminal-stacks/--asu-graphs smoke checks; NAtopo quotient cross-validation",
+    "base-pair regressions (C1' nodes, weak contacts, plane-angle filter, interchain rule, two-fold self pairs, deposited hydrog links, schema 3); installed --base-pairs smoke check; NAtopo base_pairs.csv cross-validation"
   ],
   "external_validation": {
     "ToposPro": "not yet executed",
     "Phenix": "not required",
     "Coot": "not required",
-    "Systre": "19.6.0 native parser, node degrees, consecutive labels and finite component checks passed for 8D93; cosine-roundoff cell warning diagnosed; no net identification. 0.4.0: tools/check_stitched_cgd.py passed 85 stitched/unstitched exports of 17 crystals with Systre 19.6.0 (edge counts match receipts).",
+    "Systre": "19.6.0 native parser, node degrees, consecutive labels and finite component checks passed for 8D93; cosine-roundoff cell warning diagnosed; no net identification. 0.4.0: tools/check_stitched_cgd.py passed 85 stitched/unstitched exports of 17 crystals with Systre 19.6.0 (edge counts match receipts). 0.5.0: 42 --base-pairs exports of 21 crystals (base pairs alone, and with nicks and chain-end stacks) passed tools/check_stitched_cgd.py with Systre 19.6.0, edge counts equal to receipts.",
     "ChimeraX": "1.12 (2026-06-12): native CMM import passed for both 8D93 views, including all nodes, links and notes."
   },
   "distribution": {
@@ -151,7 +154,7 @@
     "live_workbook_dependency": false
   },
   "cgd_export": {
-    "status": "IMPLEMENTED_CHAIN_AWARE; NICK_AND_CHAIN_END_STACK_STITCHING_OPT_IN; ASU_GRAPHS_OPT_IN",
+    "status": "IMPLEMENTED_CHAIN_AWARE; NICK_AND_CHAIN_END_STACK_STITCHING_OPT_IN; ASU_GRAPHS_OPT_IN; C1_BASE_NODES_AND_BASE_PAIRS_OPT_IN",
     "decision_date": "2026-11-13",
     "format": "Systre/Gavrog CGD",
     "extension": ".cgd",
@@ -165,16 +168,17 @@
       "edge <source-label> <neighbor-image fract_x> <neighbor-image fract_y> <neighbor-image fract_z>",
       "end"
     ],
-    "representation": "One nucleotide is represented by one node at its observed O3-prime atom coordinate; no base centroid or fitted pseudoatom.",
+    "representation": "One nucleotide is represented by one node at its observed O3-prime atom coordinate; with --base-pairs a second node at its observed C1-prime atom stands for the base. No base centroid or fitted pseudoatom.",
     "representative_atom": "O3'",
     "coordinates": "Fractional coordinates in the declared cell; retain negative and greater-than-one neighbor coordinates to identify the intended periodic image.",
     "node_degree": "Actual incident edge count; special positions rejected pending stabilizer-aware support.",
-    "graph": "Explicit consecutive retained O3-prime nodes within each original segment. With --stitch-nicks, additional periodic edges for one-to-one backbone nick joins between segment termini, in any symmetry/lattice image. With --stitch-terminal-stacks, periodic edges for every pi stack between two chain ends not already backbone joined.",
+    "graph": "Explicit consecutive retained O3-prime nodes within each original segment. With --stitch-nicks, additional periodic edges for one-to-one backbone nick joins between segment termini, in any symmetry/lattice image. With --stitch-terminal-stacks, periodic edges for every pi stack between two chain ends not already backbone joined. With --base-pairs, each nucleotide with an O3' node also has a C1' node linked to it, and C1'-C1' periodic edges join NAtopo significant hydrogen pairs; chain-end stacks remain O3'-O3'.",
     "stitching_scope": [
       "nicks (implemented, opt-in)",
       "chain-end pi stacks, any polarity (implemented, opt-in)",
       "symmetry-related copies and lattice translations (implemented)",
-      "NAtopo junction rule (removed 2026-11-13 at the user's request; never released)"
+      "NAtopo junction rule (removed 2026-11-13 at the user's request; never released)",
+      "C1'-C1' base pairs from NAtopo significant hydrogen pairs (implemented 2026-11-17, opt-in --base-pairs)"
     ],
     "pending": [
       "Reviewed confirm/remove decisions for ambiguous nicks",
@@ -277,23 +281,77 @@
         "covalent",
         "backbone_join",
         "backbone_join_o5",
-        "terminal_stack"
+        "terminal_stack",
+        "base_pair"
       ],
       "edges": "one per symmetry orbit and type, labelled with the partner copy's PDB op_klm code; operator numbers from the input file",
       "periodicity": "voltage-graph cycle translations: rank, Hermite basis, interpenetrating copies",
       "natopo_cross_validation": "identical covalent/backbone-join orbits, symmetry codes and periodicity (NAtopo's own periodicity()) on 17 local crystals (2026-11-13)",
       "png": "optional extra topotrace[png] (matplotlib); export fails before writing if it is missing"
     },
-    "native_audit": "tools/check_stitched_cgd.py (+ tools/CheckCgd.java --stitched); CheckCgd default mode is the unstitched baseline"
+    "native_audit": "tools/check_stitched_cgd.py (+ tools/CheckCgd.java --stitched); CheckCgd default mode is the unstitched baseline",
+    "base_atom": "C1' (opt-in --base-pairs)",
+    "base_pairs": {
+      "status": "IMPLEMENTED_OPT_IN",
+      "requested": "2026-11-17",
+      "module": "src/topotrace/base_pairs.py",
+      "cli": [
+        "--base-pairs",
+        "--hbond-cutoff 4.0",
+        "--hbond-plane-angle 30",
+        "--min-pair-atoms 2"
+      ],
+      "schema": "schemas/cgd-receipt-3.schema.json",
+      "rule_source": "NAtopo nucleotide_interactions.find_hydrogen_bond_candidates (active nucleotide_interactions.json: 4.0 A, 30 deg, interchain) + crystal_interactions deposited hydrog + structural_features.FeatureGraph significant pairs (>= 2 distinct atoms per base)",
+      "contact_atoms": {
+        "A": [
+          "N1",
+          "N3",
+          "N6",
+          "N7"
+        ],
+        "G": [
+          "N1",
+          "N2",
+          "N3",
+          "O6",
+          "N7"
+        ],
+        "C": [
+          "O2",
+          "N3",
+          "N4"
+        ],
+        "T": [
+          "O2",
+          "N3",
+          "O4"
+        ],
+        "U": [
+          "O2",
+          "N3",
+          "O4"
+        ]
+      },
+      "node_labels": "S<segment>_B<k> is the C1' node of the residue whose O3' node is S<segment>_N<k>",
+      "unpaired": "kept as degree-1 C1' nodes, flagged base_paired=false and listed in stitch_parameters.base_pairs.unpaired_base_nodes",
+      "terminal_stacks": "remain on O3' nodes (recorded choice 2026-11-17; revisit once base nodes are used)",
+      "natopo_cross_validation": "all 164 rows of NAtopo outputs/<id>/base_pairs.csv on 6 crystals match (residues, atom pairs, atoms per base, oriented op_(k,l,m)) (2026-11-17)",
+      "limits": [
+        "geometric screen only: no donor/acceptor chemistry or D-H...A angle (as in NAtopo)",
+        "symmetry-image deposited hydrog annotations are not read",
+        "residues without C1' get no base node"
+      ]
+    }
   },
   "agent_handoff": "docs/agent-handoff.json",
   "next_work": {
-    "status": "NICK_AND_CHAIN_END_STACK_STITCHING_AND_ASU_GRAPHS_IMPLEMENTED",
-    "task": "Reviewed decisions for ambiguous candidates (NAtopo decision log), special positions, live ToposPro import.",
+    "status": "NICK_AND_CHAIN_END_STACK_STITCHING_ASU_GRAPHS_AND_BASE_PAIRS_IMPLEMENTED",
+    "task": "Collaborator review of C1' base-pair links and whether chain-end stacks should move to C1' nodes; reviewed decisions for ambiguous candidates (NAtopo decision log), special positions, live ToposPro import.",
     "scientific_logic_owner": "Lab NAtopo project (ported rule in stitching.py); collaborator confirms scientific connectivity.",
     "topotrace_role": "Resolve identities and relative crystal images; validate and export explicit periodic links in the exact CGD dialect, with matching viewer/provenance.",
     "handoff": "docs/agent-handoff.json",
-    "current_default": "Unstitched chain-aware graph unless stitching options are given; unchanged byte-for-byte."
+    "current_default": "Unstitched O3'-only chain-aware graph unless stitching or --base-pairs options are given; unchanged apart from the version string."
   },
   "rename": {
     "from": "TopoStich",

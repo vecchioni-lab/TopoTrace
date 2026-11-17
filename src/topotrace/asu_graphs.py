@@ -25,6 +25,8 @@ Edge types:
   hydrog or metalc) or untyped PDB CONECT. Symmetry-image links are not read.
 * ``backbone_join``, ``backbone_join_o5`` - stitched nick joins.
 * ``terminal_stack`` - stitched chain-end pi stacks, with their end polarity.
+* ``base_pair`` - significant hydrogen pairs linked C1'-C1' (``base_pairs.py``),
+  with their hydrogen atom pairs; distances are hydrogen contact distances.
 
 Nodes are the nucleotide residues (those with backbone atoms) plus any
 non-water residue joined to the graph by a deposited covalent link.
@@ -40,10 +42,11 @@ import gemmi
 from .converter import covalent_connections, normalized_name
 
 GRID = 24  # Space-group translations lie on the 1/24 fractional grid.
-EDGE_TYPES = ('covalent', 'backbone_join', 'backbone_join_o5', 'terminal_stack')
+EDGE_TYPES = ('covalent', 'backbone_join', 'backbone_join_o5', 'terminal_stack', 'base_pair')
 EDGE_LABELS = {'covalent': 'Covalent bond', 'backbone_join': "Stitched backbone join (P...O3')",
                'backbone_join_o5': "Stitched O5'...O3' join (phosphate missing)",
-               'terminal_stack': 'Stitched chain-end pi stack'}
+               'terminal_stack': 'Stitched chain-end pi stack',
+               'base_pair': "Base pair (significant hydrogen pair, C1'-C1')"}
 WATER = {'HOH', 'WAT', 'DOD', 'H2O', 'D2O'}
 COVALENT_ELEMENTS = {'B', 'C', 'N', 'O', 'F', 'SI', 'P', 'S', 'CL', 'SE', 'BR', 'I'}
 EXPLICIT_COVALENT_A = (0.8, 2.3)
@@ -370,6 +373,11 @@ def build_asu_graphs(ctx, operations, *, name, space_group):
             contact = dict(text=f"{rlabel[a]} ({ev['source_end']} end) stacks on {rlabel[b]} ({ev['target_end']} end), "
                                 f"centroids {link['distance']:.2f} A, polarity {ev['polarity']}",
                            distance_A=link['distance'], polarity=ev['polarity'], same_polarity=ev['same_polarity'])
+        elif kind == 'base_pair':
+            contact = dict(text=f"{rlabel[a]} pairs {rlabel[b]}: {ev['atom_pairs']} hydrogen atom pairs "
+                                f"({' '.join(ev['atoms_1'])} / {' '.join(ev['atoms_2'])}), "
+                                f"{ev['distance_min_A']:.2f}-{ev['distance_max_A']:.2f} A ({ev['origin']})",
+                           distance_A=ev['distance_min_A'], distance_max_A=ev['distance_max_A'])
         else:
             contact = dict(text=f"{rlabel[a]} {ev['o3_atom']['atom']} ... {rlabel[b]} {ev['p_atom']['atom']} "
                                 f"{link['distance']:.2f} A (stitched)", distance_A=link['distance'])
@@ -421,7 +429,7 @@ def build_asu_graphs(ctx, operations, *, name, space_group):
 def _finish(nodes, edges, operations, name, space_group, resolution):
     for e in edges:
         contacts = e.pop('contacts')
-        distances = [c['distance_A'] for c in contacts]
+        distances = [d for c in contacts for d in (c['distance_A'], c.get('distance_max_A', c['distance_A']))]
         e['distance_min_A'], e['distance_max_A'] = min(distances), max(distances)
         if e['type'] == 'terminal_stack':
             e['polarities'] = sorted({c['polarity'] for c in contacts})
