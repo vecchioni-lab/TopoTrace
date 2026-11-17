@@ -1,0 +1,7300 @@
+{
+  "schema_version": 3,
+  "format": "Systre CGD CRYSTAL",
+  "tool_version": "0.5.0",
+  "name": "8d93_stitched_hbond",
+  "source_name": "8d93.cif",
+  "source_sha256": "9f67eb6a7193d1ff06b68105e4ba8a066f4b02bef55787fc096404a99fa1d7bb",
+  "source_format": "mmcif",
+  "model": 1,
+  "altloc": null,
+  "representative_atom": "O3'",
+  "cell": [
+    105.547,
+    105.547,
+    96.268,
+    90.0,
+    90.0,
+    120.0
+  ],
+  "space_group": "R3:H",
+  "symmetry_operations": [
+    "x,y,z",
+    "-y,x-y,z",
+    "-x+y,-x,z",
+    "x+2/3,y+1/3,z+1/3",
+    "-y+2/3,x-y+1/3,z+1/3",
+    "-x+y+2/3,-x+1/3,z+1/3",
+    "x+1/3,y+2/3,z+2/3",
+    "-y+1/3,x-y+2/3,z+2/3",
+    "-x+y+1/3,-x+2/3,z+2/3"
+  ],
+  "node_count": 84,
+  "edge_count": 105,
+  "directed_edge_rows": 210,
+  "segment_count": 4,
+  "nodes": [
+    {
+      "label": "S1_N1",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "101",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "1",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        31.67943,
+        8.3723,
+        1.34405
+      ],
+      "fractional": [
+        0.34594237314879916,
+        0.09159425959499187,
+        0.01396154485394939
+      ],
+      "description": "segment=1 chain=A residue=DG:101 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N2",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "102",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "2",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        32.59129,
+        4.76937,
+        -4.40769
+      ],
+      "fractional": [
+        0.33487344077391995,
+        0.052177646988828215,
+        -0.04578561931275189
+      ],
+      "description": "segment=1 chain=A residue=DA:102 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N3",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "103",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "3",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        32.86162,
+        -0.83937,
+        -7.09925
+      ],
+      "fractional": [
+        0.30675442698087396,
+        -0.009182837891170676,
+        -0.07374465035110316
+      ],
+      "description": "segment=1 chain=A residue=DG:103 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N4",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "104",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "4",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        32.51673,
+        -7.08655,
+        -6.15193
+      ],
+      "fractional": [
+        0.26931422446752884,
+        -0.07752795532086637,
+        -0.06390420492790957
+      ],
+      "description": "segment=1 chain=A residue=DC:104 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N5",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "5",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        30.98354,
+        -12.95351,
+        -2.95705
+      ],
+      "fractional": [
+        0.22269536334097123,
+        -0.14171340702152613,
+        -0.030716852952175175
+      ],
+      "description": "segment=1 chain=A residue=DA:105 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N6",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "6",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        25.88821,
+        -15.41076,
+        -0.04684
+      ],
+      "fractional": [
+        0.16097855519894727,
+        -0.16859610286254875,
+        -0.0004865583579174803
+      ],
+      "description": "segment=1 chain=A residue=DG:106 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N7",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "7",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        20.0029,
+        -13.35295,
+        3.08569
+      ],
+      "fractional": [
+        0.11647484744260272,
+        -0.1460833425294061,
+        0.032053122532928906
+      ],
+      "description": "segment=1 chain=A residue=DC:107 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N8",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "108",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "8",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        14.56811,
+        -9.74769,
+        4.40266
+      ],
+      "fractional": [
+        0.08470424128135315,
+        -0.10664123936212348,
+        0.0457333693439149
+      ],
+      "description": "segment=1 chain=A residue=DC:108 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N9",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "109",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "9",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        9.55747,
+        -5.91829,
+        2.32943
+      ],
+      "fractional": [
+        0.05817828716455921,
+        -0.0647470098561261,
+        0.024197344912120326
+      ],
+      "description": "segment=1 chain=A residue=DT:109 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N10",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "110",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "10",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        5.60642,
+        -4.11352,
+        -1.17608
+      ],
+      "fractional": [
+        0.030616484795239,
+        -0.04500254634081328,
+        -0.012216728300162046
+      ],
+      "description": "segment=1 chain=A residue=DG:110 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N11",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "11",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        2.2525,
+        -3.40113,
+        -5.95804
+      ],
+      "fractional": [
+        0.002736758779985117,
+        -0.03720888932985138,
+        -0.0618901400257614
+      ],
+      "description": "segment=1 chain=A residue=DT:111 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_N12",
+      "degree": 3,
+      "segment": 1,
+      "chain": "A",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "12",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        0.74172,
+        -4.5089,
+        -12.2821
+      ],
+      "fractional": [
+        -0.017636641768587466,
+        -0.04932806481944731,
+        -0.1275823742053434
+      ],
+      "description": "segment=1 chain=A residue=DA:112 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N1",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "1",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        12.33427,
+        -8.43497,
+        -14.59056
+      ],
+      "fractional": [
+        0.07072051124042923,
+        -0.09227987910800718,
+        -0.15156188972451903
+      ],
+      "description": "segment=2 chain=B residue=DA:105 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N2",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "2",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        12.93038,
+        -2.76434,
+        -12.76829
+      ],
+      "fractional": [
+        0.10738711244155069,
+        -0.030242308035882577,
+        -0.13263275439398345
+      ],
+      "description": "segment=2 chain=B residue=DC:106 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N3",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "3",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        14.12571,
+        1.49502,
+        -8.939
+      ],
+      "fractional": [
+        0.14201123858985926,
+        0.016355750508188292,
+        -0.09285536211409813
+      ],
+      "description": "segment=2 chain=B residue=DA:107 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N4",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "4",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        17.71558,
+        6.29319,
+        -8.91924
+      ],
+      "fractional": [
+        0.20226965181920337,
+        0.06884847396063293,
+        -0.09265010179914404
+      ],
+      "description": "segment=2 chain=B residue=DC:111 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N5",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "5",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        14.62905,
+        12.53904,
+        -8.10439
+      ],
+      "fractional": [
+        0.20719175456791272,
+        0.13717904098419634,
+        -0.08418571072422819
+      ],
+      "description": "segment=2 chain=B residue=DC:112 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N6",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "6",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        12.6777,
+        17.79999,
+        -10.306
+      ],
+      "fractional": [
+        0.2174815865734947,
+        0.19473464936137735,
+        -0.10705530394315867
+      ],
+      "description": "segment=2 chain=B residue=DG:113 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S2_N7",
+      "degree": 3,
+      "segment": 2,
+      "chain": "B",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "7",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        7.24808,
+        18.75879,
+        -12.47891
+      ],
+      "fractional": [
+        0.17128362204678163,
+        0.2052240699626074,
+        -0.1296267710973532
+      ],
+      "description": "segment=2 chain=B residue=DT:114 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N1",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "101",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "1",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        36.4621,
+        7.63942,
+        -28.71415
+      ],
+      "fractional": [
+        0.38724664077096094,
+        0.08357643880835292,
+        -0.29827305023476125
+      ],
+      "description": "segment=3 chain=C residue=DT:101 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N2",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "102",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "2",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        30.40837,
+        7.16667,
+        -32.20123
+      ],
+      "fractional": [
+        0.3273048864836824,
+        0.07840448053839934,
+        -0.33449567873021147
+      ],
+      "description": "segment=3 chain=C residue=DC:102 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N3",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "103",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "3",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        24.21258,
+        4.3489,
+        -31.64953
+      ],
+      "fractional": [
+        0.2531897504019893,
+        0.04757764002157836,
+        -0.32876480242655914
+      ],
+      "description": "segment=3 chain=C residue=DT:103 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N4",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "104",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "4",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        20.88661,
+        -0.37524,
+        -29.50209
+      ],
+      "fractional": [
+        0.19583659492917171,
+        -0.0041051837572022585,
+        -0.3064579091702331
+      ],
+      "description": "segment=3 chain=C residue=DG:104 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N5",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "5",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        19.10699,
+        -3.12331,
+        -25.34056
+      ],
+      "fractional": [
+        0.16394351455500727,
+        -0.03416949547145155,
+        -0.26322931815348816
+      ],
+      "description": "segment=3 chain=C residue=DA:105 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N6",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "6",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        18.6595,
+        -3.76842,
+        -19.87339
+      ],
+      "fractional": [
+        0.15617499027523696,
+        -0.041227098854909536,
+        -0.2064381726014875
+      ],
+      "description": "segment=3 chain=C residue=DT:106 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N7",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "7",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        20.61181,
+        -2.80661,
+        -14.1924
+      ],
+      "fractional": [
+        0.17993323316616963,
+        -0.030704748387169595,
+        -0.14742593592886521
+      ],
+      "description": "segment=3 chain=C residue=DG:107 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N8",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "108",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "8",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        18.46619,
+        0.32767,
+        -9.95918
+      ],
+      "fractional": [
+        0.17674941365178892,
+        0.0035847605844858744,
+        -0.1034526530103461
+      ],
+      "description": "segment=3 chain=C residue=DT:108 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N9",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "109",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "9",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        17.71996,
+        1.54372,
+        -3.76188
+      ],
+      "fractional": [
+        0.17633118096727915,
+        0.016888536056039665,
+        -0.039077159596127474
+      ],
+      "description": "segment=3 chain=C residue=DG:109 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N10",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "110",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "10",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        17.27193,
+        -0.22395,
+        2.99528
+      ],
+      "fractional": [
+        0.16241705029242884,
+        -0.0024500477092672815,
+        0.03111397349067187
+      ],
+      "description": "segment=3 chain=C residue=DG:110 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N11",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "11",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        20.20441,
+        -2.36897,
+        7.75765
+      ],
+      "fractional": [
+        0.17846726607859867,
+        -0.025916898958798416,
+        0.0805838908048365
+      ],
+      "description": "segment=3 chain=C residue=DC:111 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N12",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "12",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        26.26732,
+        -5.07577,
+        10.12995
+      ],
+      "fractional": [
+        0.22110361094256942,
+        -0.055529710476747374,
+        0.10522655503386377
+      ],
+      "description": "segment=3 chain=C residue=DT:112 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N13",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "13",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        31.65622,
+        -8.78218,
+        9.09964
+      ],
+      "fractional": [
+        0.251886136156672,
+        -0.09607841032093282,
+        0.09452403706319856
+      ],
+      "description": "segment=3 chain=C residue=DG:113 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S3_N14",
+      "degree": 3,
+      "segment": 3,
+      "chain": "C",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "14",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        37.21869,
+        -9.07003,
+        6.2812
+      ],
+      "fractional": [
+        0.3030129301443151,
+        -0.09922753393384902,
+        0.06524701873935264
+      ],
+      "description": "segment=3 chain=C residue=DC:114 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N1",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "1",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        5.52783,
+        5.94052,
+        -17.22859
+      ],
+      "fractional": [
+        0.08486826552271838,
+        0.06499020950148003,
+        -0.17896486890763283
+      ],
+      "description": "segment=4 chain=D residue=DC:113 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N2",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "2",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        7.9217,
+        9.70429,
+        -21.50228
+      ],
+      "fractional": [
+        0.1281369858337442,
+        0.10616643663570154,
+        -0.22335854074043293
+      ],
+      "description": "segment=4 chain=D residue=DG:114 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N3",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "115",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "3",
+      "label_comp": "DG",
+      "label_atom": "O3'",
+      "cartesian": [
+        13.62476,
+        13.19285,
+        -22.37747
+      ],
+      "fractional": [
+        0.20125304839434904,
+        0.14433182371603845,
+        -0.2324497236880375
+      ],
+      "description": "segment=4 chain=D residue=DG:115 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N4",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "116",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "4",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        18.86135,
+        13.91867,
+        -18.54688
+      ],
+      "fractional": [
+        0.25483716137134704,
+        0.1522724070084715,
+        -0.19265882744006316
+      ],
+      "description": "segment=4 chain=D residue=DA:116 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N5",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "117",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "5",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        23.75541,
+        10.42528,
+        -16.43532
+      ],
+      "fractional": [
+        0.28209658459621995,
+        0.11405417897954888,
+        -0.17072464370299578
+      ],
+      "description": "segment=4 chain=D residue=DC:117 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N6",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "118",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "6",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        26.54689,
+        5.43142,
+        -13.91925
+      ],
+      "fractional": [
+        0.2812275270645487,
+        0.05942057659776058,
+        -0.14458854447999334
+      ],
+      "description": "segment=4 chain=D residue=DA:118 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N7",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "119",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "7",
+      "label_comp": "DT",
+      "label_atom": "O3'",
+      "cartesian": [
+        28.31836,
+        -0.10441,
+        -14.80781
+      ],
+      "fractional": [
+        0.2677298157066891,
+        -0.0011422615821593777,
+        -0.15381861054556029
+      ],
+      "description": "segment=4 chain=D residue=DT:119 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N8",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "120",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "8",
+      "label_comp": "DC",
+      "label_atom": "O3'",
+      "cartesian": [
+        26.92651,
+        -5.27022,
+        -18.86503
+      ],
+      "fractional": [
+        0.22628541848002742,
+        -0.05765702361390752,
+        -0.19596366393817258
+      ],
+      "description": "segment=4 chain=D residue=DC:120 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S4_N9",
+      "degree": 3,
+      "segment": 4,
+      "chain": "D",
+      "seq": "121",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "O3'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "9",
+      "label_comp": "DA",
+      "label_atom": "O3'",
+      "cartesian": [
+        27.3056,
+        -8.17757,
+        -25.23311
+      ],
+      "fractional": [
+        0.2139736587414421,
+        -0.0894638832144354,
+        -0.2621131632525865
+      ],
+      "description": "segment=4 chain=D residue=DA:121 atom=O3' altloc=.",
+      "node_type": "backbone"
+    },
+    {
+      "label": "S1_B1",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "101",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "1",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        33.60496,
+        7.03414,
+        4.07005
+      ],
+      "fractional": [
+        0.35686587607906917,
+        0.07695458179801443,
+        0.042278327169983795
+      ],
+      "description": "segment=1 chain=A residue=DG:101 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B2",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "102",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "2",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        32.98174,
+        4.44027,
+        -1.2786
+      ],
+      "fractional": [
+        0.3367725381088484,
+        0.04857724198271139,
+        -0.013281671999002782
+      ],
+      "description": "segment=1 chain=A residue=DA:102 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B3",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "103",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "3",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        33.3043,
+        -0.68235,
+        -3.57049
+      ],
+      "fractional": [
+        0.3118074890221272,
+        -0.007465014755161983,
+        -0.037089063863381386
+      ],
+      "description": "segment=1 chain=A residue=DG:103 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B4",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "104",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "4",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        32.44343,
+        -4.97606,
+        -3.26259
+      ],
+      "fractional": [
+        0.28016429097460155,
+        -0.05443886762302536,
+        -0.0338907009598205
+      ],
+      "description": "segment=1 chain=A residue=DC:104 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B5",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "5",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        30.21741,
+        -9.84572,
+        -2.00605
+      ],
+      "fractional": [
+        0.2324365534561316,
+        -0.10771370275546784,
+        -0.02083818091162172
+      ],
+      "description": "segment=1 chain=A residue=DA:105 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B6",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "6",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        25.95675,
+        -12.01487,
+        -0.07526
+      ],
+      "fractional": [
+        0.18020371560747006,
+        -0.1314445399448276,
+        -0.0007817758756803921
+      ],
+      "description": "segment=1 chain=A residue=DG:106 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B7",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "7",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        21.49138,
+        -11.57749,
+        1.3277
+      ],
+      "fractional": [
+        0.14028928374998628,
+        -0.12665953495675292,
+        0.013791706486059749
+      ],
+      "description": "segment=1 chain=A residue=DC:107 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B8",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "108",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "8",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        16.84454,
+        -9.44323,
+        2.06102
+      ],
+      "fractional": [
+        0.10793758815959194,
+        -0.10331039977487848,
+        0.021409191008434785
+      ],
+      "description": "segment=1 chain=A residue=DC:108 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B9",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "109",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "9",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        12.1963,
+        -6.67903,
+        0.50007
+      ],
+      "fractional": [
+        0.0790184489523569,
+        -0.07306962336069403,
+        0.005194561017160427
+      ],
+      "description": "segment=1 chain=A residue=DT:109 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B10",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "110",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "10",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        8.37322,
+        -6.09313,
+        -1.84464
+      ],
+      "fractional": [
+        0.046001778869059436,
+        -0.06665978655399746,
+        -0.01916150745834545
+      ],
+      "description": "segment=1 chain=A residue=DG:110 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B11",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "11",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        4.49831,
+        -5.35873,
+        -5.03837
+      ],
+      "fractional": [
+        0.013306354439116963,
+        -0.0586253367317787,
+        -0.05233691361615489
+      ],
+      "description": "segment=1 chain=A residue=DT:111 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S1_B12",
+      "degree": 2,
+      "segment": 1,
+      "chain": "A",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "A",
+      "label_seq": "12",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        3.71287,
+        -5.79118,
+        -10.65654
+      ],
+      "fractional": [
+        0.003499205738433353,
+        -0.063356406755769,
+        -0.11069659700004153
+      ],
+      "description": "segment=1 chain=A residue=DA:112 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B1",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "1",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        11.51409,
+        -9.5855,
+        -12.22047
+      ],
+      "fractional": [
+        0.056656266825990745,
+        -0.10486685562483361,
+        -0.12694218224124318
+      ],
+      "description": "segment=2 chain=B residue=DA:105 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B2",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "2",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        12.74072,
+        -5.04287,
+        -11.29361
+      ],
+      "fractional": [
+        0.09312645217781382,
+        -0.055169779377685524,
+        -0.11731426850043626
+      ],
+      "description": "segment=2 chain=B residue=DC:106 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B3",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "3",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        13.8812,
+        -1.76622,
+        -8.18306
+      ],
+      "fractional": [
+        0.12185540477277329,
+        -0.019322720540576238,
+        -0.08500290854697301
+      ],
+      "description": "segment=2 chain=B residue=DA:107 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B4",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "4",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        16.06195,
+        4.98624,
+        -11.24572
+      ],
+      "fractional": [
+        0.17945329574733607,
+        0.05455023840078979,
+        -0.11681680309136992
+      ],
+      "description": "segment=2 chain=B residue=DC:111 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B5",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "5",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        14.0205,
+        10.05647,
+        -9.32756
+      ],
+      "fractional": [
+        0.18784622643559168,
+        0.11001934041891093,
+        -0.09689159429924792
+      ],
+      "description": "segment=2 chain=B residue=DC:112 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B6",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "6",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        11.58521,
+        14.66014,
+        -10.18837
+      ],
+      "fractional": [
+        0.18995561953781348,
+        0.16038420372644605,
+        -0.10583340258445173
+      ],
+      "description": "segment=2 chain=B residue=DG:113 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S2_B7",
+      "degree": 2,
+      "segment": 2,
+      "chain": "B",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "B",
+      "label_seq": "7",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        7.26254,
+        15.45683,
+        -11.36133
+      ],
+      "fractional": [
+        0.1533586455448121,
+        0.16910011580278517,
+        -0.11801772136119998
+      ],
+      "description": "segment=2 chain=B residue=DT:114 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B1",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "101",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "1",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        37.70132,
+        4.27217,
+        -28.76295
+      ],
+      "fractional": [
+        0.3805684529121988,
+        0.046738201929450295,
+        -0.29877996842148996
+      ],
+      "description": "segment=3 chain=C residue=DT:101 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B2",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "102",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "2",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        32.03124,
+        5.30801,
+        -30.54472
+      ],
+      "fractional": [
+        0.3325136763940352,
+        0.05807045207085426,
+        -0.3172884032077118
+      ],
+      "description": "segment=3 chain=C residue=DC:102 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B3",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "103",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "3",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        26.92424,
+        3.45365,
+        -30.72102
+      ],
+      "fractional": [
+        0.27398415641549984,
+        0.03778346626975192,
+        -0.31911974903394685
+      ],
+      "description": "segment=3 chain=C residue=DT:103 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B4",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "104",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "4",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        23.17721,
+        0.98135,
+        -29.1062
+      ],
+      "fractional": [
+        0.2249594274273001,
+        0.010736121096179729,
+        -0.3023455353803964
+      ],
+      "description": "segment=3 chain=C residue=DG:104 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B5",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "105",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "5",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        20.94664,
+        -1.06562,
+        -25.43455
+      ],
+      "fractional": [
+        0.19262891419127168,
+        -0.011658047956907301,
+        -0.264205655046329
+      ],
+      "description": "segment=3 chain=C residue=DA:105 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B6",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "106",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "6",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        19.52823,
+        -1.68755,
+        -21.15743
+      ],
+      "fractional": [
+        0.17578825123621752,
+        -0.01846205854777401,
+        -0.21977635351310923
+      ],
+      "description": "segment=3 chain=C residue=DT:106 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B7",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "107",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "7",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        19.49007,
+        -0.81426,
+        -16.08596
+      ],
+      "fractional": [
+        0.180203670116722,
+        -0.008908130599455099,
+        -0.1670956080940707
+      ],
+      "description": "segment=3 chain=C residue=DG:107 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B8",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "108",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "8",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        17.85801,
+        2.03297,
+        -12.88033
+      ],
+      "fractional": [
+        0.18031536449879612,
+        0.022241006883273504,
+        -0.13379658868990732
+      ],
+      "description": "segment=3 chain=C residue=DT:108 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B9",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "109",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "9",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        16.59987,
+        -1.54485,
+        -5.43896
+      ],
+      "fractional": [
+        0.1488242246263978,
+        -0.016900898431174604,
+        -0.056498109444467516
+      ],
+      "description": "segment=3 chain=C residue=DG:109 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B10",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "110",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "10",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        17.97543,
+        -1.73913,
+        0.62922
+      ],
+      "fractional": [
+        0.16079417535642176,
+        -0.019026351741987056,
+        0.006536128308472181
+      ],
+      "description": "segment=3 chain=C residue=DG:110 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B11",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "111",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "11",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        20.85583,
+        -3.97124,
+        4.63798
+      ],
+      "fractional": [
+        0.17587457262625553,
+        -0.043445981089308264,
+        0.048177795321394434
+      ],
+      "description": "segment=3 chain=C residue=DC:111 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B12",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "112",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "12",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        25.04442,
+        -6.0651,
+        6.7941
+      ],
+      "fractional": [
+        0.20410559165431516,
+        -0.06635313400972079,
+        0.07057485353388457
+      ],
+      "description": "segment=3 chain=C residue=DT:112 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B13",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "13",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        30.04274,
+        -7.07763,
+        7.0956
+      ],
+      "fractional": [
+        0.24592331770941311,
+        -0.0774303691383852,
+        0.07370673536377612
+      ],
+      "description": "segment=3 chain=C residue=DG:113 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S3_B14",
+      "degree": 2,
+      "segment": 3,
+      "chain": "C",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "C",
+      "label_seq": "14",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        34.7635,
+        -7.16541,
+        5.10473
+      ],
+      "fractional": [
+        0.29016976899055363,
+        -0.07839069594311607,
+        0.05302623924876386
+      ],
+      "description": "segment=3 chain=C residue=DC:114 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B1",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "113",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "1",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        6.19919,
+        6.77967,
+        -14.44462
+      ],
+      "fractional": [
+        0.09581924923983468,
+        0.07417064055855364,
+        -0.15004591349150287
+      ],
+      "description": "segment=4 chain=D residue=DC:113 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B2",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "114",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "2",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        8.3763,
+        8.28929,
+        -18.86749
+      ],
+      "fractional": [
+        0.12470391212342252,
+        0.09068611732954748,
+        -0.19598921760086424
+      ],
+      "description": "segment=4 chain=D residue=DG:114 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B3",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "115",
+      "insertion": "",
+      "residue": "DG",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "3",
+      "label_comp": "DG",
+      "label_atom": "C1'",
+      "cartesian": [
+        13.17106,
+        10.77242,
+        -19.9379
+      ],
+      "fractional": [
+        0.183714549791313,
+        0.11785194438162544,
+        -0.2071082810487389
+      ],
+      "description": "segment=4 chain=D residue=DG:115 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B4",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "116",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "4",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        17.58501,
+        11.11647,
+        -18.7568
+      ],
+      "fractional": [
+        0.22741628797538918,
+        0.12161590470479312,
+        -0.19483940665641747
+      ],
+      "description": "segment=4 chain=D residue=DA:116 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B5",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "117",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "5",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        21.48105,
+        9.29644,
+        -17.97143
+      ],
+      "fractional": [
+        0.25437342734995033,
+        0.10170449442438356,
+        -0.18668124402709102
+      ],
+      "description": "segment=4 chain=D residue=DC:117 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B6",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "118",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "6",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        24.98089,
+        5.56013,
+        -16.29148
+      ],
+      "fractional": [
+        0.2670945886877819,
+        0.060828683946096335,
+        -0.16923048157227738
+      ],
+      "description": "segment=4 chain=D residue=DA:118 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B7",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "119",
+      "insertion": "",
+      "residue": "DT",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "7",
+      "label_comp": "DT",
+      "label_atom": "C1'",
+      "cartesian": [
+        26.72638,
+        1.54565,
+        -17.19241
+      ],
+      "fractional": [
+        0.26167263345782393,
+        0.016909650555163976,
+        -0.17858904308804585
+      ],
+      "description": "segment=4 chain=D residue=DT:119 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B8",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "120",
+      "insertion": "",
+      "residue": "DC",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "8",
+      "label_comp": "DC",
+      "label_atom": "C1'",
+      "cartesian": [
+        27.03795,
+        -2.54763,
+        -20.0086
+      ],
+      "fractional": [
+        0.24223402970908162,
+        -0.027871467048718863,
+        -0.2078426891594299
+      ],
+      "description": "segment=4 chain=D residue=DC:120 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    },
+    {
+      "label": "S4_B9",
+      "degree": 2,
+      "segment": 4,
+      "chain": "D",
+      "seq": "121",
+      "insertion": "",
+      "residue": "DA",
+      "atom": "C1'",
+      "altloc": "",
+      "label_asym": "D",
+      "label_seq": "9",
+      "label_comp": "DA",
+      "label_atom": "C1'",
+      "cartesian": [
+        27.84972,
+        -5.32662,
+        -24.4954
+      ],
+      "fractional": [
+        0.2347238150693924,
+        -0.05827404835515634,
+        -0.2544500768687414
+      ],
+      "description": "segment=4 chain=D residue=DA:121 atom=C1' altloc=.",
+      "node_type": "base",
+      "base_paired": true
+    }
+  ],
+  "edges": [
+    [
+      "S1_N1",
+      "S1_N2"
+    ],
+    [
+      "S1_N2",
+      "S1_N3"
+    ],
+    [
+      "S1_N3",
+      "S1_N4"
+    ],
+    [
+      "S1_N4",
+      "S1_N5"
+    ],
+    [
+      "S1_N5",
+      "S1_N6"
+    ],
+    [
+      "S1_N6",
+      "S1_N7"
+    ],
+    [
+      "S1_N7",
+      "S1_N8"
+    ],
+    [
+      "S1_N8",
+      "S1_N9"
+    ],
+    [
+      "S1_N9",
+      "S1_N10"
+    ],
+    [
+      "S1_N10",
+      "S1_N11"
+    ],
+    [
+      "S1_N11",
+      "S1_N12"
+    ],
+    [
+      "S2_N1",
+      "S2_N2"
+    ],
+    [
+      "S2_N2",
+      "S2_N3"
+    ],
+    [
+      "S2_N3",
+      "S2_N4"
+    ],
+    [
+      "S2_N4",
+      "S2_N5"
+    ],
+    [
+      "S2_N5",
+      "S2_N6"
+    ],
+    [
+      "S2_N6",
+      "S2_N7"
+    ],
+    [
+      "S3_N1",
+      "S3_N2"
+    ],
+    [
+      "S3_N2",
+      "S3_N3"
+    ],
+    [
+      "S3_N3",
+      "S3_N4"
+    ],
+    [
+      "S3_N4",
+      "S3_N5"
+    ],
+    [
+      "S3_N5",
+      "S3_N6"
+    ],
+    [
+      "S3_N6",
+      "S3_N7"
+    ],
+    [
+      "S3_N7",
+      "S3_N8"
+    ],
+    [
+      "S3_N8",
+      "S3_N9"
+    ],
+    [
+      "S3_N9",
+      "S3_N10"
+    ],
+    [
+      "S3_N10",
+      "S3_N11"
+    ],
+    [
+      "S3_N11",
+      "S3_N12"
+    ],
+    [
+      "S3_N12",
+      "S3_N13"
+    ],
+    [
+      "S3_N13",
+      "S3_N14"
+    ],
+    [
+      "S4_N1",
+      "S4_N2"
+    ],
+    [
+      "S4_N2",
+      "S4_N3"
+    ],
+    [
+      "S4_N3",
+      "S4_N4"
+    ],
+    [
+      "S4_N4",
+      "S4_N5"
+    ],
+    [
+      "S4_N5",
+      "S4_N6"
+    ],
+    [
+      "S4_N6",
+      "S4_N7"
+    ],
+    [
+      "S4_N7",
+      "S4_N8"
+    ],
+    [
+      "S4_N8",
+      "S4_N9"
+    ]
+  ],
+  "missing_atoms": [],
+  "stitching": true,
+  "warnings": [
+    "Base pairs: 21 C1'-C1' links from significant hydrogen pairs; 42 C1' base nodes linked to their O3' nodes.",
+    "1 hydrogen contacts with fewer than min_atoms_per_base atoms per base were not linked.",
+    "Nick stitching: 2 backbone joins stitched.",
+    "1 O5' fallback nick candidates reported only (use include_o5_fallback).",
+    "Chain-end stack stitching: 2 terminal stacks stitched.",
+    "2 chain-end stacks between ends already backbone joined were not stitched."
+  ],
+  "trace_edge_count": 38,
+  "stitched_edge_count": 25,
+  "stitched_edge_counts": {
+    "backbone_join": 2,
+    "base_pair": 21,
+    "terminal_stack": 2
+  },
+  "stitched_edges": [
+    {
+      "source": "S1_N12",
+      "target": "S4_N1",
+      "kind": "backbone_join",
+      "operation": "-x+y,-x,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y,-x,z",
+      "reverse_image_operation": "-y,x-y,z",
+      "target_image_fractional": [
+        -0.019878056021238353,
+        -0.08486826552271838,
+        -0.17896486890763283
+      ],
+      "reverse_image_fractional": [
+        0.04932806481944731,
+        0.03169142305085985,
+        -0.1275823742053434
+      ],
+      "target_image_cartesian": [
+        2.3807262316895326,
+        -7.757501207801735,
+        -17.22859
+      ],
+      "reverse_image_cartesian": [
+        3.533961943123653,
+        2.8967983624949927,
+        -12.282100000000002
+      ],
+      "distance_A": 2.930955947091795,
+      "source_description": "segment=1 chain=A residue=DA:112",
+      "target_description": "segment=4 chain=D residue=DC:113",
+      "evidence": {
+        "o3_atom": {
+          "chain": "A",
+          "seq": "112",
+          "insertion": "",
+          "residue": "DA",
+          "atom": "O3'",
+          "altloc": "",
+          "segment": 1,
+          "serial": "233",
+          "label_asym": "A",
+          "label_seq": "12",
+          "description": "segment=1 chain=A residue=DA:112 atom=O3' altloc=."
+        },
+        "p_atom": {
+          "chain": "D",
+          "seq": "113",
+          "insertion": "",
+          "residue": "DC",
+          "atom": "P",
+          "altloc": "",
+          "segment": 4,
+          "serial": "672",
+          "label_asym": "D",
+          "label_seq": "1",
+          "description": "segment=4 chain=D residue=DC:113 atom=P altloc=."
+        }
+      }
+    },
+    {
+      "source": "S2_N7",
+      "target": "S2_N1",
+      "kind": "backbone_join",
+      "operation": "-y,x-y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-y,x-y,z",
+      "reverse_image_operation": "-x+y,-x,z",
+      "target_image_fractional": [
+        0.09227987910800718,
+        0.1630003903484364,
+        -0.15156188972451903
+      ],
+      "reverse_image_fractional": [
+        0.03394044791582578,
+        -0.17128362204678163,
+        -0.1296267710973532
+      ],
+      "target_image_cartesian": [
+        1.1377633001596257,
+        14.899276157136285,
+        -14.59056
+      ],
+      "reverse_image_cartesian": [
+        12.621548684257492,
+        -15.656416408661915,
+        -12.47891
+      ],
+      "distance_A": 3.117419985597283,
+      "source_description": "segment=2 chain=B residue=DT:114",
+      "target_description": "segment=2 chain=B residue=DA:105",
+      "evidence": {
+        "o3_atom": {
+          "chain": "B",
+          "seq": "114",
+          "insertion": "",
+          "residue": "DT",
+          "atom": "O3'",
+          "altloc": "",
+          "segment": 2,
+          "serial": "375",
+          "label_asym": "B",
+          "label_seq": "7",
+          "description": "segment=2 chain=B residue=DT:114 atom=O3' altloc=."
+        },
+        "p_atom": {
+          "chain": "B",
+          "seq": "105",
+          "insertion": "",
+          "residue": "DA",
+          "atom": "P",
+          "altloc": "",
+          "segment": 2,
+          "serial": "246",
+          "label_asym": "B",
+          "label_seq": "1",
+          "description": "segment=2 chain=B residue=DA:105 atom=P altloc=."
+        }
+      }
+    },
+    {
+      "source": "S3_N14",
+      "target": "S3_N1",
+      "kind": "terminal_stack",
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "reverse_image_operation": "-y+1/3,x-y-1/3,z-1/3",
+      "target_image_fractional": [
+        0.36299646470405866,
+        -0.0539133074376276,
+        0.035060283098572086
+      ],
+      "reverse_image_fractional": [
+        0.43256086726718235,
+        0.06890713074483079,
+        -0.2680863145939807
+      ],
+      "target_image_cartesian": [
+        41.158381790178915,
+        -4.928020444249867,
+        3.375183333333338
+      ],
+      "reverse_image_cartesian": [
+        42.01903139308697,
+        6.298551604499137,
+        -25.808133333333338
+      ],
+      "distance_A": 3.3751629802021794,
+      "source_description": "segment=3 chain=C residue=DC:114",
+      "target_description": "segment=3 chain=C residue=DT:101",
+      "evidence": {
+        "polarity": "5'-3'",
+        "same_polarity": false,
+        "source_end": "3'",
+        "target_end": "5'",
+        "centroid_distance_A": 3.3751629802021794,
+        "plane_angle_deg": 2.9119125499140357,
+        "plane_separation_A": [
+          3.1952545793362557,
+          3.1915083422192776
+        ],
+        "lateral_shift_A": [
+          1.0872319514059305,
+          1.098180151191982
+        ]
+      }
+    },
+    {
+      "source": "S4_N9",
+      "target": "S1_N1",
+      "kind": "terminal_stack",
+      "operation": "-y+1/3,x-y+2/3,z+2/3",
+      "lattice_translation": [
+        0,
+        -1,
+        -1
+      ],
+      "image_operation": "-y+1/3,x-y-1/3,z-1/3",
+      "reverse_image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "target_image_fractional": [
+        0.24173907373834147,
+        -0.07898521977952604,
+        -0.3193717884793839
+      ],
+      "reverse_image_fractional": [
+        0.3632291247107891,
+        0.11935967459189123,
+        0.07122017008074684
+      ],
+      "target_image_cartesian": [
+        29.683160511895537,
+        -7.219753273667856,
+        -30.745283333333337
+      ],
+      "reverse_image_cartesian": [
+        32.03871663877449,
+        10.910236165502347,
+        6.856223333333338
+      ],
+      "distance_A": 3.9102316384633764,
+      "source_description": "segment=4 chain=D residue=DA:121",
+      "target_description": "segment=1 chain=A residue=DG:101",
+      "evidence": {
+        "polarity": "5'-3'",
+        "same_polarity": false,
+        "source_end": "3'",
+        "target_end": "5'",
+        "centroid_distance_A": 3.9102316384633764,
+        "plane_angle_deg": 4.9930241223067195,
+        "plane_separation_A": [
+          3.493400985701088,
+          3.3755915195351873
+        ],
+        "lateral_shift_A": [
+          1.7567188219924277,
+          1.97364975608189
+        ]
+      }
+    },
+    {
+      "source": "S1_B1",
+      "target": "S3_B2",
+      "kind": "base_pair",
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "reverse_image_operation": "-y+1/3,x-y-1/3,z-1/3",
+      "target_image_fractional": [
+        0.3922234423434858,
+        0.0008196569392981597,
+        0.016044930125621543
+      ],
+      "reverse_image_fractional": [
+        0.2563787515353189,
+        -0.0534220390522786,
+        -0.2910550061633495
+      ],
+      "target_image_cartesian": [
+        41.35475150354184,
+        0.07492187636244854,
+        1.544613333333335
+      ],
+      "reverse_image_cartesian": [
+        29.879276066223728,
+        -4.88311537791881,
+        -28.019283333333334
+      ],
+      "distance_A": 10.71764039320592,
+      "source_description": "segment=1 chain=A residue=DG:101",
+      "target_description": "segment=3 chain=C residue=DC:102",
+      "evidence": {
+        "origin": "inferred",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.1102512005270566,
+        "distance_max_A": 3.714908122374325
+      }
+    },
+    {
+      "source": "S1_B2",
+      "target": "S3_B1",
+      "kind": "base_pair",
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "reverse_image_operation": "-y+1/3,x-y-1/3,z-1/3",
+      "target_image_fractional": [
+        0.33283641568391814,
+        -0.04723511957886547,
+        0.03455336491184339
+      ],
+      "reverse_image_fractional": [
+        0.28475609135062196,
+        -0.045138037207196335,
+        -0.3466150053323361
+      ],
+      "target_image_cartesian": [
+        37.62264774928576,
+        -4.317591445127619,
+        3.32638333333334
+      ],
+      "reverse_image_cartesian": [
+        32.437243380338074,
+        -4.125904730065345,
+        -33.36793333333333
+      ],
+      "distance_A": 10.929045398831104,
+      "source_description": "segment=1 chain=A residue=DA:102",
+      "target_description": "segment=3 chain=C residue=DT:101",
+      "evidence": {
+        "origin": "inferred",
+        "atom_pairs": 4,
+        "atoms_1": [
+          "N1",
+          "N6"
+        ],
+        "atoms_2": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "base_1": "A",
+        "base_2": "T",
+        "distance_min_A": 3.2671084901600866,
+        "distance_max_A": 3.656174249373982
+      }
+    },
+    {
+      "source": "S1_B3",
+      "target": "S3_B14",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.29016976899055363,
+        -0.07839069594311607,
+        0.05302623924876385
+      ],
+      "reverse_image_fractional": [
+        0.3118074890221272,
+        -0.007465014755161983,
+        -0.037089063863381386
+      ],
+      "target_image_cartesian": [
+        34.7635,
+        -7.165409999999997,
+        5.104729999999999
+      ],
+      "reverse_image_cartesian": [
+        33.3043,
+        -0.6823499999999998,
+        -3.57049
+      ],
+      "distance_A": 10.9278897163176,
+      "source_description": "segment=1 chain=A residue=DG:103",
+      "target_description": "segment=3 chain=C residue=DC:114",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.880542499096307,
+        "distance_max_A": 3.790434608893814
+      }
+    },
+    {
+      "source": "S1_B4",
+      "target": "S3_B13",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.24592331770941311,
+        -0.0774303691383852,
+        0.07370673536377612
+      ],
+      "reverse_image_fractional": [
+        0.28016429097460155,
+        -0.05443886762302536,
+        -0.0338907009598205
+      ],
+      "target_image_cartesian": [
+        30.042739999999995,
+        -7.077629999999999,
+        7.0956
+      ],
+      "reverse_image_cartesian": [
+        32.44343,
+        -4.976059999999999,
+        -3.26259
+      ],
+      "distance_A": 10.83845048967333,
+      "source_description": "segment=1 chain=A residue=DC:104",
+      "target_description": "segment=3 chain=C residue=DG:113",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "atoms_2": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "base_1": "C",
+        "base_2": "G",
+        "distance_min_A": 2.8769376031120313,
+        "distance_max_A": 3.7913588400334777
+      }
+    },
+    {
+      "source": "S1_B5",
+      "target": "S3_B12",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.20410559165431516,
+        -0.06635313400972079,
+        0.07057485353388457
+      ],
+      "reverse_image_fractional": [
+        0.2324365534561316,
+        -0.10771370275546784,
+        -0.02083818091162172
+      ],
+      "target_image_cartesian": [
+        25.04442,
+        -6.065099999999999,
+        6.7941
+      ],
+      "reverse_image_cartesian": [
+        30.21741,
+        -9.845719999999998,
+        -2.00605
+      ],
+      "distance_A": 10.885566275899478,
+      "source_description": "segment=1 chain=A residue=DA:105",
+      "target_description": "segment=3 chain=C residue=DT:112",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N1",
+          "N6"
+        ],
+        "atoms_2": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "base_1": "A",
+        "base_2": "T",
+        "distance_min_A": 2.9799497746941985,
+        "distance_max_A": 3.892066088519053
+      }
+    },
+    {
+      "source": "S1_B6",
+      "target": "S3_B11",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.17587457262625553,
+        -0.04344598108930827,
+        0.048177795321394434
+      ],
+      "reverse_image_fractional": [
+        0.18020371560747006,
+        -0.1314445399448276,
+        -0.0007817758756803921
+      ],
+      "target_image_cartesian": [
+        20.85583,
+        -3.97124,
+        4.63798
+      ],
+      "reverse_image_cartesian": [
+        25.95675,
+        -12.01487,
+        -0.07526
+      ],
+      "distance_A": 10.627040967310702,
+      "source_description": "segment=1 chain=A residue=DG:106",
+      "target_description": "segment=3 chain=C residue=DC:111",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.7461068525641914,
+        "distance_max_A": 3.7438333993915927
+      }
+    },
+    {
+      "source": "S1_B7",
+      "target": "S3_B10",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.16079417535642176,
+        -0.019026351741987056,
+        0.006536128308472181
+      ],
+      "reverse_image_fractional": [
+        0.14028928374998628,
+        -0.12665953495675292,
+        0.013791706486059749
+      ],
+      "target_image_cartesian": [
+        17.975430000000003,
+        -1.7391299999999998,
+        0.62922
+      ],
+      "reverse_image_cartesian": [
+        21.49138,
+        -11.577489999999997,
+        1.3277
+      ],
+      "distance_A": 10.471060414423173,
+      "source_description": "segment=1 chain=A residue=DC:107",
+      "target_description": "segment=3 chain=C residue=DG:110",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "atoms_2": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "base_1": "C",
+        "base_2": "G",
+        "distance_min_A": 2.640820328269232,
+        "distance_max_A": 3.721660052248194
+      }
+    },
+    {
+      "source": "S1_B8",
+      "target": "S3_B9",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.1488242246263978,
+        -0.016900898431174604,
+        -0.056498109444467516
+      ],
+      "reverse_image_fractional": [
+        0.10793758815959194,
+        -0.10331039977487848,
+        0.021409191008434785
+      ],
+      "target_image_cartesian": [
+        16.59987,
+        -1.5448499999999998,
+        -5.43896
+      ],
+      "reverse_image_cartesian": [
+        16.84454,
+        -9.443229999999998,
+        2.06102
+      ],
+      "distance_A": 10.89467622436298,
+      "source_description": "segment=1 chain=A residue=DC:108",
+      "target_description": "segment=3 chain=C residue=DG:109",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "atoms_2": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "base_1": "C",
+        "base_2": "G",
+        "distance_min_A": 2.76239246127338,
+        "distance_max_A": 3.6854073077612504
+      }
+    },
+    {
+      "source": "S1_B9",
+      "target": "S2_B3",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.12185540477277329,
+        -0.019322720540576238,
+        -0.08500290854697301
+      ],
+      "reverse_image_fractional": [
+        0.0790184489523569,
+        -0.07306962336069403,
+        0.005194561017160427
+      ],
+      "target_image_cartesian": [
+        13.881200000000003,
+        -1.7662199999999995,
+        -8.18306
+      ],
+      "reverse_image_cartesian": [
+        12.196299999999999,
+        -6.679029999999999,
+        0.50007
+      ],
+      "distance_A": 10.117872143044702,
+      "source_description": "segment=1 chain=A residue=DT:109",
+      "target_description": "segment=2 chain=B residue=DA:107",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "atoms_2": [
+          "N1",
+          "N6"
+        ],
+        "base_1": "T",
+        "base_2": "A",
+        "distance_min_A": 2.626609658133465,
+        "distance_max_A": 3.7754457972138864
+      }
+    },
+    {
+      "source": "S1_B10",
+      "target": "S2_B2",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.09312645217781383,
+        -0.055169779377685524,
+        -0.11731426850043626
+      ],
+      "reverse_image_fractional": [
+        0.046001778869059436,
+        -0.06665978655399746,
+        -0.01916150745834545
+      ],
+      "target_image_cartesian": [
+        12.740720000000003,
+        -5.042869999999998,
+        -11.29361
+      ],
+      "reverse_image_cartesian": [
+        8.37322,
+        -6.0931299999999995,
+        -1.84464
+      ],
+      "distance_A": 10.46236762776476,
+      "source_description": "segment=1 chain=A residue=DG:110",
+      "target_description": "segment=2 chain=B residue=DC:106",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.6619574151552476,
+        "distance_max_A": 3.654996128753078
+      }
+    },
+    {
+      "source": "S1_B11",
+      "target": "S2_B1",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.05665626682599075,
+        -0.10486685562483361,
+        -0.12694218224124318
+      ],
+      "reverse_image_fractional": [
+        0.013306354439116963,
+        -0.0586253367317787,
+        -0.05233691361615489
+      ],
+      "target_image_cartesian": [
+        11.514090000000001,
+        -9.585499999999998,
+        -12.22047
+      ],
+      "reverse_image_cartesian": [
+        4.498310000000001,
+        -5.35873,
+        -5.03837
+      ],
+      "distance_A": 10.893544604549064,
+      "source_description": "segment=1 chain=A residue=DT:111",
+      "target_description": "segment=2 chain=B residue=DA:105",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "atoms_2": [
+          "N1",
+          "N6"
+        ],
+        "base_1": "T",
+        "base_2": "A",
+        "distance_min_A": 2.789279397460929,
+        "distance_max_A": 3.7964323218780027
+      }
+    },
+    {
+      "source": "S1_B12",
+      "target": "S2_B7",
+      "kind": "base_pair",
+      "operation": "-x+y,-x,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y,-x,z",
+      "reverse_image_operation": "-y,x-y,z",
+      "target_image_fractional": [
+        0.015741470257973067,
+        -0.1533586455448121,
+        -0.11801772136119998
+      ],
+      "reverse_image_fractional": [
+        0.063356406755769,
+        0.06685561249420237,
+        -0.11069659700004153
+      ],
+      "target_image_cartesian": [
+        9.754737441977422,
+        -14.017959136000636,
+        -11.36133
+      ],
+      "reverse_image_cartesian": [
+        3.158873997888363,
+        6.111029740949127,
+        -10.65654
+      ],
+      "distance_A": 10.231362865379284,
+      "source_description": "segment=1 chain=A residue=DA:112",
+      "target_description": "segment=2 chain=B residue=DT:114",
+      "evidence": {
+        "origin": "inferred",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N1",
+          "N6"
+        ],
+        "atoms_2": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "base_1": "A",
+        "base_2": "T",
+        "distance_min_A": 2.385280720340971,
+        "distance_max_A": 3.3969586441441053
+      }
+    },
+    {
+      "source": "S2_B4",
+      "target": "S4_B3",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.183714549791313,
+        0.11785194438162544,
+        -0.2071082810487389
+      ],
+      "reverse_image_fractional": [
+        0.17945329574733607,
+        0.05455023840078979,
+        -0.11681680309136992
+      ],
+      "target_image_cartesian": [
+        13.171059999999999,
+        10.77242,
+        -19.9379
+      ],
+      "reverse_image_cartesian": [
+        16.06195,
+        4.98624,
+        -11.245720000000002
+      ],
+      "distance_A": 10.83471813832275,
+      "source_description": "segment=2 chain=B residue=DC:111",
+      "target_description": "segment=4 chain=D residue=DG:115",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "atoms_2": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "base_1": "C",
+        "base_2": "G",
+        "distance_min_A": 2.7441686122758555,
+        "distance_max_A": 3.6718451037863766
+      }
+    },
+    {
+      "source": "S2_B5",
+      "target": "S4_B2",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.12470391212342252,
+        0.0906861173295475,
+        -0.19598921760086427
+      ],
+      "reverse_image_fractional": [
+        0.18784622643559168,
+        0.11001934041891093,
+        -0.09689159429924792
+      ],
+      "target_image_cartesian": [
+        8.376299999999999,
+        8.28929,
+        -18.867490000000004
+      ],
+      "reverse_image_cartesian": [
+        14.020499999999998,
+        10.056469999999997,
+        -9.32756
+      ],
+      "distance_A": 11.224534876657478,
+      "source_description": "segment=2 chain=B residue=DC:112",
+      "target_description": "segment=4 chain=D residue=DG:114",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "atoms_2": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "base_1": "C",
+        "base_2": "G",
+        "distance_min_A": 2.902939676569252,
+        "distance_max_A": 3.8685157223539886
+      }
+    },
+    {
+      "source": "S2_B6",
+      "target": "S4_B1",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.09581924923983469,
+        0.07417064055855364,
+        -0.15004591349150287
+      ],
+      "reverse_image_fractional": [
+        0.18995561953781348,
+        0.16038420372644605,
+        -0.10583340258445173
+      ],
+      "target_image_cartesian": [
+        6.1991900000000015,
+        6.7796699999999985,
+        -14.44462
+      ],
+      "reverse_image_cartesian": [
+        11.585209999999998,
+        14.660139999999997,
+        -10.18837
+      ],
+      "distance_A": 10.451157013642078,
+      "source_description": "segment=2 chain=B residue=DG:113",
+      "target_description": "segment=4 chain=D residue=DC:113",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.142842533598773,
+        "distance_max_A": 3.4208236583898923
+      }
+    },
+    {
+      "source": "S3_B3",
+      "target": "S4_B9",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.2347238150693924,
+        -0.05827404835515634,
+        -0.2544500768687414
+      ],
+      "reverse_image_fractional": [
+        0.27398415641549984,
+        0.03778346626975192,
+        -0.31911974903394685
+      ],
+      "target_image_cartesian": [
+        27.84972,
+        -5.326619999999999,
+        -24.4954
+      ],
+      "reverse_image_cartesian": [
+        26.924240000000005,
+        3.453649999999999,
+        -30.72102
+      ],
+      "distance_A": 10.803147637966445,
+      "source_description": "segment=3 chain=C residue=DT:103",
+      "target_description": "segment=4 chain=D residue=DA:121",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "atoms_2": [
+          "N1",
+          "N6"
+        ],
+        "base_1": "T",
+        "base_2": "A",
+        "distance_min_A": 2.669889314447325,
+        "distance_max_A": 3.903114789203615
+      }
+    },
+    {
+      "source": "S3_B4",
+      "target": "S4_B8",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.24223402970908162,
+        -0.027871467048718863,
+        -0.2078426891594299
+      ],
+      "reverse_image_fractional": [
+        0.2249594274273001,
+        0.010736121096179727,
+        -0.3023455353803964
+      ],
+      "target_image_cartesian": [
+        27.03795,
+        -2.5476299999999994,
+        -20.0086
+      ],
+      "reverse_image_cartesian": [
+        23.17721,
+        0.9813499999999995,
+        -29.106200000000005
+      ],
+      "distance_A": 10.494062080433867,
+      "source_description": "segment=3 chain=C residue=DG:104",
+      "target_description": "segment=4 chain=D residue=DC:120",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.635115392141303,
+        "distance_max_A": 3.6570753048030067
+      }
+    },
+    {
+      "source": "S3_B5",
+      "target": "S4_B7",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.26167263345782393,
+        0.016909650555163976,
+        -0.17858904308804582
+      ],
+      "reverse_image_fractional": [
+        0.19262891419127168,
+        -0.011658047956907301,
+        -0.264205655046329
+      ],
+      "target_image_cartesian": [
+        26.726379999999995,
+        1.5456499999999997,
+        -17.19241
+      ],
+      "reverse_image_cartesian": [
+        20.94664,
+        -1.0656199999999998,
+        -25.43455
+      ],
+      "distance_A": 10.399855636502846,
+      "source_description": "segment=3 chain=C residue=DA:105",
+      "target_description": "segment=4 chain=D residue=DT:119",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N1",
+          "N6"
+        ],
+        "atoms_2": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "base_1": "A",
+        "base_2": "T",
+        "distance_min_A": 2.717480851855261,
+        "distance_max_A": 3.677567707384868
+      }
+    },
+    {
+      "source": "S3_B6",
+      "target": "S4_B6",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.2670945886877819,
+        0.060828683946096335,
+        -0.16923048157227738
+      ],
+      "reverse_image_fractional": [
+        0.17578825123621752,
+        -0.01846205854777401,
+        -0.21977635351310923
+      ],
+      "target_image_cartesian": [
+        24.980890000000002,
+        5.560129999999999,
+        -16.29148
+      ],
+      "reverse_image_cartesian": [
+        19.52823,
+        -1.6875499999999999,
+        -21.15743
+      ],
+      "distance_A": 10.292610740745033,
+      "source_description": "segment=3 chain=C residue=DT:106",
+      "target_description": "segment=4 chain=D residue=DA:118",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "atoms_2": [
+          "N1",
+          "N6"
+        ],
+        "base_1": "T",
+        "base_2": "A",
+        "distance_min_A": 2.6260814005091326,
+        "distance_max_A": 3.6705012060616444
+      }
+    },
+    {
+      "source": "S3_B7",
+      "target": "S4_B5",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.25437342734995033,
+        0.10170449442438356,
+        -0.186681244027091
+      ],
+      "reverse_image_fractional": [
+        0.180203670116722,
+        -0.008908130599455099,
+        -0.16709560809407073
+      ],
+      "target_image_cartesian": [
+        21.48105,
+        9.296439999999999,
+        -17.971429999999998
+      ],
+      "reverse_image_cartesian": [
+        19.49007,
+        -0.8142599999999998,
+        -16.085960000000004
+      ],
+      "distance_A": 10.475936854109992,
+      "source_description": "segment=3 chain=C residue=DG:107",
+      "target_description": "segment=4 chain=D residue=DC:117",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 7,
+        "atoms_1": [
+          "N1",
+          "N2",
+          "O6"
+        ],
+        "atoms_2": [
+          "N3",
+          "N4",
+          "O2"
+        ],
+        "base_1": "G",
+        "base_2": "C",
+        "distance_min_A": 2.637470090465481,
+        "distance_max_A": 3.716414302967309
+      }
+    },
+    {
+      "source": "S3_B8",
+      "target": "S4_B4",
+      "kind": "base_pair",
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "reverse_image_operation": "x,y,z",
+      "target_image_fractional": [
+        0.22741628797538918,
+        0.12161590470479312,
+        -0.1948394066564175
+      ],
+      "reverse_image_fractional": [
+        0.18031536449879612,
+        0.022241006883273504,
+        -0.13379658868990732
+      ],
+      "target_image_cartesian": [
+        17.585010000000004,
+        11.116469999999998,
+        -18.756800000000002
+      ],
+      "reverse_image_cartesian": [
+        17.85801,
+        2.0329699999999997,
+        -12.88033
+      ],
+      "distance_A": 10.822079324736997,
+      "source_description": "segment=3 chain=C residue=DT:108",
+      "target_description": "segment=4 chain=D residue=DA:116",
+      "evidence": {
+        "origin": "both",
+        "atom_pairs": 5,
+        "atoms_1": [
+          "N3",
+          "O2",
+          "O4"
+        ],
+        "atoms_2": [
+          "N1",
+          "N6"
+        ],
+        "base_1": "T",
+        "base_2": "A",
+        "distance_min_A": 2.935838235478923,
+        "distance_max_A": 3.984946098782266
+      }
+    }
+  ],
+  "join_candidates": [
+    {
+      "kind": "backbone_join_o5",
+      "status": "o5_fallback_disabled",
+      "method": "natopo_backbone_join_v1",
+      "distance_A": 2.1577832932841186,
+      "cutoff_A": 6.0,
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "o3_atom": {
+        "chain": "C",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DC",
+        "atom": "O3'",
+        "altloc": "",
+        "segment": 3,
+        "serial": "661",
+        "label_asym": "C",
+        "label_seq": "14",
+        "description": "segment=3 chain=C residue=DC:114 atom=O3' altloc=."
+      },
+      "p_atom": {
+        "chain": "C",
+        "seq": "101",
+        "insertion": "",
+        "residue": "DT",
+        "atom": "O5'",
+        "altloc": "",
+        "segment": 3,
+        "serial": "387",
+        "label_asym": "C",
+        "label_seq": "1",
+        "description": "segment=3 chain=C residue=DT:101 atom=O5' altloc=."
+      },
+      "source": "S3_N14",
+      "target": "S3_N1"
+    },
+    {
+      "kind": "backbone_join",
+      "status": "stitched",
+      "method": "natopo_backbone_join_v1",
+      "distance_A": 2.930955947091795,
+      "cutoff_A": 3.5,
+      "operation": "-x+y,-x,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y,-x,z",
+      "o3_atom": {
+        "chain": "A",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DA",
+        "atom": "O3'",
+        "altloc": "",
+        "segment": 1,
+        "serial": "233",
+        "label_asym": "A",
+        "label_seq": "12",
+        "description": "segment=1 chain=A residue=DA:112 atom=O3' altloc=."
+      },
+      "p_atom": {
+        "chain": "D",
+        "seq": "113",
+        "insertion": "",
+        "residue": "DC",
+        "atom": "P",
+        "altloc": "",
+        "segment": 4,
+        "serial": "672",
+        "label_asym": "D",
+        "label_seq": "1",
+        "description": "segment=4 chain=D residue=DC:113 atom=P altloc=."
+      },
+      "source": "S1_N12",
+      "target": "S4_N1"
+    },
+    {
+      "kind": "backbone_join",
+      "status": "stitched",
+      "method": "natopo_backbone_join_v1",
+      "distance_A": 3.117419985597283,
+      "cutoff_A": 3.5,
+      "operation": "-y,x-y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-y,x-y,z",
+      "o3_atom": {
+        "chain": "B",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DT",
+        "atom": "O3'",
+        "altloc": "",
+        "segment": 2,
+        "serial": "375",
+        "label_asym": "B",
+        "label_seq": "7",
+        "description": "segment=2 chain=B residue=DT:114 atom=O3' altloc=."
+      },
+      "p_atom": {
+        "chain": "B",
+        "seq": "105",
+        "insertion": "",
+        "residue": "DA",
+        "atom": "P",
+        "altloc": "",
+        "segment": 2,
+        "serial": "246",
+        "label_asym": "B",
+        "label_seq": "1",
+        "description": "segment=2 chain=B residue=DA:105 atom=P altloc=."
+      },
+      "source": "S2_N7",
+      "target": "S2_N1"
+    }
+  ],
+  "terminal_stack_candidates": [
+    {
+      "kind": "terminal_stack",
+      "status": "stitched",
+      "method": "topostich_terminal_pi_stack_v1",
+      "polarity": "5'-3'",
+      "same_polarity": false,
+      "distance_A": 3.3751629802021794,
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "residue1": {
+        "chain": "C",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "14",
+        "description": "segment=3 chain=C residue=DC:114",
+        "end": "3'"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "101",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "1",
+        "description": "segment=3 chain=C residue=DT:101",
+        "end": "5'"
+      },
+      "source": "S3_N14",
+      "target": "S3_N1",
+      "measurements": {
+        "centroid_distance_A": 3.3751629802021794,
+        "plane_angle_deg": 2.9119125499140357,
+        "plane_separation_A": [
+          3.1952545793362557,
+          3.1915083422192776
+        ],
+        "lateral_shift_A": [
+          1.0872319514059305,
+          1.098180151191982
+        ]
+      }
+    },
+    {
+      "kind": "terminal_stack",
+      "status": "backbone_joined",
+      "method": "topostich_terminal_pi_stack_v1",
+      "polarity": "5'-3'",
+      "same_polarity": false,
+      "distance_A": 3.902470223649248,
+      "operation": "-x+y,-x,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y,-x,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "12",
+        "description": "segment=1 chain=A residue=DA:112",
+        "end": "3'"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "113",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "1",
+        "description": "segment=4 chain=D residue=DC:113",
+        "end": "5'"
+      },
+      "source": "S1_N12",
+      "target": "S4_N1",
+      "measurements": {
+        "centroid_distance_A": 3.902470223649248,
+        "plane_angle_deg": 8.702375966143727,
+        "plane_separation_A": [
+          3.7174687755203752,
+          3.6715941124543843
+        ],
+        "lateral_shift_A": [
+          1.1873077737048876,
+          1.3223730637982944
+        ]
+      }
+    },
+    {
+      "kind": "terminal_stack",
+      "status": "stitched",
+      "method": "topostich_terminal_pi_stack_v1",
+      "polarity": "5'-3'",
+      "same_polarity": false,
+      "distance_A": 3.9102316384633764,
+      "operation": "-y+1/3,x-y+2/3,z+2/3",
+      "lattice_translation": [
+        0,
+        -1,
+        -1
+      ],
+      "image_operation": "-y+1/3,x-y-1/3,z-1/3",
+      "residue1": {
+        "chain": "D",
+        "seq": "121",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "9",
+        "description": "segment=4 chain=D residue=DA:121",
+        "end": "3'"
+      },
+      "residue2": {
+        "chain": "A",
+        "seq": "101",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "1",
+        "description": "segment=1 chain=A residue=DG:101",
+        "end": "5'"
+      },
+      "source": "S4_N9",
+      "target": "S1_N1",
+      "measurements": {
+        "centroid_distance_A": 3.9102316384633764,
+        "plane_angle_deg": 4.9930241223067195,
+        "plane_separation_A": [
+          3.493400985701088,
+          3.3755915195351873
+        ],
+        "lateral_shift_A": [
+          1.7567188219924277,
+          1.97364975608189
+        ]
+      }
+    },
+    {
+      "kind": "terminal_stack",
+      "status": "backbone_joined",
+      "method": "topostich_terminal_pi_stack_v1",
+      "polarity": "5'-3'",
+      "same_polarity": false,
+      "distance_A": 4.16786733424872,
+      "operation": "-y,x-y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-y,x-y,z",
+      "residue1": {
+        "chain": "B",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "7",
+        "description": "segment=2 chain=B residue=DT:114",
+        "end": "3'"
+      },
+      "residue2": {
+        "chain": "B",
+        "seq": "105",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "1",
+        "description": "segment=2 chain=B residue=DA:105",
+        "end": "5'"
+      },
+      "source": "S2_N7",
+      "target": "S2_N1",
+      "measurements": {
+        "centroid_distance_A": 4.16786733424872,
+        "plane_angle_deg": 1.204866236433641,
+        "plane_separation_A": [
+          3.389824387962197,
+          3.4249173211428277
+        ],
+        "lateral_shift_A": [
+          2.424914170578858,
+          2.37509146334059
+        ]
+      }
+    }
+  ],
+  "stitch_parameters": {
+    "nicks": {
+      "method": "natopo_backbone_join_v1",
+      "source": "Ported from NAtopo nucleotide_interactions.find_backbone_join_candidates",
+      "join_cutoff_A": 3.5,
+      "o5_cutoff_A": 6.0,
+      "include_o5_fallback": false,
+      "polymer_link_A": [
+        0.8,
+        2.2
+      ],
+      "explicit_covalent_A": [
+        0.8,
+        2.3
+      ],
+      "image_search": "every symmetry operation and every lattice translation within the cutoff",
+      "loose_endpoints": {
+        "P": 2,
+        "O3": 4,
+        "O5_missing_phosphate": 2
+      },
+      "candidate_status_counts": {
+        "o5_fallback_disabled": 1,
+        "stitched": 2
+      }
+    },
+    "terminal_stacks": {
+      "method": "topostich_terminal_pi_stack_v1",
+      "source": "Stack geometry ported from NAtopo nucleotide_interactions.find_pi_interactions",
+      "centroid_cutoff_A": 5.5,
+      "max_angle_deg": 30.0,
+      "max_lateral_shift_A": 3.0,
+      "min_plane_separation_A": 2.0,
+      "max_plane_separation_A": 4.5,
+      "ring_atom_source": "TopoTrace NARestraints-derived residue catalog",
+      "image_search": "every symmetry operation and every lattice translation within the centroid cutoff",
+      "chain_ends": 8,
+      "single_residue_segments": 0,
+      "base_planes": 8,
+      "plane_diagnostics": [],
+      "candidate_status_counts": {
+        "backbone_joined": 2,
+        "stitched": 2
+      },
+      "polarity_counts": {
+        "5'-3'": 4
+      },
+      "stitched_polarity_counts": {
+        "5'-3'": 2
+      }
+    },
+    "base_pairs": {
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "source": "Ported from NAtopo nucleotide_interactions.find_hydrogen_bond_candidates and structural_features.FeatureGraph significant hydrogen pairs",
+      "base_atom": "C1'",
+      "hydrogen_cutoff_A": 4.0,
+      "max_plane_angle_deg": 30.0,
+      "min_atoms_per_base": 2,
+      "contact_atoms": {
+        "A": [
+          "N1",
+          "N3",
+          "N6",
+          "N7"
+        ],
+        "G": [
+          "N1",
+          "N2",
+          "N3",
+          "O6",
+          "N7"
+        ],
+        "C": [
+          "O2",
+          "N3",
+          "N4"
+        ],
+        "T": [
+          "O2",
+          "N3",
+          "O4"
+        ],
+        "U": [
+          "O2",
+          "N3",
+          "O4"
+        ]
+      },
+      "contact_atom_source": "NAtopo bases.xlsx Atom ID columns (Donor/Acceptor ignored)",
+      "interchain_only": true,
+      "deposited_hydrogen_links": 46,
+      "image_search": "every symmetry operation and every lattice translation within reach",
+      "terminal_stack_nodes": "O3'",
+      "base_planes": 42,
+      "plane_diagnostics": [],
+      "candidate_status_counts": {
+        "stitched": 21,
+        "weak_contact": 1
+      },
+      "multiple_partner_residues": 0,
+      "base_node_count": 42,
+      "residues_without_base_node": [],
+      "unpaired_base_nodes": []
+    }
+  },
+  "base_atom": "C1'",
+  "base_node_count": 42,
+  "base_link_count": 42,
+  "base_links": [
+    [
+      "S1_N1",
+      "S1_B1"
+    ],
+    [
+      "S1_N2",
+      "S1_B2"
+    ],
+    [
+      "S1_N3",
+      "S1_B3"
+    ],
+    [
+      "S1_N4",
+      "S1_B4"
+    ],
+    [
+      "S1_N5",
+      "S1_B5"
+    ],
+    [
+      "S1_N6",
+      "S1_B6"
+    ],
+    [
+      "S1_N7",
+      "S1_B7"
+    ],
+    [
+      "S1_N8",
+      "S1_B8"
+    ],
+    [
+      "S1_N9",
+      "S1_B9"
+    ],
+    [
+      "S1_N10",
+      "S1_B10"
+    ],
+    [
+      "S1_N11",
+      "S1_B11"
+    ],
+    [
+      "S1_N12",
+      "S1_B12"
+    ],
+    [
+      "S2_N1",
+      "S2_B1"
+    ],
+    [
+      "S2_N2",
+      "S2_B2"
+    ],
+    [
+      "S2_N3",
+      "S2_B3"
+    ],
+    [
+      "S2_N4",
+      "S2_B4"
+    ],
+    [
+      "S2_N5",
+      "S2_B5"
+    ],
+    [
+      "S2_N6",
+      "S2_B6"
+    ],
+    [
+      "S2_N7",
+      "S2_B7"
+    ],
+    [
+      "S3_N1",
+      "S3_B1"
+    ],
+    [
+      "S3_N2",
+      "S3_B2"
+    ],
+    [
+      "S3_N3",
+      "S3_B3"
+    ],
+    [
+      "S3_N4",
+      "S3_B4"
+    ],
+    [
+      "S3_N5",
+      "S3_B5"
+    ],
+    [
+      "S3_N6",
+      "S3_B6"
+    ],
+    [
+      "S3_N7",
+      "S3_B7"
+    ],
+    [
+      "S3_N8",
+      "S3_B8"
+    ],
+    [
+      "S3_N9",
+      "S3_B9"
+    ],
+    [
+      "S3_N10",
+      "S3_B10"
+    ],
+    [
+      "S3_N11",
+      "S3_B11"
+    ],
+    [
+      "S3_N12",
+      "S3_B12"
+    ],
+    [
+      "S3_N13",
+      "S3_B13"
+    ],
+    [
+      "S3_N14",
+      "S3_B14"
+    ],
+    [
+      "S4_N1",
+      "S4_B1"
+    ],
+    [
+      "S4_N2",
+      "S4_B2"
+    ],
+    [
+      "S4_N3",
+      "S4_B3"
+    ],
+    [
+      "S4_N4",
+      "S4_B4"
+    ],
+    [
+      "S4_N5",
+      "S4_B5"
+    ],
+    [
+      "S4_N6",
+      "S4_B6"
+    ],
+    [
+      "S4_N7",
+      "S4_B7"
+    ],
+    [
+      "S4_N8",
+      "S4_B8"
+    ],
+    [
+      "S4_N9",
+      "S4_B9"
+    ]
+  ],
+  "base_pair_candidates": [
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "inferred",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.1102512005270566,
+      "distance_max_A": 3.714908122374325,
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "residue1": {
+        "chain": "A",
+        "seq": "101",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "1",
+        "description": "segment=1 chain=A residue=DG:101"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "102",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "2",
+        "description": "segment=3 chain=C residue=DC:102"
+      },
+      "source": "S1_B1",
+      "target": "S3_B2",
+      "contacts": [
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.1102512005270566,
+          "plane_angles_deg": [
+            6.153426955410706,
+            12.784059713410034
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.586121684300008,
+          "plane_angles_deg": [
+            8.987000113991815,
+            10.089890373895585
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.9718466101833263,
+          "plane_angles_deg": [
+            11.745101332096498,
+            7.309589419345715
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.050405237239794,
+          "plane_angles_deg": [
+            7.6389297041869995,
+            8.801206331660941
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.462562688549943,
+          "plane_angles_deg": [
+            3.720600811703417,
+            7.5222570015980885
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.4658453515989205,
+          "plane_angles_deg": [
+            10.068377209410148,
+            7.3974064298304265
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.714908122374325,
+          "plane_angles_deg": [
+            6.227987594034458,
+            5.9478430822057815
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "inferred",
+      "atom_pairs": 4,
+      "atoms_1": [
+        "N1",
+        "N6"
+      ],
+      "atoms_2": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "base_1": "A",
+      "base_2": "T",
+      "distance_min_A": 3.2671084901600866,
+      "distance_max_A": 3.656174249373982,
+      "operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y+2/3,-x+1/3,z+1/3",
+      "residue1": {
+        "chain": "A",
+        "seq": "102",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "2",
+        "description": "segment=1 chain=A residue=DA:102"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "101",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "1",
+        "description": "segment=3 chain=C residue=DT:101"
+      },
+      "source": "S1_B2",
+      "target": "S3_B1",
+      "contacts": [
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.2671084901600866,
+          "plane_angles_deg": [
+            1.3341433633410746,
+            0.8933977223812274
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "N3",
+          "distance_A": 3.4873520239994984,
+          "plane_angles_deg": [
+            3.923545271915387,
+            3.4632731245945503
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 3.497690756886194,
+          "plane_angles_deg": [
+            3.9678323628552232,
+            0.8515472924272687
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "O4",
+          "distance_A": 3.656174249373982,
+          "plane_angles_deg": [
+            6.517318160895232,
+            3.473713023445799
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.880542499096307,
+      "distance_max_A": 3.790434608893814,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "103",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "3",
+        "description": "segment=1 chain=A residue=DG:103"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "14",
+        "description": "segment=3 chain=C residue=DC:114"
+      },
+      "source": "S1_B3",
+      "target": "S3_B14",
+      "contacts": [
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.880542499096307,
+          "plane_angles_deg": [
+            0.9093953447817028,
+            1.3628364187014061
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.9914615787771703,
+          "plane_angles_deg": [
+            4.812873865381816,
+            5.334257159737076
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 3.011970352144921,
+          "plane_angles_deg": [
+            8.892968430293967,
+            9.380195609009139
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.6566136076566798,
+          "plane_angles_deg": [
+            4.023861451780057,
+            0.9632354340981945
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.7586753416330083,
+          "plane_angles_deg": [
+            3.796914174761976,
+            7.547881320612878
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.784796883651749,
+          "plane_angles_deg": [
+            7.098477177108211,
+            4.171136808134549
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.790434608893814,
+          "plane_angles_deg": [
+            0.6063874648617927,
+            4.314269432629545
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "weak_contact",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": false,
+      "origin": "inferred",
+      "atom_pairs": 1,
+      "atoms_1": [
+        "N4"
+      ],
+      "atoms_2": [
+        "O4"
+      ],
+      "base_1": "C",
+      "base_2": "T",
+      "distance_min_A": 3.190682996804916,
+      "distance_max_A": 3.190682996804916,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "104",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "4",
+        "description": "segment=1 chain=A residue=DC:104"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "12",
+        "description": "segment=3 chain=C residue=DT:112"
+      },
+      "source": "S1_B4",
+      "target": "S3_B12",
+      "contacts": [
+        {
+          "atom_1": "N4",
+          "atom_2": "O4",
+          "distance_A": 3.190682996804916,
+          "plane_angles_deg": [
+            19.855242559551726,
+            20.91128230056807
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "atoms_2": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "base_1": "C",
+      "base_2": "G",
+      "distance_min_A": 2.8769376031120313,
+      "distance_max_A": 3.7913588400334777,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "104",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "4",
+        "description": "segment=1 chain=A residue=DC:104"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "113",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "13",
+        "description": "segment=3 chain=C residue=DG:113"
+      },
+      "source": "S1_B4",
+      "target": "S3_B13",
+      "contacts": [
+        {
+          "atom_1": "O2",
+          "atom_2": "N2",
+          "distance_A": 2.8769376031120313,
+          "plane_angles_deg": [
+            6.880332641138703,
+            2.0918243730026167
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.9563545510307114,
+          "plane_angles_deg": [
+            16.638048931602334,
+            7.473158610760602
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "O6",
+          "distance_A": 2.9956278910104976,
+          "plane_angles_deg": [
+            26.17679224576928,
+            17.07358545770999
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N2",
+          "distance_A": 3.676953958441686,
+          "plane_angles_deg": [
+            5.462974493096605,
+            6.1641906962830975
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "O6",
+          "distance_A": 3.6815917008136574,
+          "plane_angles_deg": [
+            20.964812322945345,
+            5.998299186359096
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.716859528943756,
+          "plane_angles_deg": [
+            13.078426948670389,
+            1.7780607450347996
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "N1",
+          "distance_A": 3.7913588400334777,
+          "plane_angles_deg": [
+            12.96669076636306,
+            13.410283823424669
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N1",
+        "N6"
+      ],
+      "atoms_2": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "base_1": "A",
+      "base_2": "T",
+      "distance_min_A": 2.9799497746941985,
+      "distance_max_A": 3.892066088519053,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "105",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "5",
+        "description": "segment=1 chain=A residue=DA:105"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "12",
+        "description": "segment=3 chain=C residue=DT:112"
+      },
+      "source": "S1_B5",
+      "target": "S3_B12",
+      "contacts": [
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.9799497746941985,
+          "plane_angles_deg": [
+            18.048841475176022,
+            19.018861579427508
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "O4",
+          "distance_A": 3.0262450825238862,
+          "plane_angles_deg": [
+            22.469916443010245,
+            23.49435840552095
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O4",
+          "distance_A": 3.670178668402944,
+          "plane_angles_deg": [
+            18.22843679997475,
+            15.386073412326667
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.813340033907283,
+          "plane_angles_deg": [
+            10.613995749698931,
+            14.740012458172123
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "N3",
+          "distance_A": 3.892066088519053,
+          "plane_angles_deg": [
+            13.852351500844721,
+            18.016261298747573
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.7461068525641914,
+      "distance_max_A": 3.7438333993915927,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "106",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "6",
+        "description": "segment=1 chain=A residue=DG:106"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "111",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "11",
+        "description": "segment=3 chain=C residue=DC:111"
+      },
+      "source": "S1_B6",
+      "target": "S3_B11",
+      "contacts": [
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.7461068525641914,
+          "plane_angles_deg": [
+            0.8380212363309523,
+            9.76401624292514
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.869489074974849,
+          "plane_angles_deg": [
+            1.407658054773854,
+            12.061776970260194
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.8970505360797563,
+          "plane_angles_deg": [
+            3.3235217871111002,
+            13.969301104955612
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.610433460666462,
+          "plane_angles_deg": [
+            1.2357302026636485,
+            7.293248135170639
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.615929350830851,
+          "plane_angles_deg": [
+            1.0064986872662294,
+            11.315655505499874
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.6364911523335266,
+          "plane_angles_deg": [
+            0.7489676124930316,
+            9.6088018088194
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.7438333993915927,
+          "plane_angles_deg": [
+            2.6780770967109406,
+            9.059182502996158
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "atoms_2": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "base_1": "C",
+      "base_2": "G",
+      "distance_min_A": 2.640820328269232,
+      "distance_max_A": 3.721660052248194,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "107",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "7",
+        "description": "segment=1 chain=A residue=DC:107"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "110",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "10",
+        "description": "segment=3 chain=C residue=DG:110"
+      },
+      "source": "S1_B7",
+      "target": "S3_B10",
+      "contacts": [
+        {
+          "atom_1": "O2",
+          "atom_2": "N2",
+          "distance_A": 2.640820328269232,
+          "plane_angles_deg": [
+            0.5092498480222187,
+            6.902223792799385
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.7986887295481826,
+          "plane_angles_deg": [
+            0.8240705567287617,
+            7.2007415412241835
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "O6",
+          "distance_A": 2.8771845163110434,
+          "plane_angles_deg": [
+            1.5314943473271265,
+            7.910563929666443
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.5587232063339815,
+          "plane_angles_deg": [
+            0.9651287154659816,
+            5.039848613236028
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N2",
+          "distance_A": 3.559750761584301,
+          "plane_angles_deg": [
+            0.06084516317831126,
+            5.732091719600894
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "O6",
+          "distance_A": 3.571621106290533,
+          "plane_angles_deg": [
+            1.528260131261124,
+            5.600895881060292
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "N1",
+          "distance_A": 3.721660052248194,
+          "plane_angles_deg": [
+            0.3370519836677911,
+            6.142114043560298
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "atoms_2": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "base_1": "C",
+      "base_2": "G",
+      "distance_min_A": 2.76239246127338,
+      "distance_max_A": 3.6854073077612504,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "108",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "8",
+        "description": "segment=1 chain=A residue=DC:108"
+      },
+      "residue2": {
+        "chain": "C",
+        "seq": "109",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "9",
+        "description": "segment=3 chain=C residue=DG:109"
+      },
+      "source": "S1_B8",
+      "target": "S3_B9",
+      "contacts": [
+        {
+          "atom_1": "N4",
+          "atom_2": "O6",
+          "distance_A": 2.76239246127338,
+          "plane_angles_deg": [
+            8.1755319046677,
+            8.068953195980733
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N2",
+          "distance_A": 2.825477611679131,
+          "plane_angles_deg": [
+            3.053024449274837,
+            3.105245944890183
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.8368614557112246,
+          "plane_angles_deg": [
+            2.3888924214346896,
+            2.2437426104659304
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "O6",
+          "distance_A": 3.538078295699517,
+          "plane_angles_deg": [
+            6.390453903720774,
+            1.830119865455801
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N2",
+          "distance_A": 3.633593496058688,
+          "plane_angles_deg": [
+            2.4997764449367845,
+            1.767574130912796
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.643914779931056,
+          "plane_angles_deg": [
+            1.985381380008016,
+            2.4232750196263724
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "N1",
+          "distance_A": 3.6854073077612504,
+          "plane_angles_deg": [
+            1.8235485804830949,
+            6.009143557903701
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "atoms_2": [
+        "N1",
+        "N6"
+      ],
+      "base_1": "T",
+      "base_2": "A",
+      "distance_min_A": 2.626609658133465,
+      "distance_max_A": 3.7754457972138864,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "109",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "9",
+        "description": "segment=1 chain=A residue=DT:109"
+      },
+      "residue2": {
+        "chain": "B",
+        "seq": "107",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "3",
+        "description": "segment=2 chain=B residue=DA:107"
+      },
+      "source": "S1_B9",
+      "target": "S2_B3",
+      "contacts": [
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.626609658133465,
+          "plane_angles_deg": [
+            2.545228388640091,
+            1.975951167082636
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N6",
+          "distance_A": 3.038177656062924,
+          "plane_angles_deg": [
+            5.689355118898681,
+            1.1629109745505755
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.396739149507951,
+          "plane_angles_deg": [
+            1.9468056021210427,
+            3.954820492807042
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N1",
+          "distance_A": 3.4971762557097397,
+          "plane_angles_deg": [
+            1.9010401270022403,
+            0.9426121686867772
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N6",
+          "distance_A": 3.7754457972138864,
+          "plane_angles_deg": [
+            4.58526584915646,
+            1.311871850982059
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.6619574151552476,
+      "distance_max_A": 3.654996128753078,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "110",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "10",
+        "description": "segment=1 chain=A residue=DG:110"
+      },
+      "residue2": {
+        "chain": "B",
+        "seq": "106",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "2",
+        "description": "segment=2 chain=B residue=DC:106"
+      },
+      "source": "S1_B10",
+      "target": "S2_B2",
+      "contacts": [
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.6619574151552476,
+          "plane_angles_deg": [
+            0.18832788653105853,
+            2.0732768217932223
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.7369312612486283,
+          "plane_angles_deg": [
+            2.0002631575567573,
+            0.22672333699315225
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.746989871859743,
+          "plane_angles_deg": [
+            3.945143662828408,
+            1.7107934330600922
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.476951558031837,
+          "plane_angles_deg": [
+            1.6314861298793237,
+            1.321728133967104
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.524512290374373,
+          "plane_angles_deg": [
+            0.21617736726622228,
+            0.14279680765119754
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.5483379636810244,
+          "plane_angles_deg": [
+            1.469263672809084,
+            1.588272612987146
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.654996128753078,
+          "plane_angles_deg": [
+            2.9096933585517575,
+            0.14141417394810046
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "atoms_2": [
+        "N1",
+        "N6"
+      ],
+      "base_1": "T",
+      "base_2": "A",
+      "distance_min_A": 2.789279397460929,
+      "distance_max_A": 3.7964323218780027,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "111",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "11",
+        "description": "segment=1 chain=A residue=DT:111"
+      },
+      "residue2": {
+        "chain": "B",
+        "seq": "105",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "1",
+        "description": "segment=2 chain=B residue=DA:105"
+      },
+      "source": "S1_B11",
+      "target": "S2_B1",
+      "contacts": [
+        {
+          "atom_1": "O4",
+          "atom_2": "N6",
+          "distance_A": 2.789279397460929,
+          "plane_angles_deg": [
+            2.2633437060323485,
+            1.6939689280673642
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.8763978266401193,
+          "plane_angles_deg": [
+            3.7030181766841985,
+            0.28845875690599304
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N1",
+          "distance_A": 3.494075121201605,
+          "plane_angles_deg": [
+            3.057389000239187,
+            1.2886817733993785
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.795788681275605,
+          "plane_angles_deg": [
+            2.7267553924009627,
+            0.7164361937043175
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N6",
+          "distance_A": 3.7964323218780027,
+          "plane_angles_deg": [
+            1.6538132397358327,
+            0.27700105214312365
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "inferred",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N1",
+        "N6"
+      ],
+      "atoms_2": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "base_1": "A",
+      "base_2": "T",
+      "distance_min_A": 2.385280720340971,
+      "distance_max_A": 3.3969586441441053,
+      "operation": "-x+y,-x,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "-x+y,-x,z",
+      "residue1": {
+        "chain": "A",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 1,
+        "label_asym": "A",
+        "label_seq": "12",
+        "description": "segment=1 chain=A residue=DA:112"
+      },
+      "residue2": {
+        "chain": "B",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "7",
+        "description": "segment=2 chain=B residue=DT:114"
+      },
+      "source": "S1_B12",
+      "target": "S2_B7",
+      "contacts": [
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.385280720340971,
+          "plane_angles_deg": [
+            2.106242927195312,
+            0.25814530452169987
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "O4",
+          "distance_A": 2.5189957302744355,
+          "plane_angles_deg": [
+            2.8907597787929125,
+            1.0549074519100188
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.2312926994800604,
+          "plane_angles_deg": [
+            0.7864635766193208,
+            0.18695395110831692
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O4",
+          "distance_A": 3.3306322580445906,
+          "plane_angles_deg": [
+            2.211748166383296,
+            0.16827464324881825
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "N3",
+          "distance_A": 3.3969586441441053,
+          "plane_angles_deg": [
+            1.4534798426658437,
+            0.7985177674841375
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "atoms_2": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "base_1": "C",
+      "base_2": "G",
+      "distance_min_A": 2.7441686122758555,
+      "distance_max_A": 3.6718451037863766,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "B",
+        "seq": "111",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "4",
+        "description": "segment=2 chain=B residue=DC:111"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "115",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "3",
+        "description": "segment=4 chain=D residue=DG:115"
+      },
+      "source": "S2_B4",
+      "target": "S4_B3",
+      "contacts": [
+        {
+          "atom_1": "N4",
+          "atom_2": "O6",
+          "distance_A": 2.7441686122758555,
+          "plane_angles_deg": [
+            5.3886902604773645,
+            2.6497441762689737
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N2",
+          "distance_A": 2.7906585747812276,
+          "plane_angles_deg": [
+            2.6014850682553607,
+            5.29437925512553
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.820315770423587,
+          "plane_angles_deg": [
+            1.4487695735564536,
+            1.3228877674374162
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N2",
+          "distance_A": 3.56316717470567,
+          "plane_angles_deg": [
+            1.9205014977426431,
+            1.0061431807669845
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "O6",
+          "distance_A": 3.5789743912607124,
+          "plane_angles_deg": [
+            3.8419874275991264,
+            1.266362632203711
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "N1",
+          "distance_A": 3.6175511774956264,
+          "plane_angles_deg": [
+            1.413022719983977,
+            2.2313641810552727
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.6718451037863766,
+          "plane_angles_deg": [
+            0.999541778561628,
+            4.061181400607775
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "atoms_2": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "base_1": "C",
+      "base_2": "G",
+      "distance_min_A": 2.902939676569252,
+      "distance_max_A": 3.8685157223539886,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "B",
+        "seq": "112",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "5",
+        "description": "segment=2 chain=B residue=DC:112"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "114",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "2",
+        "description": "segment=4 chain=D residue=DG:114"
+      },
+      "source": "S2_B5",
+      "target": "S4_B2",
+      "contacts": [
+        {
+          "atom_1": "N4",
+          "atom_2": "O6",
+          "distance_A": 2.902939676569252,
+          "plane_angles_deg": [
+            2.203951516937345,
+            0.11165559305312336
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 3.0526484732769337,
+          "plane_angles_deg": [
+            3.773200621887305,
+            1.698034058151633
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N2",
+          "distance_A": 3.0998251277612447,
+          "plane_angles_deg": [
+            5.319203581341816,
+            3.2144142724740847
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "O6",
+          "distance_A": 3.6939488646298284,
+          "plane_angles_deg": [
+            1.5612713647047116,
+            1.4874784958960952
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N2",
+          "distance_A": 3.8035078197632255,
+          "plane_angles_deg": [
+            4.448994058582053,
+            1.2554835721403577
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N4",
+          "atom_2": "N1",
+          "distance_A": 3.8065608109552116,
+          "plane_angles_deg": [
+            3.190813725529849,
+            0.003367679174853914
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.8685157223539886,
+          "plane_angles_deg": [
+            2.8627725448315045,
+            2.68076000506378
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.142842533598773,
+      "distance_max_A": 3.4208236583898923,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "B",
+        "seq": "113",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 2,
+        "label_asym": "B",
+        "label_seq": "6",
+        "description": "segment=2 chain=B residue=DG:113"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "113",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "1",
+        "description": "segment=4 chain=D residue=DC:113"
+      },
+      "source": "S2_B6",
+      "target": "S4_B1",
+      "contacts": [
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.142842533598773,
+          "plane_angles_deg": [
+            2.6293394806195476,
+            2.136829534962691
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.406524886573999,
+          "plane_angles_deg": [
+            1.7475810167639734,
+            6.455966497795054
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.5876012224065783,
+          "plane_angles_deg": [
+            5.628398144841056,
+            10.391712576840208
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.1087880041746176,
+          "plane_angles_deg": [
+            1.5005762125458086,
+            1.1549600814698326
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.3248701759316868,
+          "plane_angles_deg": [
+            1.832497623034875,
+            4.96614902945364
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.3526828598750593,
+          "plane_angles_deg": [
+            4.478403159693582,
+            4.583378527219208
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.4208236583898923,
+          "plane_angles_deg": [
+            1.0951833619703728,
+            7.887258424382876
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "atoms_2": [
+        "N1",
+        "N6"
+      ],
+      "base_1": "T",
+      "base_2": "A",
+      "distance_min_A": 2.669889314447325,
+      "distance_max_A": 3.903114789203615,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "103",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "3",
+        "description": "segment=3 chain=C residue=DT:103"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "121",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "9",
+        "description": "segment=4 chain=D residue=DA:121"
+      },
+      "source": "S3_B3",
+      "target": "S4_B9",
+      "contacts": [
+        {
+          "atom_1": "O4",
+          "atom_2": "N6",
+          "distance_A": 2.669889314447325,
+          "plane_angles_deg": [
+            21.043716632100395,
+            7.680817806606596
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.779574300032288,
+          "plane_angles_deg": [
+            15.999037933498695,
+            2.6856892368171077
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N1",
+          "distance_A": 3.2386606377637013,
+          "plane_angles_deg": [
+            14.077024331852893,
+            6.305687325753254
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N6",
+          "distance_A": 3.867550883207616,
+          "plane_angles_deg": [
+            14.022017475916178,
+            1.9465998875136292
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.903114789203615,
+          "plane_angles_deg": [
+            10.801522763991711,
+            1.4510745047214169
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.635115392141303,
+      "distance_max_A": 3.6570753048030067,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "104",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "4",
+        "description": "segment=3 chain=C residue=DG:104"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "120",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "8",
+        "description": "segment=4 chain=D residue=DC:120"
+      },
+      "source": "S3_B4",
+      "target": "S4_B8",
+      "contacts": [
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.635115392141303,
+          "plane_angles_deg": [
+            11.351013180958999,
+            3.4655233332659012
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.793055915534093,
+          "plane_angles_deg": [
+            8.04006868184956,
+            0.10639594329618564
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.8601817271110614,
+          "plane_angles_deg": [
+            5.35648723824084,
+            2.566815175479796
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.501129646128519,
+          "plane_angles_deg": [
+            6.305690053840303,
+            2.678180150786737
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.596432375452094,
+          "plane_angles_deg": [
+            8.389954789729593,
+            0.014017960077370542
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.6094250313034624,
+          "plane_angles_deg": [
+            6.282197733510431,
+            2.0960612959741587
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.6570753048030067,
+          "plane_angles_deg": [
+            4.119196693825719,
+            0.1427251155577446
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N1",
+        "N6"
+      ],
+      "atoms_2": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "base_1": "A",
+      "base_2": "T",
+      "distance_min_A": 2.717480851855261,
+      "distance_max_A": 3.677567707384868,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "105",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "5",
+        "description": "segment=3 chain=C residue=DA:105"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "119",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "7",
+        "description": "segment=4 chain=D residue=DT:119"
+      },
+      "source": "S3_B5",
+      "target": "S4_B7",
+      "contacts": [
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.717480851855261,
+          "plane_angles_deg": [
+            1.5799397704958433,
+            4.2416995706415
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "O4",
+          "distance_A": 2.900998322112576,
+          "plane_angles_deg": [
+            4.869164162045035,
+            7.577640575632842
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.474190722268997,
+          "plane_angles_deg": [
+            1.4808738211378087,
+            3.4215813380379014
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O4",
+          "distance_A": 3.5761256607255802,
+          "plane_angles_deg": [
+            4.0422639323338965,
+            3.2632453160933714
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N6",
+          "atom_2": "N3",
+          "distance_A": 3.677567707384868,
+          "plane_angles_deg": [
+            1.076235948986875,
+            5.93064917866809
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "atoms_2": [
+        "N1",
+        "N6"
+      ],
+      "base_1": "T",
+      "base_2": "A",
+      "distance_min_A": 2.6260814005091326,
+      "distance_max_A": 3.6705012060616444,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "106",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "6",
+        "description": "segment=3 chain=C residue=DT:106"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "118",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "6",
+        "description": "segment=4 chain=D residue=DA:118"
+      },
+      "source": "S3_B6",
+      "target": "S4_B6",
+      "contacts": [
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.6260814005091326,
+          "plane_angles_deg": [
+            5.880675779481522,
+            3.013081070585532
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N6",
+          "distance_A": 2.8350897867087026,
+          "plane_angles_deg": [
+            10.052547155355871,
+            7.14772889478943
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.4427069939366026,
+          "plane_angles_deg": [
+            4.516971173271362,
+            1.2989206609860537
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N1",
+          "distance_A": 3.4574991474330137,
+          "plane_angles_deg": [
+            4.250089256868766,
+            5.782975812661428
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N6",
+          "distance_A": 3.6705012060616444,
+          "plane_angles_deg": [
+            7.9504857576704095,
+            2.223736516669143
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 7,
+      "atoms_1": [
+        "N1",
+        "N2",
+        "O6"
+      ],
+      "atoms_2": [
+        "N3",
+        "N4",
+        "O2"
+      ],
+      "base_1": "G",
+      "base_2": "C",
+      "distance_min_A": 2.637470090465481,
+      "distance_max_A": 3.716414302967309,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "107",
+        "insertion": "",
+        "residue": "DG",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "7",
+        "description": "segment=3 chain=C residue=DG:107"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "117",
+        "insertion": "",
+        "residue": "DC",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "5",
+        "description": "segment=4 chain=D residue=DC:117"
+      },
+      "source": "S3_B7",
+      "target": "S4_B5",
+      "contacts": [
+        {
+          "atom_1": "N2",
+          "atom_2": "O2",
+          "distance_A": 2.637470090465481,
+          "plane_angles_deg": [
+            5.330619375943229,
+            0.9966005487158538
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N3",
+          "distance_A": 2.8342054404718087,
+          "plane_angles_deg": [
+            9.367786067551945,
+            3.1089969890220526
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N4",
+          "distance_A": 2.9519185458105026,
+          "plane_angles_deg": [
+            13.3823600028098,
+            7.106057315150597
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N2",
+          "atom_2": "N3",
+          "distance_A": 3.5254639564460146,
+          "plane_angles_deg": [
+            7.526171504216177,
+            0.6765173082582948
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "O2",
+          "distance_A": 3.605471658535122,
+          "plane_angles_deg": [
+            3.889903481801068,
+            2.375910480122323
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O6",
+          "atom_2": "N3",
+          "distance_A": 3.6430251160539666,
+          "plane_angles_deg": [
+            7.269696485782024,
+            5.721693169125377
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N1",
+          "atom_2": "N4",
+          "distance_A": 3.716414302967309,
+          "plane_angles_deg": [
+            10.598685794200223,
+            2.400955855277221
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "base_pair",
+      "status": "stitched",
+      "method": "natopo_significant_hydrogen_pair_v1",
+      "significant": true,
+      "origin": "both",
+      "atom_pairs": 5,
+      "atoms_1": [
+        "N3",
+        "O2",
+        "O4"
+      ],
+      "atoms_2": [
+        "N1",
+        "N6"
+      ],
+      "base_1": "T",
+      "base_2": "A",
+      "distance_min_A": 2.935838235478923,
+      "distance_max_A": 3.984946098782266,
+      "operation": "x,y,z",
+      "lattice_translation": [
+        0,
+        0,
+        0
+      ],
+      "image_operation": "x,y,z",
+      "residue1": {
+        "chain": "C",
+        "seq": "108",
+        "insertion": "",
+        "residue": "DT",
+        "segment": 3,
+        "label_asym": "C",
+        "label_seq": "8",
+        "description": "segment=3 chain=C residue=DT:108"
+      },
+      "residue2": {
+        "chain": "D",
+        "seq": "116",
+        "insertion": "",
+        "residue": "DA",
+        "segment": 4,
+        "label_asym": "D",
+        "label_seq": "4",
+        "description": "segment=4 chain=D residue=DA:116"
+      },
+      "source": "S3_B8",
+      "target": "S4_B4",
+      "contacts": [
+        {
+          "atom_1": "N3",
+          "atom_2": "N1",
+          "distance_A": 2.935838235478923,
+          "plane_angles_deg": [
+            1.5929399309088494,
+            0.7757087705957261
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N6",
+          "distance_A": 3.045513803120912,
+          "plane_angles_deg": [
+            6.11753171161384,
+            3.696361159811987
+          ],
+          "origin": [
+            "file",
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O4",
+          "atom_2": "N1",
+          "distance_A": 3.5440214645089285,
+          "plane_angles_deg": [
+            1.350017788684179,
+            3.1475337642101513
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "O2",
+          "atom_2": "N1",
+          "distance_A": 3.8477686863297773,
+          "plane_angles_deg": [
+            1.24365860500697,
+            3.9871967735475278
+          ],
+          "origin": [
+            "inferred"
+          ]
+        },
+        {
+          "atom_1": "N3",
+          "atom_2": "N6",
+          "distance_A": 3.984946098782266,
+          "plane_angles_deg": [
+            4.644447420668832,
+            0.5463372841098781
+          ],
+          "origin": [
+            "inferred"
+          ]
+        }
+      ]
+    }
+  ],
+  "asu_graphs": {
+    "residue": {
+      "nodes": 42,
+      "edges": 63,
+      "edge_type_counts": {
+        "backbone_join": 2,
+        "base_pair": 21,
+        "covalent": 38,
+        "terminal_stack": 2
+      },
+      "periodicity": [
+        "A (12), B (7), C (14), D (9) residues: 3-periodic framework along [1/3, 2/3, 2/3] & [0, 1, 0] & [0, 0, 1]"
+      ]
+    },
+    "chain": {
+      "nodes": 4,
+      "edges": 10,
+      "edge_type_counts": {
+        "backbone_join": 2,
+        "base_pair": 6,
+        "terminal_stack": 2
+      },
+      "periodicity": [
+        "A, B, C, D: 3-periodic framework along [1/3, 2/3, 2/3] & [0, 1, 0] & [0, 0, 1]"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "name": "8d93_stitched_hbond.cgd",
+      "sha256": "0680889f5c6043b8a41ea462f5771aec5117a77c05ea64c7c3c507ab2d25cb12"
+    },
+    {
+      "name": "8d93_stitched_hbond_asu.json",
+      "sha256": "f20790d96f7ea14bf20b27c391b68ac226fb17ee0af2af6102b3830521d34d01"
+    },
+    {
+      "name": "8d93_stitched_hbond_chains.html",
+      "sha256": "011c95e684a917b83572aac03bda7b10edb38fbf9c7767302f668a40381d558c"
+    },
+    {
+      "name": "8d93_stitched_hbond_residues.html",
+      "sha256": "6dbfc4294596b63ddb0632c3380b0cfeb90cbc678316056fe6fc397b0207d149"
+    },
+    {
+      "name": "8d93_stitched_hbond_chains.png",
+      "sha256": "933229d05061804d5df2861316ca7c358400d19d8e596ac49dc0a46b1a37da0c"
+    },
+    {
+      "name": "8d93_stitched_hbond_residues.png",
+      "sha256": "049b8056902836ae23db108b24fa07008646e8125cd3d0e8a9d644e7f63364da"
+    },
+    {
+      "name": "8d93_stitched_hbond.cmm",
+      "sha256": "d3473c877c497b3175a553b9a4bc3953233406374a14fd07840ddc01807c1993"
+    },
+    {
+      "name": "8d93_stitched_hbond_symmetry.cmm",
+      "sha256": "0e98ace06ea50cc4d973552315be634a1986c92f56b3a5c27575bc4630bdaef4"
+    }
+  ]
+}
